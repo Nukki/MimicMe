@@ -15,21 +15,22 @@ The goals of this endeavor are twofold: 1) to achieve a computational model that
 
 #### **Features**
 To achieve the mentioned goals, several features must be developed. The chatbot features include:
-access to various messaging apps
-ability to create and send messages
-ability to learn the user’s messaging habits
-ability to auto-respond to user’s messages
+- access to various messaging apps
+- ability to create and send messages
+- ability to learn the user’s messaging habits
+- ability to auto-respond to user’s messages
+
 In terms of the user, security features must be developed to secure user profiles and accounts; users should be able to interact with the chatbot; and the application should be able to run on both Android and iOS mobile platforms. Lastly, the chatbot user interface should be customizable so that users can configure settings to fit their preferences.
 
 #### **Stories**
 **As a *user*, I want:**
-to register to create a new account, so that my data can be stored for later retrieval. 
-to login to retrieve my personal account, so that I can be sure my data is secure.
-my conversations to be encrypted, so that messages cannot be read by unintended receivers.
-a chat window, so that text conversations can take place in real time.
-to access my profile, so that I can configure the settings and modify my user experience to fit my preferences.
-to rate my chatbots responses, so the chatbot improves performance based on my feedback.
-an interface to upload my chat data from various platforms, so that the chatbot can train on more data.
+- to register to create a new account, so that my data can be stored for later retrieval. 
+- to login to retrieve my personal account, so that I can be sure my data is secure.
+- my conversations to be encrypted, so that messages cannot be read by unintended receivers.
+- a chat window, so that text conversations can take place in real time.
+- to access my profile, so that I can configure the settings and modify my user experience to fit my preferences.
+- to rate my chatbots responses, so the chatbot improves performance based on my feedback.
+- an interface to upload my chat data from various platforms, so that the chatbot can train on more data.
 
 
 #### **Platforms and Languages**
