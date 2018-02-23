@@ -1,2 +1,2 @@
-# VirtualCompanion
+# MimicMe
 Capstone project
