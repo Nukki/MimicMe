@@ -1,5 +1,6 @@
 # Capstone Project: MimicMe
 Capstone project
+Collaborators: Jesse, Nikki, Michael, and Naveed
 
 [![Waffle.io - Issues in progress](https://badge.waffle.io/Jessegoodspeed/MimicMe.png?label=in%20progress&title=In%20Progress)](http://waffle.io/Jessegoodspeed/MimicMe)
 
