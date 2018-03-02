@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2159204505DA00E45AA7 /* AppDelegate.swift */; };
+		A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F215D204505DA00E45AA7 /* Main.storyboard */; };
+		A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */; };
+		A55F2164204505DA00E45AA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55F2163204505DA00E45AA7 /* Assets.xcassets */; };
+		A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */; };
+		A55F2172204505DA00E45AA7 /* MimicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2171204505DA00E45AA7 /* MimicMeTests.swift */; };
+		A55F217D204505DA00E45AA7 /* MimicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */; };
+		A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F218A20451D7300E45AA7 /* ChatViewController.swift */; };
+		A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */; };
+		A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2D2049478600F1D95D /* LoginController.swift */; };
+		A5AC8C302049479700F1D95D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2F2049479700F1D95D /* SignupController.swift */; };
+		A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0362047E3AC00503DD5 /* MainViewController.swift */; };
+		A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0382047E5E000503DD5 /* UploadViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A55F216E204505DA00E45AA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A55F214E204505DA00E45AA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A55F2155204505DA00E45AA7;
+			remoteInfo = MimicMe;
+		};
+		A55F2179204505DA00E45AA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A55F214E204505DA00E45AA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A55F2155204505DA00E45AA7;
+			remoteInfo = MimicMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55F2159204505DA00E45AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A55F215E204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A55F2161204505DA00E45AA7 /* MimicMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MimicMe.xcdatamodel; sourceTree = "<group>"; };
+		A55F2163204505DA00E45AA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A55F2166204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A55F2168204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55F216D204505DA00E45AA7 /* MimicMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MimicMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55F2171204505DA00E45AA7 /* MimicMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicMeTests.swift; sourceTree = "<group>"; };
+		A55F2173204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55F2178204505DA00E45AA7 /* MimicMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MimicMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicMeUITests.swift; sourceTree = "<group>"; };
+		A55F217E204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55F218A20451D7300E45AA7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownUser.swift; sourceTree = "<group>"; };
+		A5AC8C2D2049478600F1D95D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		A5AC8C2F2049479700F1D95D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		A5C1F0362047E3AC00503DD5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A5C1F0382047E5E000503DD5 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A55F2153204505DA00E45AA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F216A204505DA00E45AA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F2175204505DA00E45AA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A55F214D204505DA00E45AA7 = {
+			isa = PBXGroup;
+			children = (
+				A55F2158204505DA00E45AA7 /* MimicMe */,
+				A55F2170204505DA00E45AA7 /* MimicMeTests */,
+				A55F217B204505DA00E45AA7 /* MimicMeUITests */,
+				A55F2157204505DA00E45AA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A55F2157204505DA00E45AA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A55F2156204505DA00E45AA7 /* MimicMe.app */,
+				A55F216D204505DA00E45AA7 /* MimicMeTests.xctest */,
+				A55F2178204505DA00E45AA7 /* MimicMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A55F2158204505DA00E45AA7 /* MimicMe */ = {
+			isa = PBXGroup;
+			children = (
+				A55F2159204505DA00E45AA7 /* AppDelegate.swift */,
+				A55F215D204505DA00E45AA7 /* Main.storyboard */,
+				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
+				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
+				A55F2168204505DA00E45AA7 /* Info.plist */,
+				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
+				A55F218A20451D7300E45AA7 /* ChatViewController.swift */,
+				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
+				A5C1F0382047E5E000503DD5 /* UploadViewController.swift */,
+				A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */,
+				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
+				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+			);
+			path = MimicMe;
+			sourceTree = "<group>";
+		};
+		A55F2170204505DA00E45AA7 /* MimicMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A55F2171204505DA00E45AA7 /* MimicMeTests.swift */,
+				A55F2173204505DA00E45AA7 /* Info.plist */,
+			);
+			path = MimicMeTests;
+			sourceTree = "<group>";
+		};
+		A55F217B204505DA00E45AA7 /* MimicMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */,
+				A55F217E204505DA00E45AA7 /* Info.plist */,
+			);
+			path = MimicMeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A55F2155204505DA00E45AA7 /* MimicMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A55F2181204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMe" */;
+			buildPhases = (
+				A55F2152204505DA00E45AA7 /* Sources */,
+				A55F2153204505DA00E45AA7 /* Frameworks */,
+				A55F2154204505DA00E45AA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MimicMe;
+			productName = MimicMe;
+			productReference = A55F2156204505DA00E45AA7 /* MimicMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A55F216C204505DA00E45AA7 /* MimicMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A55F2184204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeTests" */;
+			buildPhases = (
+				A55F2169204505DA00E45AA7 /* Sources */,
+				A55F216A204505DA00E45AA7 /* Frameworks */,
+				A55F216B204505DA00E45AA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A55F216F204505DA00E45AA7 /* PBXTargetDependency */,
+			);
+			name = MimicMeTests;
+			productName = MimicMeTests;
+			productReference = A55F216D204505DA00E45AA7 /* MimicMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A55F2177204505DA00E45AA7 /* MimicMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A55F2187204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeUITests" */;
+			buildPhases = (
+				A55F2174204505DA00E45AA7 /* Sources */,
+				A55F2175204505DA00E45AA7 /* Frameworks */,
+				A55F2176204505DA00E45AA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A55F217A204505DA00E45AA7 /* PBXTargetDependency */,
+			);
+			name = MimicMeUITests;
+			productName = MimicMeUITests;
+			productReference = A55F2178204505DA00E45AA7 /* MimicMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A55F214E204505DA00E45AA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = N;
+				TargetAttributes = {
+					A55F2155204505DA00E45AA7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 92NZHY756F;
+						ProvisioningStyle = Automatic;
+					};
+					A55F216C204505DA00E45AA7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 92NZHY756F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A55F2155204505DA00E45AA7;
+					};
+					A55F2177204505DA00E45AA7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 92NZHY756F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A55F2155204505DA00E45AA7;
+					};
+				};
+			};
+			buildConfigurationList = A55F2151204505DA00E45AA7 /* Build configuration list for PBXProject "MimicMe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A55F214D204505DA00E45AA7;
+			productRefGroup = A55F2157204505DA00E45AA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A55F2155204505DA00E45AA7 /* MimicMe */,
+				A55F216C204505DA00E45AA7 /* MimicMeTests */,
+				A55F2177204505DA00E45AA7 /* MimicMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A55F2154204505DA00E45AA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */,
+				A55F2164204505DA00E45AA7 /* Assets.xcassets in Resources */,
+				A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F216B204505DA00E45AA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F2176204505DA00E45AA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A55F2152204505DA00E45AA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
+				A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */,
+				A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */,
+				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
+				A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */,
+				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
+				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
+				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F2169204505DA00E45AA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55F2172204505DA00E45AA7 /* MimicMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55F2174204505DA00E45AA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A55F217D204505DA00E45AA7 /* MimicMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A55F216F204505DA00E45AA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A55F2155204505DA00E45AA7 /* MimicMe */;
+			targetProxy = A55F216E204505DA00E45AA7 /* PBXContainerItemProxy */;
+		};
+		A55F217A204505DA00E45AA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A55F2155204505DA00E45AA7 /* MimicMe */;
+			targetProxy = A55F2179204505DA00E45AA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A55F215D204505DA00E45AA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A55F215E204505DA00E45AA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A55F2166204505DA00E45AA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A55F217F204505DA00E45AA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A55F2180204505DA00E45AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A55F2182204505DA00E45AA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A55F2183204505DA00E45AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A55F2185204505DA00E45AA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MimicMe.app/MimicMe";
+			};
+			name = Debug;
+		};
+		A55F2186204505DA00E45AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MimicMe.app/MimicMe";
+			};
+			name = Release;
+		};
+		A55F2188204505DA00E45AA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MimicMe;
+			};
+			name = Debug;
+		};
+		A55F2189204505DA00E45AA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 92NZHY756F;
+				INFOPLIST_FILE = MimicMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = N.MimicMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MimicMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A55F2151204505DA00E45AA7 /* Build configuration list for PBXProject "MimicMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55F217F204505DA00E45AA7 /* Debug */,
+				A55F2180204505DA00E45AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A55F2181204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55F2182204505DA00E45AA7 /* Debug */,
+				A55F2183204505DA00E45AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A55F2184204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55F2185204505DA00E45AA7 /* Debug */,
+				A55F2186204505DA00E45AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A55F2187204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55F2188204505DA00E45AA7 /* Debug */,
+				A55F2189204505DA00E45AA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A55F2161204505DA00E45AA7 /* MimicMe.xcdatamodel */,
+			);
+			currentVersion = A55F2161204505DA00E45AA7 /* MimicMe.xcdatamodel */;
+			path = MimicMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A55F214E204505DA00E45AA7 /* Project object */;
+}
