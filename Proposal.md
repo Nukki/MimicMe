@@ -1,9 +1,6 @@
-# Capstone Project: MimicMe
-#### Collaborators: Jesse, Nikki, Michael, and Naveed
-
-[![Waffle.io - Issues in progress](https://badge.waffle.io/Jessegoodspeed/MimicMe.png?label=in%20progress&title=In%20Progress)](http://waffle.io/Jessegoodspeed/MimicMe)
-
+# Capstone Project Proposal
 ###### 2/21/2018
+
 
 We are living in a time when most people prefer to communicate by way of messages as opposed to any other medium. This preference emerges with the abundance of messaging applications and a plethora of other smartphone capabilities. Due to these conditions many people find it hard to separate themselves from their smartphone devices, even at the risk of their own safety in certain cases.
 
