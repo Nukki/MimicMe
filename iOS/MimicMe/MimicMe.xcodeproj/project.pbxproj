@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5383993204C82C2006EA321 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5383992204C82C2006EA321 /* MessageCell.swift */; };
 		A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2159204505DA00E45AA7 /* AppDelegate.swift */; };
 		A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F215D204505DA00E45AA7 /* Main.storyboard */; };
 		A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 		A55F2172204505DA00E45AA7 /* MimicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2171204505DA00E45AA7 /* MimicMeTests.swift */; };
 		A55F217D204505DA00E45AA7 /* MimicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */; };
 		A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F218A20451D7300E45AA7 /* ChatViewController.swift */; };
+		A568580C204E70670098097A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568580B204E70670098097A /* Chat.swift */; };
 		A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */; };
 		A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2D2049478600F1D95D /* LoginController.swift */; };
 		A5AC8C302049479700F1D95D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2F2049479700F1D95D /* SignupController.swift */; };
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5383992204C82C2006EA321 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F2159204505DA00E45AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55F215E204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicMeUITests.swift; sourceTree = "<group>"; };
 		A55F217E204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A55F218A20451D7300E45AA7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A568580B204E70670098097A /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownUser.swift; sourceTree = "<group>"; };
 		A5AC8C2D2049478600F1D95D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A5AC8C2F2049479700F1D95D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+				A5383992204C82C2006EA321 /* MessageCell.swift */,
+				A568580B204E70670098097A /* Chat.swift */,
 			);
 			path = MimicMe;
 			sourceTree = "<group>";
@@ -283,11 +289,13 @@
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
 				A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */,
 				A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */,
+				A568580C204E70670098097A /* Chat.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
 				A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
+				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
-    var user = false;
+    var user = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
