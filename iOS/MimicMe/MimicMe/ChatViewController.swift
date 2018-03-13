@@ -18,6 +18,7 @@ class ChatViewController : UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor.purple
         messages = createMessages()
         tableView.delegate = self
         tableView.dataSource = self

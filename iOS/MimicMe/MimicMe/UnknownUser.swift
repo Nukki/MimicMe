@@ -22,8 +22,9 @@ class UnknownUser : UIViewController {
     }
     @IBAction func signupTapped(_ sender: UIButton) {
          presentingViewController?.dismiss(animated: false, completion:nil)
-    
-            performSegue(withIdentifier: "toSignup", sender: self)
+//           dismiss(animated: false, completion: nil)
+//            navigationController?.popViewController(animated: true)
+            shouldPerformSegue(withIdentifier: "toSignup", sender: self)
     }
     
 }

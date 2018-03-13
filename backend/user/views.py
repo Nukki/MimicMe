@@ -53,7 +53,6 @@ def register(request):
 			# email=request.POST.get('email',''),
 			# password=request.POST.get('password',''),
 			)
-
 		user.save() 
 		res = {	'response' : 'New user created' } #success, send 201 status
 		data = json.dumps(res)
@@ -79,10 +78,11 @@ def login(request):
 		# catch the error if user doesn't exist to let front end know
 		try:
 			user = User.objects.get(email=body['email'])
-			if user:
+			if user:	
 				if user.password == body['password']:
 					res = { 'response' : 'Login success!' } # success, send 200 status
 					data = json.dumps(res)
+					print(user.id)
 					return HttpResponse(data, content_type='application/json')
 				else:
 					res = { 'response' : 'Wrong password' } # error, send 400 status
