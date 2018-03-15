@@ -55,10 +55,10 @@ class RootHighjackController: UINavigationController {
             //user is logged in
             print("Loggedin")
             
-            perform(#selector(showMainController), with: nil, afterDelay: 0.01)
+// -------->           perform(#selector(showMainController), with: nil, afterDelay: 0.01)
             
-//            let mainController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeScreen") as UIViewController
-//            viewControllers = [mainController]
+            let mainController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeScreen") as UIViewController
+            viewControllers = [mainController]
         } else {
             print("not logged in")
             

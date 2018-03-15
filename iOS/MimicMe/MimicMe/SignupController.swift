@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SignupController : UIViewController {
+class SignupController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +21,16 @@ class SignupController : UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        repeatPasswordTextField.delegate = self
+    }
+    
+    // Called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func signupTapped(_ sender: UIButton) {
@@ -52,7 +62,8 @@ class SignupController : UIViewController {
         // ****************** Make an HTTP Request **********************************
         
         // make a header for request
-        guard let url = URL(string: "http://127.0.0.1:8000/register") else { return }
+//        guard let url = URL(string: "http://127.0.0.1:8000/register") else { return }
+        guard let url = URL(string: "http://192.168.0.7:8000/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");

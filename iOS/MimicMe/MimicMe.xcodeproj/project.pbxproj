@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F112205A29ED00C53D76 /* TalkToBotController.swift */; };
 		A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */; };
 		A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E372052F3D000A71014 /* KeychainWrapper.swift */; };
 		A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349F862054197B009FB58B /* RootHighjackController.swift */; };
@@ -25,11 +26,14 @@
 		A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F218A20451D7300E45AA7 /* ChatViewController.swift */; };
 		A57143F42055FCA4000B1A24 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A57143F32055FCA4000B1A24 /* logo.png */; };
 		A5AAB13C2056E2F40059D9BF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; };
-		A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */; };
 		A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2D2049478600F1D95D /* LoginController.swift */; };
 		A5AC8C302049479700F1D95D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2F2049479700F1D95D /* SignupController.swift */; };
 		A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0362047E3AC00503DD5 /* MainViewController.swift */; };
 		A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0382047E5E000503DD5 /* UploadViewController.swift */; };
+		A5CB6439205A31B9006D418E /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */; };
+		A5CB643A205A31B9006D418E /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */; };
+		A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643B205A54DB006D418E /* PersistenceService.swift */; };
+		A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643D205A76C2006D418E /* WebsocketHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A532F112205A29ED00C53D76 /* TalkToBotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToBotController.swift; sourceTree = "<group>"; };
 		A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		A5338E372052F3D000A71014 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		A5349F862054197B009FB58B /* RootHighjackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHighjackController.swift; sourceTree = "<group>"; };
@@ -108,11 +113,14 @@
 		A55F218A20451D7300E45AA7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A57143F32055FCA4000B1A24 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "../../../../Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
-		A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownUser.swift; sourceTree = "<group>"; };
 		A5AC8C2D2049478600F1D95D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A5AC8C2F2049479700F1D95D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		A5C1F0362047E3AC00503DD5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A5C1F0382047E5E000503DD5 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5CB643B205A54DB006D418E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		A5CB643D205A76C2006D418E /* WebsocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,22 +178,26 @@
 				A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */,
 				A55F2159204505DA00E45AA7 /* AppDelegate.swift */,
 				A55F215D204505DA00E45AA7 /* Main.storyboard */,
+				A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */,
+				A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */,
 				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
 				A53C7A5E2057FE8200789790 /* email2.png */,
 				A53C7A602057FE8A00789790 /* pass2.png */,
 				A53C7A63205827AC00789790 /* name.png */,
 				A57143F32055FCA4000B1A24 /* logo.png */,
+				A5CB643B205A54DB006D418E /* PersistenceService.swift */,
+				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
+				A5349F862054197B009FB58B /* RootHighjackController.swift */,
 				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
 				A55F2168204505DA00E45AA7 /* Info.plist */,
-				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
-				A55F218A20451D7300E45AA7 /* ChatViewController.swift */,
 				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
-				A5C1F0382047E5E000503DD5 /* UploadViewController.swift */,
-				A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+				A55F218A20451D7300E45AA7 /* ChatViewController.swift */,
 				A5383992204C82C2006EA321 /* MessageCell.swift */,
-				A5349F862054197B009FB58B /* RootHighjackController.swift */,
+				A5C1F0382047E5E000503DD5 /* UploadViewController.swift */,
+				A532F112205A29ED00C53D76 /* TalkToBotController.swift */,
+				A5CB643D205A76C2006D418E /* WebsocketHelper.swift */,
 			);
 			path = MimicMe;
 			sourceTree = "<group>";
@@ -391,17 +403,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
-				A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */,
 				A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */,
 				A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */,
+				A5CB6439205A31B9006D418E /* ChatMessage+CoreDataClass.swift in Sources */,
 				A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
 				A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */,
+				A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */,
+				A5CB643A205A31B9006D418E /* ChatMessage+CoreDataProperties.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */,
+				A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */,
 				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
 				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
+				A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

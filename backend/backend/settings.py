@@ -25,7 +25,7 @@ SECRET_KEY = '#*94hx*jr^wnjizo6(&^fc1%!z-3ih8ojs8&!dq@vz%-9crbmv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.7', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.0.7', '127.0.0.1'] # enables access to server from local network
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'channels',
     'user.apps.UserConfig',
     'chat.apps.ChatConfig',
+    'rest_framework',           
+    'rest_framework.authtoken', 
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   # 'backend.middleware.TokenMiddleware'
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -77,7 +80,7 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
         },
-        # "ROUTING": "backend.routing.channel_routing",
+         #"ROUTING": "backend.routing.ProtocolTypeRouter",
     },
 }
 
@@ -90,9 +93,11 @@ ASGI_APPLICATION = 'backend.routing.application'
 
 import mongoengine
 
+#N
 DATABASES = {
     'default': {
-        'ENGINE': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'accounts',
     },
 }
 
@@ -108,9 +113,30 @@ _MONGODB_DATABASE_HOST = \
 mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
 AUTHENTICATION_BACKENDS = (
-    'mongoengine.django.auth.MongoEngineBackend',
+    'django.contrib.auth.backends.ModelBackend',
+   # 'backend.backends.TokenBackend', #N
 )
 
+#AUTH_USER_MODEL = 'user.User'
+
+# N
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+]
+
+#N
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

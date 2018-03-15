@@ -52,8 +52,13 @@ class LoginController : UIViewController, UITextFieldDelegate {
             if isWorking {
                 // do stuff
                 UserDefaults.standard.set("lmao", forKey: "ayyy")
-                self.dismiss(animated: false, completion: nil)
-                self.shouldPerformSegue(withIdentifier: "loginSuccess", sender: self)
+                //new
+                DispatchQueue.main.async {
+                    self.dismiss(animated: false, completion: nil)
+                    self.performSegue(withIdentifier: "go", sender: self)
+                } // end new
+//                self.dismiss(animated: false, completion: nil)
+//                self.shouldPerformSegue(withIdentifier: "loginSuccess", sender: self)
             } else {
                 // not working
                 print("NOW I SHOULD DISPLAY ERROR *************************")
@@ -120,6 +125,7 @@ class LoginController : UIViewController, UITextFieldDelegate {
     func check(email : String, password: String, completion: @escaping (_ isWorking: Bool)->()) {
         // make a header for HTTP request
         guard let url = URL(string: "http://127.0.0.1:8000/login") else { return }
+//        guard let url = URL(string: "http://192.168.0.7:8000/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");
