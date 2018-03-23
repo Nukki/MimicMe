@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}MultiChat Example{% endblock %}
+{% block header_text %}MultiChat Example{% endblock %}
+
+{% block content %}
+
+    <ul class="rooms">
+        {% for room in rooms %}
+            <li class="room-link" data-room-id="{{ room.id }}">{{ room }}</li>
+        {% empty %}
+            <p class="empty">No chat rooms defined. Maybe make some in the <a href="{% url 'admin:index' %}">admin</a>?</p>
+        {% endfor %}
+    </ul>
+
+    <div id="chats">
+    </div>
+
+{% endblock %}
+
+{% block extra_body %}
+    <script>
+        $(function () {
+            // Correctly decide between ws:// and wss://
+            var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+            var ws_path = ws_scheme + '://' + window.location.host + "/socket";
+            console.log("Connecting to " + ws_path);
+            var socket = new ReconnectingWebSocket(ws_path);
+
+
+            var roomdiv = $(
+                    "<div class='room' id='room-'>" +
+                    "<h2> room </h2>" +
+                    "<div class='messages'></div>" +
+                    "<form><input><button>Send</button></form>" +
+                    "</div>"
+            );
+            // Hook up send button to send a message
+            roomdiv.find("form").on("submit", function () {
+                socket.send(JSON.stringify({
+                    "message": roomdiv.find("input").val()
+                }));
+                roomdiv.find("input").val("");
+                return false;
+            });
+            $("#chats").append(roomdiv);
+
+
+            // Handle incoming messages
+            socket.onmessage = function (message) {
+                // Decode the JSON
+                console.log("Got websocket message " + message.data);
+                var data = JSON.parse(message.data);
+                // Handle errors
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                } else if (data.message) {
+                    var msgdiv = $("#room- .messages");
+                    var ok_msg = "";
+                    // msg types are defined in chat/settings.py
+                    // Only for demo purposes is hardcoded, in production scenarios, consider call a service.
+        
+                    // Message
+                    ok_msg = "<div class='message'>" +
+                            "<span class='username'></span>" +
+                            "<span class='body'>" + data.message + "</span>" +
+                            "</div>";
+              	} else {
+                    console.log("Cannot handle message!");
+              	}
+                msgdiv.append(ok_msg);
+
+                msgdiv.scrollTop(msgdiv.prop("scrollHeight"));
+
+            };
+
+
+            // Helpful debugging
+            socket.onopen = function () {
+                console.log("Connected to chat socket");
+            };
+            socket.onclose = function () {
+                console.log("Disconnected from chat socket");
+            }
+        });
+    </script>
+{% endblock %}
