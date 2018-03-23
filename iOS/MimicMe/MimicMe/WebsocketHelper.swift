@@ -16,6 +16,7 @@ extension TalkToBotController: WebSocketDelegate {
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("----------------------- disconnected ------------------")
+        print(error as Any)
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {

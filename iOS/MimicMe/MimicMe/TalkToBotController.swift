@@ -15,6 +15,9 @@ private let reuseIdentifier = "Cell"
 class TalkToBotController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var messages = [ChatMessage]()
     var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/socket")!)
+//    var request = URLRequest(url: URL(string: "ws://localhost:5000/")!)
+//    var socket: WebSocket?
+    
     
     //positioning input window at the bottom
     var bottomConstraint: NSLayoutConstraint?
@@ -25,7 +28,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     // create a container to hold input and send button at the bottom
     let typingContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.purple
+        view.backgroundColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
         return view
     }()
     
@@ -57,7 +60,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: messageDictionary, options: [])
             let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
-                socket.write(string: jsonString)
+            socket.write(string: jsonString)
         } catch let err {
             print(err)
         }
@@ -66,7 +69,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         saveMessage(text: messageContent!, isSender: true)
     }
     
-    deinit {
+    deinit {   // close socket when view is not active
         socket.disconnect(forceTimeout: 0)
         socket.delegate = nil
     }
@@ -76,6 +79,9 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         messages = loadMessagesFromMemory()
         collectionView?.reloadData()
         
+//        request.httpMethod = "POST"
+//        request.timeoutInterval = 5
+//        socket = WebSocket(request: request)
         // set up the socket
         socket.disableSSLCertValidation = true
         socket.delegate = self
@@ -87,8 +93,11 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         
         // LAYOUT -------------------------------------------------------------------------------------
         self.navigationController?.isNavigationBarHidden = false
-        collectionView?.backgroundColor = UIColor.green
+        collectionView?.backgroundColor = UIColor.init(red: 65.0/255, green: 0.0/255, blue: 129.0/255, alpha: 1.0)
         collectionView?.alwaysBounceVertical = true
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        
         
         typingContainerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(typingContainerView)

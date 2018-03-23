@@ -62,8 +62,8 @@ class SignupController : UIViewController, UITextFieldDelegate {
         // ****************** Make an HTTP Request **********************************
         
         // make a header for request
-//        guard let url = URL(string: "http://127.0.0.1:8000/register") else { return }
-        guard let url = URL(string: "http://192.168.0.7:8000/register") else { return }
+        guard let url = URL(string: "http://127.0.0.1:8000/register") else { return }
+//        guard let url = URL(string: "http://192.168.0.7:8000/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");
