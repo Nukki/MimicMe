@@ -2,7 +2,7 @@
 //  ChatMessage+CoreDataProperties.swift
 //  MimicMe
 //
-//  Created by Full Name on 3/15/18.
+//  Created by Full Name on 4/7/18.
 //  Copyright © 2018 N. All rights reserved.
 //
 //
@@ -17,8 +17,9 @@ extension ChatMessage {
         return NSFetchRequest<ChatMessage>(entityName: "ChatMessage")
     }
 
-    @NSManaged public var date: NSDate?
     @NSManaged public var isSender: Bool
     @NSManaged public var text: String?
+    @NSManaged public var date: NSDate?
+    @NSManaged public var room: Room?
 
 }
