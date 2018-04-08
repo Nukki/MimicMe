@@ -16,9 +16,6 @@ class SignupController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     
-   
-    
-    
     override func viewDidLoad(){
         super.viewDidLoad()
         nameTextField.delegate = self
@@ -27,21 +24,20 @@ class SignupController : UIViewController, UITextFieldDelegate {
         repeatPasswordTextField.delegate = self
     }
     
-    // Called when 'return' key pressed. return NO to ignore.
+    // Called when 'return' key pressed.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    // sign up button is tapped
     @IBAction func signupTapped(_ sender: UIButton) {
         let name = nameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
         let passRepeat = repeatPasswordTextField.text!
-        
         // TODO check for injections
         // case when the email is already in use???
-        // post it to Keychain and to server?
       
         // ***************** User Input Validation ********************************
         
@@ -85,15 +81,26 @@ class SignupController : UIViewController, UITextFieldDelegate {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 print(json)
-                // which view to go next
+                
+//                if let resp = response as? HTTPURLResponse {
+//                    if resp.statusCode == 201 {
+//                        print("ACCOUNT CREATED 201")
+//                        DispatchQueue.main.async {
+//                            self.dismiss(animated: false, completion: nil)
+//                        }
+////                        self.dismiss(animated: false, completion: nil)
+//                    } else {
+//                        DispatchQueue.main.async {
+//                            self.displayAlertMessage("Something went wrong. Try again later")
+//                        }
+//                    }
+//                }
+//
                 self.dismiss(animated: false, completion: nil)
-//                self.displayAlertMessage("come onnnn")
                 
             } catch {}
         }.resume()
-        
-        
-    }
+    } // end signupTapped
     
     // displays given error message in a pop-up alert view
     // @param userMessage is the explanation of the error

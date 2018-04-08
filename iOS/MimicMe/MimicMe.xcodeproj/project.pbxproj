@@ -13,9 +13,6 @@
 		A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349F862054197B009FB58B /* RootHighjackController.swift */; };
 		A5383993204C82C2006EA321 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5383992204C82C2006EA321 /* MessageCell.swift */; };
 		A53C7A5D2057FD8900789790 /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A53C7A5F2057FE8200789790 /* email2.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A5E2057FE8200789790 /* email2.png */; };
-		A53C7A612057FE8A00789790 /* pass2.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A602057FE8A00789790 /* pass2.png */; };
-		A53C7A65205827AC00789790 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A63205827AC00789790 /* name.png */; };
 		A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2159204505DA00E45AA7 /* AppDelegate.swift */; };
 		A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F215D204505DA00E45AA7 /* Main.storyboard */; };
 		A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */; };
@@ -23,17 +20,16 @@
 		A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */; };
 		A55F2172204505DA00E45AA7 /* MimicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2171204505DA00E45AA7 /* MimicMeTests.swift */; };
 		A55F217D204505DA00E45AA7 /* MimicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */; };
-		A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F218A20451D7300E45AA7 /* ChatViewController.swift */; };
-		A57143F42055FCA4000B1A24 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A57143F32055FCA4000B1A24 /* logo.png */; };
 		A5AAB13C2056E2F40059D9BF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; };
 		A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2D2049478600F1D95D /* LoginController.swift */; };
 		A5AC8C302049479700F1D95D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2F2049479700F1D95D /* SignupController.swift */; };
 		A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0362047E3AC00503DD5 /* MainViewController.swift */; };
-		A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0382047E5E000503DD5 /* UploadViewController.swift */; };
-		A5CB6439205A31B9006D418E /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */; };
-		A5CB643A205A31B9006D418E /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */; };
 		A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643B205A54DB006D418E /* PersistenceService.swift */; };
 		A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643D205A76C2006D418E /* WebsocketHelper.swift */; };
+		A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */; };
+		A5E0EBBD2079B41B004E647D /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */; };
+		A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */; };
+		A5E0EBC52079D2FF004E647D /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,9 +90,6 @@
 		A5338E372052F3D000A71014 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		A5349F862054197B009FB58B /* RootHighjackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHighjackController.swift; sourceTree = "<group>"; };
 		A5383992204C82C2006EA321 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		A53C7A5E2057FE8200789790 /* email2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email2.png; path = ../../../../images/email2.png; sourceTree = "<group>"; };
-		A53C7A602057FE8A00789790 /* pass2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pass2.png; path = ../../../../images/pass2.png; sourceTree = "<group>"; };
-		A53C7A63205827AC00789790 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name.png; path = ../../../../images/name.png; sourceTree = "<group>"; };
 		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F2159204505DA00E45AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55F215E204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,17 +103,16 @@
 		A55F2178204505DA00E45AA7 /* MimicMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MimicMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicMeUITests.swift; sourceTree = "<group>"; };
 		A55F217E204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A55F218A20451D7300E45AA7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		A57143F32055FCA4000B1A24 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "../../../../Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
 		A5AC8C2D2049478600F1D95D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A5AC8C2F2049479700F1D95D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		A5C1F0362047E3AC00503DD5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A5C1F0382047E5E000503DD5 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
-		A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5CB643B205A54DB006D418E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		A5CB643D205A76C2006D418E /* WebsocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketHelper.swift; sourceTree = "<group>"; };
+		A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,28 +166,24 @@
 			isa = PBXGroup;
 			children = (
 				A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */,
-				A5338E372052F3D000A71014 /* KeychainWrapper.swift */,
-				A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */,
+				A55F2168204505DA00E45AA7 /* Info.plist */,
 				A55F2159204505DA00E45AA7 /* AppDelegate.swift */,
 				A55F215D204505DA00E45AA7 /* Main.storyboard */,
-				A5CB6437205A31B9006D418E /* ChatMessage+CoreDataClass.swift */,
-				A5CB6438205A31B9006D418E /* ChatMessage+CoreDataProperties.swift */,
-				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
-				A53C7A5E2057FE8200789790 /* email2.png */,
-				A53C7A602057FE8A00789790 /* pass2.png */,
-				A53C7A63205827AC00789790 /* name.png */,
-				A57143F32055FCA4000B1A24 /* logo.png */,
+				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
+				A5338E372052F3D000A71014 /* KeychainWrapper.swift */,
+				A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */,
+				A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */,
+				A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */,
+				A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */,
+				A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */,
 				A5CB643B205A54DB006D418E /* PersistenceService.swift */,
 				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
+				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
 				A5349F862054197B009FB58B /* RootHighjackController.swift */,
-				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
-				A55F2168204505DA00E45AA7 /* Info.plist */,
-				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
-				A55F218A20451D7300E45AA7 /* ChatViewController.swift */,
+				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
 				A5383992204C82C2006EA321 /* MessageCell.swift */,
-				A5C1F0382047E5E000503DD5 /* UploadViewController.swift */,
 				A532F112205A29ED00C53D76 /* TalkToBotController.swift */,
 				A5CB643D205A76C2006D418E /* WebsocketHelper.swift */,
 			);
@@ -371,13 +359,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57143F42055FCA4000B1A24 /* logo.png in Resources */,
 				A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */,
-				A53C7A5F2057FE8200789790 /* email2.png in Resources */,
 				A55F2164204505DA00E45AA7 /* Assets.xcassets in Resources */,
 				A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */,
-				A53C7A612057FE8A00789790 /* pass2.png in Resources */,
-				A53C7A65205827AC00789790 /* name.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,15 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E0EBC52079D2FF004E647D /* Room+CoreDataProperties.swift in Sources */,
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
-				A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */,
+				A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */,
 				A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */,
-				A5CB6439205A31B9006D418E /* ChatMessage+CoreDataClass.swift in Sources */,
 				A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
-				A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */,
+				A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */,
 				A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */,
-				A5CB643A205A31B9006D418E /* ChatMessage+CoreDataProperties.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */,
 				A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */,
@@ -418,6 +401,7 @@
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
 				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
 				A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */,
+				A5E0EBBD2079B41B004E647D /* ChatMessage+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

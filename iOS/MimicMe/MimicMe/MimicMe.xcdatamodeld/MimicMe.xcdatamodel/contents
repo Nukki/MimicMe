@@ -4,8 +4,15 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="isSender" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="messages" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChatMessage" inverseName="room" inverseEntity="ChatMessage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ChatMessage" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="ChatMessage" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Room" positionX="-371" positionY="-270" width="128" height="88"/>
     </elements>
 </model>

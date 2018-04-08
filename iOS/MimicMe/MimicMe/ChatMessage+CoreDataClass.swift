@@ -2,7 +2,7 @@
 //  ChatMessage+CoreDataClass.swift
 //  MimicMe
 //
-//  Created by Full Name on 4/7/18.
+//  Created by Nikki Jack on 4/7/18.
 //  Copyright © 2018 N. All rights reserved.
 //
 //

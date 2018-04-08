@@ -2,13 +2,14 @@
 //  PersistenceService.swift
 //  MimicMe
 //
-//  Created by Full Name on 3/15/18.
+//  Created by Nikki Jack on 3/15/18.
 //  Copyright © 2018 N. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
+// A class to facilitate core data manipulation, access and save context.
 class PersistenceService {
     
     private init() {}

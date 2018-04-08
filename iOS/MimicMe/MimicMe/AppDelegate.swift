@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MimicMe
 //
-//  Created by Full Name on 2/26/18.
+//  Created by Nikki Jack on 2/26/18.
 //  Copyright © 2018 N. All rights reserved.
 //
 
@@ -17,27 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // instanciates the RootHighjack view controller upon app start
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        window?.rootViewController = RootHighjackController()
          let highjack: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "highjack") as UIViewController
         window?.rootViewController = highjack
-//
-        
-        
-//        // Override point for customization after application launch.
-//        // start my code
-//        let userDefaults: UserDefaults = .standard
-//        let userLoggedIn: String? = userDefaults.string(forKey: "ayyy")
-//        if (userLoggedIn != nil){
-//            print("inside app delegate", userLoggedIn!)
-//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as!
-//            MainViewController
-//            window!.rootViewController = mainViewController
-//        }
-//        else { print("OOPS")}
-//        // end my code
         return true
     }
 
@@ -65,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistenceService.saveContext()
     }
 
-    // MARK: - Core Data stack
+    // MARK: - Core Data stack -- moved to PersistenceService.swift
 
 //    lazy var persistentContainer: NSPersistentContainer = {
 //        /*
