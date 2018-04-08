@@ -14,14 +14,18 @@ class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     var rooms = [Room]() // data for rooms table
+    var jsonArr: String?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveRooms()
+        jsonArr = "[{\"name\":\"1337room\",\"id\":\"1\"},{\"name\":\"n00broom\",\"id\":\"2\"},{\"name\":\"S*itPoster\",\"id\":\"3\"},{\"name\":\"SrsBzns\",\"id\":\"4\"}]"
+        let data = jsonArr?.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        rooms = fakeGetRooms(data: data!)
+//        getRoomsFromServer()
         tableView.backgroundColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 65;
+        tableView.rowHeight = 55;
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -54,7 +58,64 @@ class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     // ********************** Core Data Manipulations ****************************
     
     func getRoomsFromServer() -> [Room] {
-        return []
+        let memoryRooms = loadRoomsFromMemory()
+        
+        // make a header for request
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return memoryRooms}
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField:"Content-Type");
+
+        // make a request
+        URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            guard let data = data else {return}
+            do {
+                let responseRooms = try JSONDecoder().decode([decStuff].self, from: data) // decode as array of roomJson struct
+                if (memoryRooms.count < responseRooms.count) {
+//                    saveNewRooms(responseRooms) do it with closure
+                }
+
+            } catch {}
+        }.resume()
+
+        return memoryRooms
+    }
+    
+    func fakeGetRooms(data: Data)-> [Room] {
+        let memoryRooms = loadRoomsFromMemory()
+        print("rooms in memory: ", memoryRooms.count)
+        do {
+            let responseRooms = try JSONDecoder().decode([RoomFromJson].self, from: data) // decode as array of roomfromJson struct
+            print(responseRooms[0].id)
+            if (memoryRooms.count < responseRooms.count) {
+                print("There are new rooms to save")
+                saveNewRooms(rooms: responseRooms)
+            }
+        }catch {}
+        return loadRoomsFromMemory()
+    }
+    
+    func saveNewRooms(rooms: [RoomFromJson]) {
+        for room in rooms {
+            if(!roomExists(id: room.id)){
+                saveRoom(id: room.id, name: room.name)
+            }
+        }
+    }
+    
+    func roomExists(id: String) -> Bool {
+        let fetchRequest: NSFetchRequest<Room> = Room.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        var results: [NSManagedObject] = []
+        do {
+            results = try PersistenceService.context.fetch(fetchRequest)
+        } catch let err {
+            print(err)
+        }
+        return results.count > 0
     }
     
     func loadRoomsFromMemory() -> [Room] {
@@ -68,16 +129,13 @@ class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         return []
     }
     
-    func saveRooms() {
+    func saveRoom(id: String, name: String) {
+        print("Trying to save a room: ", name)
         let aRoom = Room(context: PersistenceService.context)
-        aRoom.id = "1"
-        aRoom.name = "1337room"
-        let anotherRoom = Room(context: PersistenceService.context)
-        anotherRoom.id = "2"
-        anotherRoom.name = "n00broom"
+        aRoom.id = id
+        aRoom.name = name
         PersistenceService.saveContext() // save to db
         rooms.append(aRoom)
-        rooms.append(anotherRoom)
         tableView?.reloadData()
     }
     
@@ -102,5 +160,18 @@ class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     }
 }
 
+
+// struct for parsing JSON to Room
+struct RoomFromJson: Decodable {
+    let id: String
+    let name: String
+}
+
+struct decStuff: Decodable {
+    let id: Int
+    let body: String
+    let title: String
+    let userId: Int
+}
 
 
