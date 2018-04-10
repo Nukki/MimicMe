@@ -10,6 +10,7 @@ from asgiref.sync import async_to_sync # to keep sync functions sync
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
+
 from channels.generic.websocket import JsonWebsocketConsumer
 
 #TODO Look into options
@@ -20,7 +21,6 @@ class MyConsumer(JsonWebsocketConsumer):
 
     def connect(self):
 
-
         # Called on connection. Either call
         self.accept()
         # Or to reject the connection, call
@@ -28,6 +28,7 @@ class MyConsumer(JsonWebsocketConsumer):
 
 
     def receive_json(self, content):
+
 
         print(content)
 
@@ -55,6 +56,7 @@ class MyConsumer(JsonWebsocketConsumer):
             print("test")
             message = content["message"]
 
+
             async_to_sync(self.channel_layer.group_send)(room.name, {
                 "type": "chat.message",
                 "room_id" : content["room"],
@@ -70,6 +72,7 @@ class MyConsumer(JsonWebsocketConsumer):
                 "username": "bot",
                 "message" : response,
             });
+
 
 
 
@@ -124,3 +127,6 @@ class MyConsumer(JsonWebsocketConsumer):
                 "message": event["message"],
             },
         )
+
+
+
