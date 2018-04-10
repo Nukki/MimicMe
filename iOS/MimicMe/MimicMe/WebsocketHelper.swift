@@ -13,6 +13,15 @@ import CoreData
 // Takes care of socket things and saving a message to core data.
 extension TalkToBotController: WebSocketDelegate {
     func websocketDidConnect(socket: WebSocketClient) {
+        // {"command": "join", "room" : "idVar" }
+//        let messageDictionary : [String: String] = [ "command": "join", "room": (room?.id)! ]
+//        do {
+//            let jsonData = try JSONSerialization.data(withJSONObject: messageDictionary, options: [])
+//            let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
+//            socket.write(string: jsonString)
+//        } catch let err {
+//            print(err)
+//        }
         print("-------------------- socket connected ------------------")
     }
     

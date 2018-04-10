@@ -22,8 +22,8 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     
     var messages = [ChatMessage]() // messages from core data
     
-//    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/socket")!)
-    var socket = WebSocket(url: URL(string: "ws://192.168.0.2:8000/socket")!)
+    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/socket")!)
+//    var socket = WebSocket(url: URL(string: "ws://192.168.0.2:8000/socket")!)
     
     // positioning input window at the bottom
     var bottomConstraint: NSLayoutConstraint?
@@ -63,8 +63,12 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     func sendTapped() {
         let messageContent = typingField.text
         
-        // send over socket
+        // write to socket
+        // commands: join, leave send  // "command"
+//        data has message, type, username ??????????
         let messageDictionary : [String: String] = [ "message": messageContent! ]
+//        let messageDictionary : [String: String] = [ "command": "send" , "message": messageContent! ]
+
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: messageDictionary, options: [])
             let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!

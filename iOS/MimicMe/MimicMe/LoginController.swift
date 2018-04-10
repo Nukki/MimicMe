@@ -80,8 +80,8 @@ class LoginController : UIViewController, UITextFieldDelegate {
     // @param email and password from user input
     func check(email : String, password: String, completion: @escaping (_ isWorking: Bool)->()) {
         // make a header for HTTP request
-//        guard let url = URL(string: "http://127.0.0.1:8000/login") else { return }
-        guard let url = URL(string: "http://192.168.0.2:8000/login") else { return }
+        guard let url = URL(string: "http://127.0.0.1:8000/login") else { return }
+//        guard let url = URL(string: "http://192.168.0.2:8000/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");
