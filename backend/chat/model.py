@@ -2,11 +2,8 @@ import tensorflow as tf
 import numpy as np
 import pickle
 
-# Just disables the warning, doesn't enable AVX/FMA
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-# Load in data structures
+
 with open("chat/data/wordList.txt", "rb") as fp:
     wordList = pickle.load(fp)
 wordList.append('<pad>')
@@ -17,7 +14,9 @@ vocabSize = len(wordList)
 batchSize = 24
 maxEncoderLength = 15
 maxDecoderLength = 15
-lstmUnits = 112  # was 48 but should be 112 to match Seq2Seq.py
+
+lstmUnits = 112
+
 numLayersLSTM = 3
 
 # Create placeholders
@@ -86,6 +85,6 @@ def pred(inputString):
     ids = (sess.run(decoderPrediction, feed_dict=feedDict))
     return idsToSentence(ids, wordList)
 
-def prediction(msg):
-    response =  pred(msg)
-    return response
+# def prediction(msg):
+# 	response = pred(m)
+
