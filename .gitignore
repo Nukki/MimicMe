@@ -119,3 +119,5 @@ conversationData.txt
 conversationDictionary.npy
 wordList.txt
 .floyd*
+GoogleTextForm/
+tensorboard/
