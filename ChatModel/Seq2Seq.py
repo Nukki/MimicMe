@@ -9,6 +9,8 @@ import os
 # Removes an annoying Tensorflow warning
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
+# The original script is from https://github.com/adeshpande3/Facebook-Messenger-Bot
+
 def createTrainingMatrices(conversationFileName, wList, maxLen):
 	conversationDictionary = np.load(conversationFileName).item()
 	numExamples = len(conversationDictionary)

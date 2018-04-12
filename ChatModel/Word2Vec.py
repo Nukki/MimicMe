@@ -1,5 +1,5 @@
-import tensorflow as tf 
-import numpy as np 
+import tensorflow as tf
+import numpy as np
 import re
 from collections import Counter
 import sys
@@ -7,6 +7,9 @@ import math
 from random import randint
 import pickle
 import os
+
+# The original script is from https://github.com/adeshpande3/Facebook-Messenger-Bot
+
 
 # This Word2Vec implementation is largely based on this paper
 # https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
@@ -21,7 +24,7 @@ numNegativeSample = 64
 windowSize = 5
 numIterations = 100000
 
-# This function just takes in the conversation data and makes it 
+# This function just takes in the conversation data and makes it
 # into one huge string, and then uses a Counter to identify words
 # and the number of occurences
 def processDataset(filename):
@@ -34,7 +37,7 @@ def processDataset(filename):
 	return myStr, finalDict
 
 def createTrainingMatrices(dictionary, corpus):
-	allUniqueWords = dictionary.keys()	
+	allUniqueWords = dictionary.keys()
 	allWords = corpus.split()
 	numTotalWords = len(allWords)
 	xTrain=[]
@@ -78,12 +81,12 @@ else:
 		np.save('Word2VecYTrain.npy', yTrain)
 	else:
 		continueWord2Vec = False
-	with open("wordList.txt", "wb") as fp: 
+	with open("wordList.txt", "wb") as fp:
 		pickle.dump(wordList, fp)
-	
-# If you do not want to create your own word vectors and you'd just like to 
-# have Tensorflow's seq2seq take care of that, then you don't need to run 
-# anything below this line. 
+
+# If you do not want to create your own word vectors and you'd just like to
+# have Tensorflow's seq2seq take care of that, then you don't need to run
+# anything below this line.
 if (continueWord2Vec == False):
 	sys.exit()
 

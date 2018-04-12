@@ -4,6 +4,8 @@ import os
 import re
 from datetime import datetime
 
+# The original script is from https://github.com/adeshpande3/Facebook-Messenger-Bot
+
 personName = input('Enter your full name: ')
 fbData = input('Do you have Facebook data to parse through (y/n)?')
 googleData = input('Do you have Google Hangouts data to parse through (y/n)?')
@@ -21,20 +23,20 @@ def getGoogleHangoutsData():
         # Going through each file, and recording everyone's messages to me, and my responses
     for currentFile in allFiles:
         myMessage, otherPersonsMessage, currentSpeaker = "","",""
-        openedFile = open(currentFile, 'r') 
+        openedFile = open(currentFile, 'r')
         allLines = openedFile.readlines()
         for index,lines in enumerate(allLines):
             # The sender's name is separated by < and >
             leftBracket = lines.find('<')
             rightBracket = lines.find('>')
-                
+
             # Find messages that I sent
             if (lines[leftBracket+1:rightBracket] == personName):
                 if not myMessage:
                     # Want to find the first message that I send (if I send multiple in a row)
                     startMessageIndex = index - 1
                 myMessage += lines[rightBracket+1:]
-                
+
             elif myMessage:
             # Now go and see what message the other person sent by looking at previous messages
                 for counter in range(startMessageIndex, 0, -1):
@@ -58,7 +60,7 @@ def getGoogleHangoutsData():
 
 def getFacebookData():
         responseDictionary = dict()
-        fbFile = open('fbMessages.txt', 'r') 
+        fbFile = open('fbMessages.txt', 'r')
         allLines = fbFile.readlines()
         myMessage, otherPersonsMessage, currentSpeaker = "","",""
         for index,lines in enumerate(allLines):
@@ -71,7 +73,7 @@ def getFacebookData():
                     # Want to find the first message that I send (if I send multiple in a row)
                     startMessageIndex = index - 1
                 myMessage += justMessage[colon+2:]
-                
+
             elif myMessage:
                 # Now go and see what message the other person sent by looking at previous messages
                 for counter in range(startMessageIndex, 0, -1):
@@ -89,7 +91,7 @@ def getFacebookData():
                         responseDictionary[otherPersonsMessage] = myMessage
                         break
                     otherPersonsMessage = justMessage[colon+2:] + otherPersonsMessage
-                myMessage, otherPersonsMessage, currentSpeaker = "","",""    
+                myMessage, otherPersonsMessage, currentSpeaker = "","",""
         return responseDictionary
 
 def getLinkedInData():
