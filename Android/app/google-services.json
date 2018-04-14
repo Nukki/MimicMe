@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "143061509337",
+    "firebase_url": "https://mimicme-a04dc.firebaseio.com",
+    "project_id": "mimicme-a04dc",
+    "storage_bucket": "mimicme-a04dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143061509337:android:3e0eb7f2a791cfa9",
+        "android_client_info": {
+          "package_name": "com.example.naveedshah.mimicme5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143061509337-hpipmrmn7nora332sdba6sqdrla8ts1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.naveedshah.mimicme5",
+            "certificate_hash": "8d731253c4ada6633d6958899a0b0f187b3effda"
+          }
+        },
+        {
+          "client_id": "143061509337-jsr4nj3e30ccisq6l1lndj1nau36n7ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT41M13owcBMV_iq1zfeDQyAJT476x500"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143061509337-jsr4nj3e30ccisq6l1lndj1nau36n7ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
