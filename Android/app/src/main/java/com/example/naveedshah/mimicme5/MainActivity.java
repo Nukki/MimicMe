@@ -1,6 +1,5 @@
 package com.example.naveedshah.mimicme5;
 
-
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -26,8 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Integer to indiciate a sign-in request
     private static int SIGN_IN_REQUEST_CODE = 1;
-    private FirebaseListAdapter<Message> adapter;
+
+    // Keep track of user signed-in
+    boolean userSignedIn = false;
     RelativeLayout activity_main;
 
     @Override
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         {
             if(resultCode == RESULT_OK)
             {
+                userSignedIn = true;
                 Snackbar.make(activity_main,"Successfully signed in.Welcome!", Snackbar.LENGTH_SHORT).show();
                 displayMessage();
             }
@@ -76,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
 
 
-        //Check if not sign-in then navigate Signin page
-        if(FirebaseAuth.getInstance().getCurrentUser() == null)
+        // If there is no user signed-in, prompt them to sign in
+
+        if(userSignedIn == false)
         {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
         }
@@ -95,25 +99,27 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayMessage() {
 
-        ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
-        adapter = new FirebaseListAdapter<Message>(this,Message.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference())
-        {
-            @Override
-            protected void populateView(View v, Message model, int position) {
+        // OLD FIREBASE CODE TO BE REPLACED WITH NEW CODE FOR DJANGO SERVER
 
-                //Get references to the views of list_item.xml
-                TextView messageText, messageUser, messageTime;
-                messageText = (TextView) v.findViewById(R.id.message_text);
-                messageUser = (TextView) v.findViewById(R.id.message_user);
-                messageTime = (TextView) v.findViewById(R.id.message_time);
-
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
-
-            }
-        };
-        listOfMessage.setAdapter(adapter);
+//        ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
+//        adapter = new FirebaseListAdapter<Message>(this,Message.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference())
+//        {
+//            @Override
+//            protected void populateView(View v, Message model, int position) {
+//
+//                //Get references to the views of list_item.xml
+//                TextView messageText, messageUser, messageTime;
+//                messageText = (TextView) v.findViewById(R.id.message_text);
+//                messageUser = (TextView) v.findViewById(R.id.message_user);
+//                messageTime = (TextView) v.findViewById(R.id.message_time);
+//
+//                messageText.setText(model.getMessageText());
+//                messageUser.setText(model.getMessageUser());
+//                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
+//
+//            }
+//        };
+//        listOfMessage.setAdapter(adapter);
     }
 }
 
