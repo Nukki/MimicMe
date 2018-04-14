@@ -16,12 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.text.format.DateFormat;
 
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,11 +78,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(userSignedIn == false)
         {
-            startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
+            // implement Django Sign-in here
+
+            //startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
         }
         else
         {
-            Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(activity_main,"Welcome",Snackbar.LENGTH_SHORT).show();
             //Load content
             displayMessage();
         }
