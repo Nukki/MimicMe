@@ -39,6 +39,7 @@ import java.io.*;
 import android.util.*;
 import android.net.*;
 import java.net.*;
+import android.content.Intent;
 
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -48,21 +49,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-    /**
-     * Id to identity READ_CONTACTS permission request.
-     */
-    private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
     private UserLoginTask mAuthTask = null;
 
     // UI references.
@@ -216,7 +203,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                         StringBuilder sb = new StringBuilder();
                         String line;
-3
+
                         while ((line = br.readLine()) != null) {
                             sb.append(line + "\n");
                         }
@@ -224,6 +211,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         br.close();
                         Log.d("INCOMING ", sb.toString());
 
+                        if (sb.toString() == "Logged In!") {
+                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
+                            startActivity(myIntent);
+                        } else if (sb.toString() == "New User") {
+
+                        }Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                        startActivity(myIntent);
 
                     } catch (IOException e) {
                         Log.e("MYAPP", "exception for connection:", e);
