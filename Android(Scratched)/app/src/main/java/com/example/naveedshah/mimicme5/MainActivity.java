@@ -2,10 +2,9 @@ package com.example.naveedshah.mimicme5;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.text.format.DateFormat;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -78,9 +82,46 @@ public class MainActivity extends AppCompatActivity {
 
         if(userSignedIn == false)
         {
-            // implement Django Sign-in here
 
-            //startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
+            // implement Django Sign-in here
+            new Thread() {
+                HttpURLConnection conn = null;
+
+                public void run() {
+                    try {
+
+                        URL url = new URL("http://10.0.2.2:8000/login");
+                        conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+
+                        conn.setRequestProperty("email", "test@gmail.com");
+                        conn.setRequestProperty("password", "abcabc");
+                        conn.setRequestProperty("name", "testing123");
+
+
+                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+
+                        br.close();
+                        Log.d("INCOMING ", sb.toString());
+
+
+                    } catch (IOException e) {
+                        Log.e("MYAPP", "exception for connection:", e);
+                    } finally {
+                        if (conn != null) {
+                            conn.disconnect();
+                        }
+                    }
+                }
+            }.start();
+
         }
         else
         {
