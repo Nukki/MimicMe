@@ -31,7 +31,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import java.net.HttpURLConnection;
 
 import java.util.*;
@@ -146,7 +145,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                         conn.setRequestProperty("email", email);
                         conn.setRequestProperty("password", password);
-                        conn.setRequestProperty("password", password);
+                        conn.setRequestProperty("name", name);
 
 
                         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
@@ -266,7 +265,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         };
 
         int ADDRESS = 0;
-        int IS_PRIMARY = 1;
     }
 
 }
