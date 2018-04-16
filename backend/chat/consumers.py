@@ -14,72 +14,69 @@ from channels.generic.websocket import JsonWebsocketConsumer
 
 #TODO Look into options
 
-
+# Consumer class is instantiated for every websocket connection
+# 3 main functions (connect, receive_json, disconnect)
 class MyConsumer(JsonWebsocketConsumer):
-    # groups = ["broadcast"]
-
+    # Called upon ws://chat/stream connection
     def connect(self):
-
-
-        # Called on connection. Either call
         self.accept()
-        # Or to reject the connection, call
         # self.close()
 
-
+    # Called when a message is sent from client to the server
     def receive_json(self, content):
-
         print(content)
-
+        # Get command to select routine
         command = content.get("command", None)
 
         if command == "join":
-            room = Room.objects(pk=content["room"])[0]
-            print(room.name)
-            # Add them to the group so they get room messages
-            # link room to
-            async_to_sync(self.channel_layer.group_add)(
-                room.name,
-                self.channel_name,
-            )
-            # Instruct their client to finish opening the room
-            self.send_json({
-                "join": content["room"],
-                "title": room.name,
-            })
-
-
+            self.join_room(content["room"])
 
         elif command == "send":
-            room = Room.objects(pk=content["room"])[0]
-            print("test")
-            message = content["message"]
-
-            async_to_sync(self.channel_layer.group_send)(room.name, {
-                "type": "chat.message",
-                "room_id" : content["room"],
-                "username": "human",
-                "message" : message,
-            });
-
-            response =  mod.pred(str(message))
-
-            async_to_sync(self.channel_layer.group_send)(room.name, {
-                "type": "chat.message",
-                "room_id" : content["room"],
-                "username": "bot",
-                "message" : response,
-            });
+            self.send_room(content["room"], content["message"])
 
 
 
 
-
-
+    # called when the socket closes
     def disconnect(self,close_code):
         print('close')
-        # self.close()
-        # Called when the socket closes
+
+
+
+    def join_room(self, roomId):
+
+        room = Room.objects.get(pk=roomId) # "room" is the room id
+        # print(room.name)
+        # Add them to the group so they get room messages
+        # link room to
+        async_to_sync(self.channel_layer.group_add)(
+            room.group_name,
+            self.channel_name,
+        )
+        # Instruct their client to finish opening the room
+        self.send_json({
+            "join": str(room.id),
+            "name": room.name,
+        })
+
+    def send_room(self, roomId, message):
+        room = Room.objects.get(pk=roomId)
+
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": "human",
+            "message" : message,
+        });
+
+        response =  mod.pred(str(message))
+
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": "bot",
+            "message" : response,
+        });
 
 
 
@@ -88,9 +85,9 @@ class MyConsumer(JsonWebsocketConsumer):
 
     # These helper methods are named by the types we send - so chat.join becomes chat_join
     def chat_join(self, event):
-        """
-        Called when someone has joined our chat.
-        """
+
+        # Called when someone has joined our chat.
+
         # Send a message down to the client
         self.send_json(
             {
@@ -100,9 +97,9 @@ class MyConsumer(JsonWebsocketConsumer):
         )
 
     def chat_leave(self, event):
-        """
-        Called when someone has left our chat.
-        """
+
+        # Called when someone has left our chat.
+
         # Send a message down to the client
         self.send_json(
             {
@@ -112,9 +109,9 @@ class MyConsumer(JsonWebsocketConsumer):
         )
 
     def chat_message(self, event):
-        """
-        Called when someone has messaged our chat.
-        """
+
+        # Called when someone has messaged our chat.
+
         # Send a message down to the client
         self.send_json(
             {

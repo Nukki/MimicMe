@@ -13,13 +13,15 @@ from django.contrib.auth.decorators import login_required
 @csrf_exempt
 def index(request):
 
-    rooms = Room.objects
-
+    rooms = Room.objects.order_by("name")
+    res = []
+    for room in rooms:
+        res.append({"name": room.name, "id": room.id})
+    data = json.dumps(res)
     # turn into HTTp response and send json of all the rooms
     # Render that in the index template
-    return render(request, "index.html", {
-        "rooms": rooms
-    })
+    return HttpResponse(data, content_type='application/json',status=201)
+
 
 
 
