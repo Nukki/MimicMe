@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import tensorflow as tf
 import chat.model as mod
+import asyncio
 import os
 
 from asgiref.sync import async_to_sync # to keep sync functions sync
@@ -18,10 +19,20 @@ from channels.generic.websocket import JsonWebsocketConsumer
 # Consumer class is instantiated for every websocket connection
 # 3 main functions (connect, receive_json, disconnect)
 class MyConsumer(JsonWebsocketConsumer):
+
+
     # Called upon ws://chat/stream connection
     def connect(self):
-        self.accept()
-        # self.close()
+
+        if self.scope["user"].is_anonymous:
+            print("user not logged")
+            # reject if user isnt logged in
+            self.close()
+        else:
+            print("user found")
+            # accept
+            self.accept()
+
 
     # Called when a message is sent from client to the server
     def receive_json(self, content):
@@ -37,7 +48,6 @@ class MyConsumer(JsonWebsocketConsumer):
 
 
 
-
     # called when the socket closes
     def disconnect(self,close_code):
         print('close')
@@ -47,14 +57,14 @@ class MyConsumer(JsonWebsocketConsumer):
     def join_room(self, roomId):
 
         room = Room.objects.get(pk=roomId) # "room" is the room id
-        # print(room.name)
+
         # Add them to the group so they get room messages
-        # link room to
         async_to_sync(self.channel_layer.group_add)(
             room.group_name,
             self.channel_name,
         )
         # Instruct their client to finish opening the room
+        # Note: mobile apps may need different information
         self.send_json({
             "join": str(room.id),
             "name": room.name,
@@ -63,15 +73,18 @@ class MyConsumer(JsonWebsocketConsumer):
     def send_room(self, roomId, message):
         room = Room.objects.get(pk=roomId)
 
+        # send message to room
         async_to_sync(self.channel_layer.group_send)(room.group_name, {
             "type": "chat.message",
             "room_id" : roomId,
-            "username": "human",
+            "username": self.scope["user"].username,
             "message" : message,
         });
 
+        # formulate model response
         response =  mod.pred(str(message))
-
+        # asyncio.sleep(10)
+        # send that response to the room
         async_to_sync(self.channel_layer.group_send)(room.group_name, {
             "type": "chat.message",
             "room_id" : roomId,
