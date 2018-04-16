@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import tensorflow as tf
 import chat.model as mod
+import asyncio
 import os
 
 from asgiref.sync import async_to_sync # to keep sync functions sync
@@ -15,74 +16,81 @@ from channels.generic.websocket import JsonWebsocketConsumer
 
 #TODO Look into options
 
-
+# Consumer class is instantiated for every websocket connection
+# 3 main functions (connect, receive_json, disconnect)
 class MyConsumer(JsonWebsocketConsumer):
-    # groups = ["broadcast"]
 
+
+    # Called upon ws://chat/stream connection
     def connect(self):
 
-        # Called on connection. Either call
-        self.accept()
-        # Or to reject the connection, call
-        # self.close()
+        if self.scope["user"].is_anonymous:
+            print("user not logged")
+            # reject if user isnt logged in
+            self.close()
+        else:
+            print("user found")
+            # accept
+            self.accept()
 
 
+    # Called when a message is sent from client to the server
     def receive_json(self, content):
-
-
         print(content)
-
+        # Get command to select routine
         command = content.get("command", None)
 
         if command == "join":
-            room = Room.objects(pk=content["room"])[0]
-            print(room.name)
-            # Add them to the group so they get room messages
-            # link room to
-            async_to_sync(self.channel_layer.group_add)(
-                room.name,
-                self.channel_name,
-            )
-            # Instruct their client to finish opening the room
-            self.send_json({
-                "join": content["room"],
-                "title": room.name,
-            })
-
-
+            self.join_room(content["room"])
 
         elif command == "send":
-            room = Room.objects(pk=content["room"])[0]
-            print("test")
-            message = content["message"]
-
-
-            async_to_sync(self.channel_layer.group_send)(room.name, {
-                "type": "chat.message",
-                "room_id" : content["room"],
-                "username": "human",
-                "message" : message,
-            });
-
-            response =  mod.pred(str(message))
-
-            async_to_sync(self.channel_layer.group_send)(room.name, {
-                "type": "chat.message",
-                "room_id" : content["room"],
-                "username": "bot",
-                "message" : response,
-            });
+            self.send_room(content["room"], content["message"])
 
 
 
-
-
-
-
+    # called when the socket closes
     def disconnect(self,close_code):
         print('close')
-        # self.close()
-        # Called when the socket closes
+
+
+
+    def join_room(self, roomId):
+
+        room = Room.objects.get(pk=roomId) # "room" is the room id
+
+        # Add them to the group so they get room messages
+        async_to_sync(self.channel_layer.group_add)(
+            room.group_name,
+            self.channel_name,
+        )
+        # Instruct their client to finish opening the room
+        # Note: mobile apps may need different information
+        self.send_json({
+            "join": str(room.id),
+            "name": room.name,
+        })
+
+    def send_room(self, roomId, message):
+        room = Room.objects.get(pk=roomId)
+
+        # send message to room
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": self.scope["user"].username,
+            "message" : message,
+        });
+
+        # formulate model response
+        response =  mod.pred(str(message))
+        # asyncio.sleep(10)
+        # send that response to the room
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": "bot",
+            "message" : response,
+        });
 
 
 
@@ -91,9 +99,9 @@ class MyConsumer(JsonWebsocketConsumer):
 
     # These helper methods are named by the types we send - so chat.join becomes chat_join
     def chat_join(self, event):
-        """
-        Called when someone has joined our chat.
-        """
+
+        # Called when someone has joined our chat.
+
         # Send a message down to the client
         self.send_json(
             {
@@ -103,9 +111,9 @@ class MyConsumer(JsonWebsocketConsumer):
         )
 
     def chat_leave(self, event):
-        """
-        Called when someone has left our chat.
-        """
+
+        # Called when someone has left our chat.
+
         # Send a message down to the client
         self.send_json(
             {
@@ -115,9 +123,9 @@ class MyConsumer(JsonWebsocketConsumer):
         )
 
     def chat_message(self, event):
-        """
-        Called when someone has messaged our chat.
-        """
+
+        # Called when someone has messaged our chat.
+
         # Send a message down to the client
         self.send_json(
             {
@@ -127,6 +135,3 @@ class MyConsumer(JsonWebsocketConsumer):
                 "message": event["message"],
             },
         )
-
-
-
