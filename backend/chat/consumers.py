@@ -10,6 +10,7 @@ from asgiref.sync import async_to_sync # to keep sync functions sync
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
+
 from channels.generic.websocket import JsonWebsocketConsumer
 
 #TODO Look into options

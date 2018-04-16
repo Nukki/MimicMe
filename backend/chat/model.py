@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 
 
+
 with open("chat/data/wordList.txt", "rb") as fp:
     wordList = pickle.load(fp)
 wordList.append('<pad>')
@@ -13,7 +14,9 @@ vocabSize = len(wordList)
 batchSize = 24
 maxEncoderLength = 15
 maxDecoderLength = 15
+
 lstmUnits = 112
+
 numLayersLSTM = 3
 
 # Create placeholders
@@ -84,3 +87,4 @@ def pred(inputString):
 
 # def prediction(msg):
 # 	response = pred(m)
+
