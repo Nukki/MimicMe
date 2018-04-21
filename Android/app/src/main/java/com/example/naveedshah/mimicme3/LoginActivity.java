@@ -40,6 +40,22 @@ import android.net.*;
 import java.net.*;
 import android.content.Intent;
 
+import org.json.*;
+
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.AbstractWebSocket;
+import org.java_websocket.WebSocket;
+import org.java_websocket.WebSocketImpl;
+import org.java_websocket.drafts.Draft;
+import org.java_websocket.drafts.Draft_6455;
+import org.java_websocket.exceptions.InvalidHandshakeException;
+import org.java_websocket.framing.CloseFrame;
+import org.java_websocket.framing.Framedata;
+import org.java_websocket.framing.Framedata.Opcode;
+import org.java_websocket.handshake.HandshakeImpl1Client;
+import org.java_websocket.handshake.Handshakedata;
+import org.java_websocket.handshake.ServerHandshake;
+
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -47,7 +63,8 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-
+    private WebSocketClient mWebSocketClient;
+    private ServerHandshake mServerHandshake;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -134,50 +151,93 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             focusView.requestFocus();
         } else {
             new Thread() {
-                HttpURLConnection conn = null;
 
-                public void run() {
-                    try {
-
-                        URL url = new URL("http://10.0.2.2:8000/login");
-                        conn = (HttpURLConnection) url.openConnection();
-                        conn.setRequestMethod("POST");
-
-                        conn.setRequestProperty("email", email);
-                        conn.setRequestProperty("password", password);
-                        conn.setRequestProperty("name", name);
-
-
-                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-
-                        StringBuilder sb = new StringBuilder();
-                        String line;
-
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line + "\n");
-                        }
-
-                        br.close();
-                        Log.d("INCOMING ", sb.toString());
-
-                        if (sb.toString() == "Logged In!") {
-                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
-                            startActivity(myIntent);
-                        } else if (sb.toString() == "New User") {
-
-                        }Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
-                        startActivity(myIntent);
-
-                    } catch (IOException e) {
-                        Log.e("MYAPP", "exception for connection:", e);
-                    } finally {
-                        if (conn != null) {
-                            conn.disconnect();
-                        }
-                    }
+//                HttpURLConnection conn = null;
+//
+               public void run() {
+                   connectWebSocket();
+//                    try {
+//
+//                        URL url = new URL("http://10.0.2.2:8000/login");
+//                        conn = (HttpURLConnection) url.openConnection();
+//                        conn.setRequestMethod("POST");
+//
+//                        conn.setRequestProperty("email", email);
+//                        conn.setRequestProperty("password", password);
+//                        conn.setRequestProperty("name", name);
+//
+//
+//                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+//
+//                        StringBuilder sb = new StringBuilder();
+//                        String line;
+//
+//                        while ((line = br.readLine()) != null) {
+//                            sb.append(line + "\n");
+//                        }
+//
+//                        br.close();
+//                        Log.d("INCOMING ", sb.toString());
+//
+//                        if (sb.toString() == "Logged In!") {
+//                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
+//                            startActivity(myIntent);
+//                        } else if (sb.toString() == "New User") {
+//
+//                        }Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+//                        startActivity(myIntent);
+//
+//                    } catch (IOException e) {
+//                        Log.e("MYAPP", "exception for connection:", e);
+//                    } finally {
+//                        if (conn != null) {
+//                            conn.disconnect();
+//                        }
+//                    }
                 }
             }.start();
         }
+    }
+
+    private void connectWebSocket() {
+        URI uri;
+        try {
+            uri = new URI("ws://10.0.2.2:8000/");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        mWebSocketClient = new WebSocketClient(uri) {
+            @Override
+            public void onOpen(ServerHandshake serverHandshake) {
+                Log.i("Websocket", "Opened");
+                if (mWebSocketClient.isOpen()) {
+                    mWebSocketClient.send("Hello from " + Build.MANUFACTURER + " " + Build.MODEL);
+                }
+
+            }
+
+            @Override
+            public void onMessage(String s) {
+
+            }
+
+            @Override
+            public void onClose(int i, String s, boolean b) {
+                Log.i("Websocket", "Closed " + s);
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.i("Websocket", "Error " + e.getMessage());
+            }
+        };
+
+        mWebSocketClient.connect();
+        mWebSocketClient.onOpen(mServerHandshake);
+       // mWebSocketClient.close();
+
     }
 
     private boolean isEmailValid(String email) {
@@ -189,41 +249,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return password.length() >= 6;
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    private void showProgress(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-                }
-            });
-
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mProgressView.animate().setDuration(shortAnimTime).alpha(
-                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-                }
-            });
-        } else {
-            // The ViewPropertyAnimator APIs are not available, so simply show
-            // and hide the relevant UI components.
-            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-        }
-    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
