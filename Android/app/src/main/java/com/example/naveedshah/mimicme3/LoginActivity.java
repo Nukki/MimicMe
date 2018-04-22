@@ -1,11 +1,5 @@
 package com.example.naveedshah.mimicme3;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -13,7 +7,6 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +16,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,38 +25,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.net.HttpURLConnection;
 
-import java.util.*;
 import java.io.*;
 import android.util.*;
-import android.net.*;
 import java.net.*;
 import android.content.Intent;
 
 import org.json.*;
 
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.AbstractWebSocket;
-import org.java_websocket.WebSocket;
-import org.java_websocket.WebSocketImpl;
-import org.java_websocket.drafts.Draft;
-import org.java_websocket.drafts.Draft_6455;
-import org.java_websocket.exceptions.InvalidHandshakeException;
-import org.java_websocket.framing.CloseFrame;
-import org.java_websocket.framing.Framedata;
-import org.java_websocket.framing.Framedata.Opcode;
-import org.java_websocket.handshake.HandshakeImpl1Client;
-import org.java_websocket.handshake.Handshakedata;
-import org.java_websocket.handshake.ServerHandshake;
+
+import android.support.design.widget.Snackbar;
 
 
-import static android.Manifest.permission.READ_CONTACTS;
+public class LoginActivity extends AppCompatActivity {
 
-/**
- * A login screen that offers login via email/password.
- */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-    private WebSocketClient mWebSocketClient;
-    private ServerHandshake mServerHandshake;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -107,11 +80,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
     private void attemptLogin() {
 
         // Reset errors.
@@ -152,93 +120,73 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             new Thread() {
 
-//                HttpURLConnection conn = null;
-//
                public void run() {
-                   connectWebSocket();
-//                    try {
-//
-//                        URL url = new URL("http://10.0.2.2:8000/login");
-//                        conn = (HttpURLConnection) url.openConnection();
-//                        conn.setRequestMethod("POST");
-//
-//                        conn.setRequestProperty("email", email);
-//                        conn.setRequestProperty("password", password);
-//                        conn.setRequestProperty("name", name);
-//
-//
-//                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-//
-//                        StringBuilder sb = new StringBuilder();
-//                        String line;
-//
-//                        while ((line = br.readLine()) != null) {
-//                            sb.append(line + "\n");
-//                        }
-//
-//                        br.close();
-//                        Log.d("INCOMING ", sb.toString());
-//
-//                        if (sb.toString() == "Logged In!") {
-//                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
-//                            startActivity(myIntent);
-//                        } else if (sb.toString() == "New User") {
-//
-//                        }Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
-//                        startActivity(myIntent);
-//
-//                    } catch (IOException e) {
-//                        Log.e("MYAPP", "exception for connection:", e);
-//                    } finally {
-//                        if (conn != null) {
-//                            conn.disconnect();
-//                        }
-//                    }
+
+                   HttpURLConnection conn = null;
+                    try {
+
+
+                        URL url = new URL("http://10.0.2.2:8000/login");
+
+                        conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        JSONObject jsonObject = new JSONObject();
+                        try {
+                            jsonObject.put("email", email);
+                            jsonObject.put("password", password);
+                            jsonObject.put("name", name);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+                        wr.writeBytes(jsonObject.toString());
+                        wr.flush();
+                        wr.close();
+
+
+                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        br.close();
+
+                        if (sb.toString().contains("Login success!")) {
+                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
+                            startActivity(myIntent);
+                        }  else if (sb.toString().contains("Wrong password")) {
+
+                            Snackbar mySnackbar;
+                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"Incorrect Password",1000);
+                            mySnackbar.show();
+
+                        } else if (sb.toString().contains("Account not found. User does not exist")) {
+
+                            Snackbar mySnackbar;
+                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"This email is not registered",1000);
+                            mySnackbar.show();
+
+                            Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                            startActivity(myIntent);
+                        }
+
+                    } catch (IOException e) {
+                        Log.e("MYAPP", "exception for connection:", e);
+                    } finally {
+                        if (conn != null) {
+                            conn.disconnect();
+                        }
+                    }
                 }
             }.start();
         }
     }
 
-    private void connectWebSocket() {
-        URI uri;
-        try {
-            uri = new URI("ws://10.0.2.2:8000/");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        mWebSocketClient = new WebSocketClient(uri) {
-            @Override
-            public void onOpen(ServerHandshake serverHandshake) {
-                Log.i("Websocket", "Opened");
-                if (mWebSocketClient.isOpen()) {
-                    mWebSocketClient.send("Hello from " + Build.MANUFACTURER + " " + Build.MODEL);
-                }
-
-            }
-
-            @Override
-            public void onMessage(String s) {
-
-            }
-
-            @Override
-            public void onClose(int i, String s, boolean b) {
-                Log.i("Websocket", "Closed " + s);
-            }
-
-            @Override
-            public void onError(Exception e) {
-                Log.i("Websocket", "Error " + e.getMessage());
-            }
-        };
-
-        mWebSocketClient.connect();
-        mWebSocketClient.onOpen(mServerHandshake);
-       // mWebSocketClient.close();
-
-    }
 
     private boolean isEmailValid(String email) {
         return email.contains("@");
@@ -249,48 +197,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return password.length() >= 6;
     }
 
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return new CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
-                Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
-
-                // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE +
-                        " = ?", new String[]{ContactsContract.CommonDataKinds.Email
-                .CONTENT_ITEM_TYPE},
-
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
-                ContactsContract.Contacts.Data.IS_PRIMARY + " DESC");
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        List<String> emails = new ArrayList<>();
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            emails.add(cursor.getString(ProfileQuery.ADDRESS));
-            cursor.moveToNext();
-        }
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> cursorLoader) {
-
-    }
-
-
-    private interface ProfileQuery {
-        String[] PROJECTION = {
-                ContactsContract.CommonDataKinds.Email.ADDRESS,
-                ContactsContract.CommonDataKinds.Email.IS_PRIMARY,
-        };
-
-        int ADDRESS = 0;
-    }
 
 }
 

@@ -17,10 +17,11 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
 
 	if request.method == "POST":
-		res = { 'response': 'POST recieved!' }
+		#res = { 'response': 'POST recieved!' }
 	elif request.method == "GET":
-		res = { 'response': 'GET recieved!'}
+		#res = { 'response': 'GET recieved!'}
 
+	res = request.body;
 	data = json.dumps(res)
   # Return JSON and let it know its json
 	return HttpResponse(data, content_type='application/json')
@@ -53,7 +54,7 @@ def register(request):
 			# email=request.POST.get('email',''),
 			# password=request.POST.get('password',''),
 			)
-		user.save() 
+		user.save()
 		res = {	'response' : 'New user created' } #success, send 201 status
 		data = json.dumps(res)
 		return HttpResponse(data, content_type='application/json',status=201, reason='created' )
@@ -70,7 +71,7 @@ def register(request):
 @csrf_exempt
 def login(request):
 	if request.method == "POST":
-    	
+
 		# parse the raw request body from bytes to unicode string
 		body_unicode = request.body.decode('utf-8')
 		body = json.loads(body_unicode)
@@ -78,7 +79,7 @@ def login(request):
 		# catch the error if user doesn't exist to let front end know
 		try:
 			user = User.objects.get(email=body['email'])
-			if user:	
+			if user:
 				if user.password == body['password']:
 					res = { 'response' : 'Login success!' } # success, send 200 status
 					data = json.dumps(res)
@@ -88,17 +89,13 @@ def login(request):
 					res = { 'response' : 'Wrong password' } # error, send 400 status
 					data = json.dumps(res)
 					return HttpResponseBadRequest(data, content_type='application/json')
-		except User.DoesNotExist:			
+		except User.DoesNotExist:
 			res = {'response' : 'Account not found. User does not exist'}
 			data = json.dumps(res)
-			return HttpResponseServerError(data, content_type='application/json') # error, send 500 status	
+			return HttpResponseServerError(data, content_type='application/json') # error, send 500 status
 
 	elif request.method == "GET":
 		res = { 'response' : 'GET recived when POST was expected' }
 
 	data = json.dumps(res)
 	return HttpResponseBadRequest(data, content_type='application/json') # error, send 400 status
-
-
-
-
