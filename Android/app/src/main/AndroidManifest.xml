@@ -25,6 +25,11 @@
         </activity>
 
         <activity
+            android:name=".RecyclerActivity"
+            android:label="@string/ChatRoomsLabel">
+        </activity>
+
+        <activity
             android:name=".SignUpActivity"
             android:label="@string/signUpLabel">
         </activity>

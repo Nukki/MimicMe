@@ -46,7 +46,6 @@ public class SignUpActivity extends AppCompatActivity {
     private AutoCompleteTextView mNameView;
     private EditText mPasswordView;
 
-    private View mProgressView;
     private View mSignupFormView;
 
     @Override
@@ -78,7 +77,6 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         mSignupFormView = findViewById(R.id.sign_up_form);
-        mProgressView = findViewById(R.id.login_progress);
     }
 
 
@@ -173,7 +171,7 @@ public class SignUpActivity extends AppCompatActivity {
                             mySnackbar = Snackbar.make(findViewById(R.id.sign_up_view),"Success!",1000);
                             mySnackbar.show();
 
-                            Intent myIntent = new Intent(SignUpActivity.this, ChatRoomsActivity.class);
+                            Intent myIntent = new Intent(SignUpActivity.this, RecyclerActivity.class);
                             startActivity(myIntent);
                         }
 

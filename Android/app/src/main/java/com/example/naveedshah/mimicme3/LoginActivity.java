@@ -1,16 +1,8 @@
 package com.example.naveedshah.mimicme3;
 
+// Libraries and files to import
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,37 +12,27 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.net.HttpURLConnection;
-
 import java.io.*;
 import android.util.*;
 import java.net.*;
 import android.content.Intent;
-
 import org.json.*;
-
-
 import android.support.design.widget.Snackbar;
 
 
 public class LoginActivity extends AppCompatActivity {
 
-
     // UI references.
     private AutoCompleteTextView mEmailView;
     private AutoCompleteTextView mNameView;
     private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login); // Connect to activity_login.xml
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -74,9 +56,6 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
     }
 
 
@@ -118,6 +97,8 @@ public class LoginActivity extends AppCompatActivity {
             // form field with an error.
             focusView.requestFocus();
         } else {
+            // There was no error with front-end validations. Attempt to login with
+            // the backend
             new Thread() {
 
                public void run() {
@@ -125,11 +106,13 @@ public class LoginActivity extends AppCompatActivity {
                    HttpURLConnection conn = null;
                     try {
 
-
+                        // port to connect to Django server
                         URL url = new URL("http://10.0.2.2:8000/login");
 
                         conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
+
+                        // Send information user entered as a JSON object to the backend
                         JSONObject jsonObject = new JSONObject();
                         try {
                             jsonObject.put("email", email);
@@ -139,6 +122,8 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
+                        // http://10.0.2.2:8000/user/login
+                        // http://10.0.2.2:8000/user/register
 
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
                         wr.writeBytes(jsonObject.toString());
@@ -151,26 +136,32 @@ public class LoginActivity extends AppCompatActivity {
                         StringBuilder sb = new StringBuilder();
                         String line;
 
+                        // Obtain and record response from back-end server
                         while ((line = br.readLine()) != null) {
                             sb.append(line + "\n");
                         }
                         br.close();
 
+                        // If the server returns a login-success response, launch the RecyclerActivity which contains the list of chatrooms
                         if (sb.toString().contains("Login success!")) {
-                            Intent myIntent = new Intent(LoginActivity.this, ChatRoomsActivity.class);
+
+                            Intent myIntent = new Intent(LoginActivity.this, RecyclerActivity.class);
                             startActivity(myIntent);
+
+                        // If the server returns that the password is wrong, show a Snackbar message to alert the user
                         }  else if (sb.toString().contains("Wrong password")) {
 
                             Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"Incorrect Password",1000);
+                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"Incorrect Password",3000);
                             mySnackbar.show();
 
+                         // If the server returns that the account is not registered, alert user and send them SignUpActivity
                         } else if (sb.toString().contains("Account not found. User does not exist")) {
 
                             Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"This email is not registered",1000);
+                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"This email is not registered",3000);
                             mySnackbar.show();
-
+                            // see if I can put a delay here.
                             Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
                             startActivity(myIntent);
                         }
@@ -187,11 +178,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+    // Checks if the inputted email contains a "@" symbol
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }
 
+    // Checks to ensure that password is atleast 6 characters long
     private boolean isPasswordValid(String password) {
         // Password must be atleast 6 characters
         return password.length() >= 6;
