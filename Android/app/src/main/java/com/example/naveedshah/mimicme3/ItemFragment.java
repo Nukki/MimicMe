@@ -2,7 +2,6 @@ package com.example.naveedshah.mimicme3;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,20 +13,12 @@ import android.view.ViewGroup;
 
 import com.example.naveedshah.mimicme3.ChatRoomContent.ChatRoom;
 
-import java.util.List;
-
-
 /**
  * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
+ **/
 public class ItemFragment extends ListFragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
     public OnListFragmentInteractionListener mListener;
 
@@ -38,7 +29,6 @@ public class ItemFragment extends ListFragment {
     public ItemFragment() {
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static ItemFragment newInstance(int columnCount) {
         ItemFragment fragment = new ItemFragment();
