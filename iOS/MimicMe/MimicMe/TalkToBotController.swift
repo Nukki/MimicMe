@@ -22,7 +22,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     
     var messages = [ChatMessage]() // messages from core data
     
-    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/socket")!)
+    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/chat/stream/")!)
 //    var socket = WebSocket(url: URL(string: "ws://192.168.0.2:8000/socket")!)
     
     // positioning input window at the bottom
