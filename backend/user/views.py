@@ -80,7 +80,7 @@ def login(request):
 		if user is not None:
 			auth_login(request, user)
 			res = { 'response' : 'Login success!',
-			 		'UID' : user.id} # success, send 200 status
+			 		'uid' : user.id} # success, send 200 status
 			data = json.dumps(res)
 			print(user.id)
 			return HttpResponse(data, content_type='application/json')
