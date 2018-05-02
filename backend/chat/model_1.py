@@ -4,7 +4,7 @@ import pickle
 
 
 
-with open("chat/data/wordList.txt", "rb") as fp:
+with open("chat/data/wordList_1.txt", "rb") as fp:
     wordList = pickle.load(fp)
 wordList.append('<pad>')
 wordList.append('<EOS>')
@@ -27,8 +27,8 @@ feedPrevious = tf.placeholder(tf.bool)
 
 encoderLSTM = tf.nn.rnn_cell.BasicLSTMCell(lstmUnits, state_is_tuple=True)
 #encoderLSTM = tf.nn.rnn_cell.MultiRNNCell([singleCell]*numLayersLSTM, state_is_tuple=True)
-decoderOutputs, decoderFinalState = tf.contrib.legacy_seq2seq.embedding_rnn_seq2seq(encoderInputs, decoderInputs, encoderLSTM,
-                                                            vocabSize, vocabSize, lstmUnits, feed_previous=feedPrevious)
+with variable_scope("model_1"):
+    decoderOutputs, decoderFinalState = tf.contrib.legacy_seq2seq.embedding_rnn_seq2seq(encoderInputs, decoderInputs, encoderLSTM, vocabSize, vocabSize, lstmUnits, feed_previous=feedPrevious)
 
 decoderPrediction = tf.argmax(decoderOutputs, 2)
 
@@ -38,7 +38,9 @@ sess = tf.Session()
 
 # Load in pretrained model
 saver = tf.train.Saver()
-saver.restore(sess, tf.train.latest_checkpoint('chat/models'))
+saver.restore(sess, tf.train.latest_checkpoint('chat/models/1'))
+saver.config.init_training_mode()
+
 zeroVector = np.zeros((1), dtype='int32')
 
 def getTestInput(inputMessage, wList, maxLen):
@@ -87,4 +89,3 @@ def pred(inputString):
 
 # def prediction(msg):
 # 	response = pred(m)
-

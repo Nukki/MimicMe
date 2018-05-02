@@ -16,11 +16,15 @@ def index(request):
     rooms = Room.objects.order_by("name")
     res = []
     for room in rooms:
+        print(room.bots)
         res.append({"name": room.name, "id": room.id})
     data = json.dumps(res)
     # turn into HTTp response and send json of all the rooms
     # Render that in the index template
-    return HttpResponse(data, content_type='application/json',status=201)
+    return render(request, "index.html", {
+        "rooms": rooms
+    })
+    # return HttpResponse(data, content_type='application/json',status=201)
 
 
 
@@ -35,9 +39,10 @@ def create(request):
         # parse raw to usable format
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
-
+        print(bots)
         room =  Room.objects.create(
-            name=body['name']
+            name=body['name'],
+            bots=body['bots']
         )
 
         room.save()
