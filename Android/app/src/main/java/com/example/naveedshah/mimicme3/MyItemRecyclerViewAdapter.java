@@ -1,9 +1,8 @@
 package com.example.naveedshah.mimicme3;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +42,10 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
+                    Log.d("test","testing 123");
+                    // naveed
+//                    Intent myIntent = new Intent(RecyclerActivity.class, ChatRoomActivity.class);
+//                    startActivity(myIntent);
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
                     mListener.onListFragmentInteraction(holder.mItem);
@@ -50,6 +53,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             }
         });
     }
+
 
     @Override
     public int getItemCount() {

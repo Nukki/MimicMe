@@ -130,7 +130,6 @@ public class LoginActivity extends AppCompatActivity {
                         wr.flush();
                         wr.close();
 
-
                         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
 
                         StringBuilder sb = new StringBuilder();

@@ -34,6 +34,11 @@
             android:label="@string/signUpLabel">
         </activity>
 
+        <activity
+            android:name=".ChatRoomActivity"
+            android:label="@string/ChatRoomsLabel">
+        </activity>
+
     </application>
 
 </manifest>

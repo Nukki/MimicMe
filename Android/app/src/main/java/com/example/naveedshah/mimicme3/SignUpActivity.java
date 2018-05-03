@@ -1,16 +1,7 @@
 package com.example.naveedshah.mimicme3;
 
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,19 +11,12 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.net.HttpURLConnection;
-
 import java.io.*;
 import android.util.*;
 import java.net.*;
 import android.content.Intent;
-
 import org.json.*;
-
-
 import android.support.design.widget.Snackbar;
 
 /**
@@ -79,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
         mSignupFormView = findViewById(R.id.sign_up_form);
     }
 
-
+    // Once the user presses Sign-up, this function is launched
     private void attemptRegister() {
 
         // Reset errors.
@@ -125,11 +109,14 @@ public class SignUpActivity extends AppCompatActivity {
                     HttpURLConnection conn = null;
                     try {
 
-
+                        // connect to backend server to register user
                         URL url = new URL("http://10.0.2.2:8000/register");
+
 
                         conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
+
+                        // Create JSON object to send to backend
                         JSONObject jsonObject = new JSONObject();
                         try {
                             jsonObject.put("email", email);
