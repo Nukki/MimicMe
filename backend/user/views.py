@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 from django.http import HttpResponseServerError # let front end know about server error
 from django.http import HttpResponseBadRequest # let front end know about client side error
 from django.http import HttpResponse  # HttpResponse is how we send
@@ -77,7 +78,9 @@ def login(request):
 
 		user = authenticate(username=body['name'], password=body['password'])
 		if user is not None:
-			res = { 'response' : 'Login success!' } # success, send 200 status
+			auth_login(request, user)
+			res = { 'response' : 'Login success!',
+			 		'uid' : user.id} # success, send 200 status
 			data = json.dumps(res)
 			print(user.id)
 			return HttpResponse(data, content_type='application/json')
@@ -87,7 +90,7 @@ def login(request):
 			data = json.dumps(res)
 			return HttpResponseServerError(data, content_type='application/json') # error, send 500 status
 
-		
+
 	elif request.method == "GET":
 		res = { 'response' : 'GET recived when POST was expected' }
 
