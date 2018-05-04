@@ -92,11 +92,24 @@ import mongoengine
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': '',
+    },
 }
 
+# SESSION_ENGINE = 'mongoengine.django.sessions' # optional	
+	
+_MONGODB_USER = 'localhost'	
+_MONGODB_PASSWD = '27017'	
+_MONGODB_NAME = 'mimicme'	
+_MONGODB_DATABASE_HOST = \	
+    'mongodb://%s:%s/%s' \	
+    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_NAME)	
+	
+mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)	
+	
+AUTHENTICATION_BACKENDS = (	
+    'mongoengine.django.auth.MongoEngineBackend',	
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -131,7 +144,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+# Static files (CSS, JavaScript, Images)	
+# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
