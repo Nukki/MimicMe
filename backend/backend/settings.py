@@ -88,6 +88,8 @@ ASGI_APPLICATION = 'backend.routing.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+import mongoengine
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
