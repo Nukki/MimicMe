@@ -22,7 +22,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     
     var messages = [ChatMessage]() // messages from core data
     
-    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/socket")!)
+    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/chat/stream/")!)
 //    var socket = WebSocket(url: URL(string: "ws://192.168.0.2:8000/socket")!)
     
     // positioning input window at the bottom
@@ -64,21 +64,18 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         let messageContent = typingField.text
         
         // write to socket
-        // commands: join, leave send  // "command"
-//        data has message, type, username ??????????
-        let messageDictionary : [String: String] = [ "message": messageContent! ]
-//        let messageDictionary : [String: String] = [ "command": "send" , "message": messageContent! ]
+        let myUsername: String = UserDefaults.standard.string(forKey: "uname")!
+        let messageDictionary : [String: String] = ["command": "send", "message": messageContent!, "username" : myUsername, "room": String(room!.id) ]
 
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: messageDictionary, options: [])
-            let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
-            socket.write(string: jsonString)
+            let jsonData =  try JSONEncoder().encode(messageDictionary)
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            socket.write(string: jsonString )
         } catch let err {
             print(err)
         }
         typingField.resignFirstResponder()
         typingField.text = nil           // clear text field
-        saveMessage(text: messageContent!, isSender: true, room: room!)
     }
     
     deinit {   // close socket when view is not active
@@ -102,7 +99,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         
         
         // LAYOUT -------------------------------------------------------------------------------------
-        collectionView?.contentInset = UIEdgeInsetsMake(0.0,0.0,58.0,0.0)
+        collectionView?.contentInset = UIEdgeInsetsMake(8.0,0.0,58.0,0.0) // make some space on top and show last message above the "send" box
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
@@ -238,24 +235,42 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     
         // Configure the cell
         cell.messageTextLabel.text = chatMessage.text
+        cell.nameLabel.text = chatMessage.uName
+        
+        print("User in this message", chatMessage.uName!)
         
         if let messageText =  chatMessage.text {
+//            let stringLarge: String = messageText + "This is a line of text is a line of text"
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)], context: nil)
+           
+            
             
             // adjust color and position of message bubble
             // depending if it's a sender message or a message from other users
             if chatMessage.isSender {
+                cell.nameLabel.isHidden = true
                 cell.messageTextLabel.frame = CGRect(x: view.frame.width - estimatedFrame.width - 16 - 2 - 3 , y: 0, width: estimatedFrame.width + 16 , height: estimatedFrame.height + 18)
                 cell.bubble.frame = CGRect(x: view.frame.width - estimatedFrame.width - 16 - 8 - 3, y: 0, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
                 cell.bubble.backgroundColor = UIColor.init(red: 82/255, green: 51/255, blue: 189/255, alpha: 1.0)
                 cell.messageTextLabel.textColor = UIColor.white
             } else {
-                cell.messageTextLabel.frame = CGRect(x: 8, y: 0, width: estimatedFrame.width + 16 , height: estimatedFrame.height + 18)
-                cell.bubble.frame = CGRect(x: 3, y: 0, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
+              // the non-sender should display the username
+                //new
+                cell.nameLabel.isHidden = false
+                cell.nameLabel.frame =  CGRect(x: 8, y: 0, width: estimatedFrame.width + 16 + 8  , height: 14 )
+                cell.messageTextLabel.frame = CGRect(x: 8, y: 16, width: estimatedFrame.width + 16 , height: estimatedFrame.height + 18)
+                cell.bubble.frame = CGRect(x: 3, y: 16, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
                 cell.bubble.backgroundColor =  UIColor(white: 0.95, alpha: 1)
                 cell.messageTextLabel.textColor = UIColor.black
+                //end new
+                
+                //old
+//                cell.messageTextLabel.frame = CGRect(x: 8, y: 0, width: estimatedFrame.width + 16 , height: estimatedFrame.height + 18)
+//                cell.bubble.frame = CGRect(x: 3, y: 0, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
+//                cell.bubble.backgroundColor =  UIColor(white: 0.95, alpha: 1)
+//                cell.messageTextLabel.textColor = UIColor.black
             }
         }
         return cell
@@ -267,7 +282,19 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)], context: nil)
-            return CGSize(width: view.frame.width, height: estimatedFrame.height + 18)
+            
+            //new
+            if (messages[indexPath.item].isSender) {
+                 return CGSize(width: view.frame.width, height: estimatedFrame.height + 18 )
+            }
+            else {
+                 // make 16 pixels of space for username above the bubble
+                 return CGSize(width: view.frame.width, height: estimatedFrame.height + 18 + 16)
+            }
+            // end new
+            
+            //old
+//            return CGSize(width: view.frame.width, height: estimatedFrame.height + 18)
         }
         return CGSize(width: view.frame.width,height: 100)
     }

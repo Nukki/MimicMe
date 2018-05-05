@@ -1,0 +1,6 @@
+model_checkpoint_path: "pretrained_seq2seq.ckpt-400000"
+all_model_checkpoint_paths: "pretrained_seq2seq.ckpt-360000"
+all_model_checkpoint_paths: "pretrained_seq2seq.ckpt-370000"
+all_model_checkpoint_paths: "pretrained_seq2seq.ckpt-380000"
+all_model_checkpoint_paths: "pretrained_seq2seq.ckpt-390000"
+all_model_checkpoint_paths: "pretrained_seq2seq.ckpt-400000"

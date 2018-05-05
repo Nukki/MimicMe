@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from django.views.generic import RedirectView
-from chat.views import notindex
+# going to see if we can use default auth on mongo user
+from django.contrib.auth.views import login, logout
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('user.urls')),
-    path('chat', notindex)
+    path('user/', include('user.urls')),
+    path('accounts/login/', login),
+    path('accounts/logout/', logout),
+    path('chat/', include('chat.urls'))
 ]
