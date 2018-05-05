@@ -55,7 +55,7 @@ class MyConsumer(JsonWebsocketConsumer):
             self.join_room(content["room"], content["username"], content["uid"])
 
         elif command == "send":
-            self.send_room(content["room"], content["message"])
+            self.send_room(content["room"], content["message"], content["username"])
 
 
 
@@ -87,18 +87,18 @@ class MyConsumer(JsonWebsocketConsumer):
         # Instruct their client to finish opening the room
         # Note: mobile apps may need different information
         self.send_json({
-            "join": str(room.id),
+            "join": room.id,
             "name": room.name,
         })
 
-    def send_room(self, roomId, message):
+    def send_room(self, roomId, message, username):
         room = Room.objects.get(pk=roomId)
 
         # send message to room
         async_to_sync(self.channel_layer.group_send)(room.group_name, {
             "type": "chat.message",
             "room_id" : roomId,
-            "username": self.scope["user"].username,
+            "username": username,
             "message" : message,
         });
 
