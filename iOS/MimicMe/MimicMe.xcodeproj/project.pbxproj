@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */; };
-		A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E372052F3D000A71014 /* KeychainWrapper.swift */; };
+		70DF1F52F59BCBA383B99C06 /* Pods_MimicMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF83B013DA214E78CEA8EA5 /* Pods_MimicMeUITests.framework */; };
+		A50CCE24209D1256008283A6 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */; };
+		A50CCE26209D4B5D008283A6 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */; };
+		A50CCE2A209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */; };
+		A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F112205A29ED00C53D76 /* TalkToBotController.swift */; };
 		A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349F862054197B009FB58B /* RootHighjackController.swift */; };
 		A5383993204C82C2006EA321 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5383992204C82C2006EA321 /* MessageCell.swift */; };
-		A53C7A5D2057FD8900789790 /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A53C7A5F2057FE8200789790 /* email2.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A5E2057FE8200789790 /* email2.png */; };
-		A53C7A612057FE8A00789790 /* pass2.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A602057FE8A00789790 /* pass2.png */; };
-		A53C7A65205827AC00789790 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = A53C7A63205827AC00789790 /* name.png */; };
 		A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2159204505DA00E45AA7 /* AppDelegate.swift */; };
 		A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F215D204505DA00E45AA7 /* Main.storyboard */; };
 		A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */; };
@@ -22,14 +21,15 @@
 		A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */; };
 		A55F2172204505DA00E45AA7 /* MimicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2171204505DA00E45AA7 /* MimicMeTests.swift */; };
 		A55F217D204505DA00E45AA7 /* MimicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */; };
-		A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F218A20451D7300E45AA7 /* ChatViewController.swift */; };
-		A57143F42055FCA4000B1A24 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A57143F32055FCA4000B1A24 /* logo.png */; };
-		A5AAB13C2056E2F40059D9BF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; };
-		A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */; };
 		A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2D2049478600F1D95D /* LoginController.swift */; };
 		A5AC8C302049479700F1D95D /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AC8C2F2049479700F1D95D /* SignupController.swift */; };
 		A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0362047E3AC00503DD5 /* MainViewController.swift */; };
-		A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1F0382047E5E000503DD5 /* UploadViewController.swift */; };
+		A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643B205A54DB006D418E /* PersistenceService.swift */; };
+		A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643D205A76C2006D418E /* WebsocketHelper.swift */; };
+		A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */; };
+		A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */; };
+		AF4AF0EB672E8937322FC5F5 /* Pods_MimicMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E417C9649DFF051051E5FD3 /* Pods_MimicMe.framework */; };
+		F9D56B15601378C237F500CB /* Pods_MimicMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C602497E22008E80D70CA7 /* Pods_MimicMeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,51 +47,20 @@
 			remoteGlobalIDString = A55F2155204505DA00E45AA7;
 			remoteInfo = MimicMe;
 		};
-		A5AAB1352056E29A0059D9BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 33CCF0921F5DDC030099B092;
-			remoteInfo = Starscream;
-		};
-		A5AAB1372056E29A0059D9BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 335FA2021F5DF71D00F6D2EC;
-			remoteInfo = "Starscream Tests";
-		};
-		A5AAB1392056E2CF0059D9BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 33CCF0841F5DDC030099B092;
-			remoteInfo = Starscream;
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		A53C7A5B2057FD3600789790 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A53C7A5D2057FD8900789790 /* Starscream.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
-		A5338E372052F3D000A71014 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		555702DD50413186F83771AE /* Pods-MimicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeTests/Pods-MimicMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		5FF83B013DA214E78CEA8EA5 /* Pods_MimicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MimicMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BB2C0A7AAEE58E591C5BC2 /* Pods-MimicMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeUITests/Pods-MimicMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E417C9649DFF051051E5FD3 /* Pods_MimicMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MimicMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B2EE4E3F44094B3323935F /* Pods-MimicMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMe/Pods-MimicMe.debug.xcconfig"; sourceTree = "<group>"; };
+		A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A532F112205A29ED00C53D76 /* TalkToBotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToBotController.swift; sourceTree = "<group>"; };
 		A5349F862054197B009FB58B /* RootHighjackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHighjackController.swift; sourceTree = "<group>"; };
 		A5383992204C82C2006EA321 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		A53C7A5E2057FE8200789790 /* email2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email2.png; path = ../../../../images/email2.png; sourceTree = "<group>"; };
-		A53C7A602057FE8A00789790 /* pass2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pass2.png; path = ../../../../images/pass2.png; sourceTree = "<group>"; };
-		A53C7A63205827AC00789790 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = name.png; path = ../../../../images/name.png; sourceTree = "<group>"; };
 		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F2159204505DA00E45AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55F215E204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,14 +74,17 @@
 		A55F2178204505DA00E45AA7 /* MimicMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MimicMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F217C204505DA00E45AA7 /* MimicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicMeUITests.swift; sourceTree = "<group>"; };
 		A55F217E204505DA00E45AA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A55F218A20451D7300E45AA7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		A57143F32055FCA4000B1A24 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "../../../../Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
-		A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownUser.swift; sourceTree = "<group>"; };
 		A5AC8C2D2049478600F1D95D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A5AC8C2F2049479700F1D95D /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		A5C1F0362047E3AC00503DD5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A5C1F0382047E5E000503DD5 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		A5CB643B205A54DB006D418E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		A5CB643D205A76C2006D418E /* WebsocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketHelper.swift; sourceTree = "<group>"; };
+		A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BFB3BFA8E8FBC890C20842D8 /* Pods-MimicMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeUITests/Pods-MimicMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2C602497E22008E80D70CA7 /* Pods_MimicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MimicMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D1D2143D8242D85ED35AF8 /* Pods-MimicMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeTests/Pods-MimicMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCA30D2C22DBEB7884BF5AC6 /* Pods-MimicMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMe/Pods-MimicMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5AAB13C2056E2F40059D9BF /* Starscream.framework in Frameworks */,
+				AF4AF0EB672E8937322FC5F5 /* Pods_MimicMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D56B15601378C237F500CB /* Pods_MimicMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70DF1F52F59BCBA383B99C06 /* Pods_MimicMeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +123,7 @@
 				A55F217B204505DA00E45AA7 /* MimicMeUITests */,
 				A55F2157204505DA00E45AA7 /* Products */,
 				A5AAB13B2056E2F40059D9BF /* Frameworks */,
+				EAA1FADA4A93E04C46F223DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,27 +140,25 @@
 		A55F2158204505DA00E45AA7 /* MimicMe */ = {
 			isa = PBXGroup;
 			children = (
-				A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */,
-				A5338E372052F3D000A71014 /* KeychainWrapper.swift */,
-				A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */,
+				A55F2168204505DA00E45AA7 /* Info.plist */,
 				A55F2159204505DA00E45AA7 /* AppDelegate.swift */,
 				A55F215D204505DA00E45AA7 /* Main.storyboard */,
-				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
-				A53C7A5E2057FE8200789790 /* email2.png */,
-				A53C7A602057FE8A00789790 /* pass2.png */,
-				A53C7A63205827AC00789790 /* name.png */,
-				A57143F32055FCA4000B1A24 /* logo.png */,
 				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
-				A55F2168204505DA00E45AA7 /* Info.plist */,
+				A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */,
+				A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */,
+				A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */,
+				A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */,
+				A5CB643B205A54DB006D418E /* PersistenceService.swift */,
 				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
-				A55F218A20451D7300E45AA7 /* ChatViewController.swift */,
-				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
-				A5C1F0382047E5E000503DD5 /* UploadViewController.swift */,
-				A5AC8C2B2049473E00F1D95D /* UnknownUser.swift */,
+				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
+				A5349F862054197B009FB58B /* RootHighjackController.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+				A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */,
+				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
 				A5383992204C82C2006EA321 /* MessageCell.swift */,
-				A5349F862054197B009FB58B /* RootHighjackController.swift */,
+				A532F112205A29ED00C53D76 /* TalkToBotController.swift */,
+				A5CB643D205A76C2006D418E /* WebsocketHelper.swift */,
 			);
 			path = MimicMe;
 			sourceTree = "<group>";
@@ -208,20 +181,27 @@
 			path = MimicMeUITests;
 			sourceTree = "<group>";
 		};
-		A5AAB1312056E29A0059D9BF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A5AAB1362056E29A0059D9BF /* Starscream.framework */,
-				A5AAB1382056E29A0059D9BF /* Starscream Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A5AAB13B2056E2F40059D9BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E417C9649DFF051051E5FD3 /* Pods_MimicMe.framework */,
+				E2C602497E22008E80D70CA7 /* Pods_MimicMeTests.framework */,
+				5FF83B013DA214E78CEA8EA5 /* Pods_MimicMeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAA1FADA4A93E04C46F223DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B2EE4E3F44094B3323935F /* Pods-MimicMe.debug.xcconfig */,
+				FCA30D2C22DBEB7884BF5AC6 /* Pods-MimicMe.release.xcconfig */,
+				E7D1D2143D8242D85ED35AF8 /* Pods-MimicMeTests.debug.xcconfig */,
+				555702DD50413186F83771AE /* Pods-MimicMeTests.release.xcconfig */,
+				BFB3BFA8E8FBC890C20842D8 /* Pods-MimicMeUITests.debug.xcconfig */,
+				74BB2C0A7AAEE58E591C5BC2 /* Pods-MimicMeUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,15 +211,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55F2181204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMe" */;
 			buildPhases = (
+				73615D0E98D2E66DD8AA4F15 /* [CP] Check Pods Manifest.lock */,
 				A55F2152204505DA00E45AA7 /* Sources */,
 				A55F2153204505DA00E45AA7 /* Frameworks */,
 				A55F2154204505DA00E45AA7 /* Resources */,
-				A53C7A5B2057FD3600789790 /* Copy Frameworks */,
+				B2D66D64ED2B9385D580BD8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A5AAB13A2056E2CF0059D9BF /* PBXTargetDependency */,
 			);
 			name = MimicMe;
 			productName = MimicMe;
@@ -250,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55F2184204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeTests" */;
 			buildPhases = (
+				29D0F9AC28367ECE10F253C7 /* [CP] Check Pods Manifest.lock */,
 				A55F2169204505DA00E45AA7 /* Sources */,
 				A55F216A204505DA00E45AA7 /* Frameworks */,
 				A55F216B204505DA00E45AA7 /* Resources */,
@@ -268,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55F2187204505DA00E45AA7 /* Build configuration list for PBXNativeTarget "MimicMeUITests" */;
 			buildPhases = (
+				F0C7A7E5F097E48A56289E42 /* [CP] Check Pods Manifest.lock */,
 				A55F2174204505DA00E45AA7 /* Sources */,
 				A55F2175204505DA00E45AA7 /* Frameworks */,
 				A55F2176204505DA00E45AA7 /* Resources */,
@@ -322,12 +304,6 @@
 			mainGroup = A55F214D204505DA00E45AA7;
 			productRefGroup = A55F2157204505DA00E45AA7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A5AAB1312056E29A0059D9BF /* Products */;
-					ProjectRef = A5AAB1302056E29A0059D9BF /* Starscream.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A55F2155204505DA00E45AA7 /* MimicMe */,
@@ -337,35 +313,14 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		A5AAB1362056E29A0059D9BF /* Starscream.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Starscream.framework;
-			remoteRef = A5AAB1352056E29A0059D9BF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5AAB1382056E29A0059D9BF /* Starscream Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Starscream Tests.xctest";
-			remoteRef = A5AAB1372056E29A0059D9BF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		A55F2154204505DA00E45AA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57143F42055FCA4000B1A24 /* logo.png in Resources */,
 				A55F2167204505DA00E45AA7 /* LaunchScreen.storyboard in Resources */,
-				A53C7A5F2057FE8200789790 /* email2.png in Resources */,
 				A55F2164204505DA00E45AA7 /* Assets.xcassets in Resources */,
 				A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */,
-				A53C7A612057FE8A00789790 /* pass2.png in Resources */,
-				A53C7A65205827AC00789790 /* name.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,23 +340,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29D0F9AC28367ECE10F253C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MimicMeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73615D0E98D2E66DD8AA4F15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MimicMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2D66D64ED2B9385D580BD8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MimicMe/Pods-MimicMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MimicMe/Pods-MimicMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0C7A7E5F097E48A56289E42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MimicMeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A55F2152204505DA00E45AA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50CCE24209D1256008283A6 /* Room+CoreDataProperties.swift in Sources */,
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
-				A5AC8C2C2049473E00F1D95D /* UnknownUser.swift in Sources */,
-				A5C1F0392047E5E000503DD5 /* UploadViewController.swift in Sources */,
-				A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */,
-				A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */,
+				A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
-				A55F218B20451D7300E45AA7 /* ChatViewController.swift in Sources */,
+				A50CCE26209D4B5D008283A6 /* CreateRoomViewController.swift in Sources */,
+				A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */,
+				A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */,
+				A50CCE2A209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift in Sources */,
+				A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */,
 				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
 				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
+				A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,11 +466,6 @@
 			isa = PBXTargetDependency;
 			target = A55F2155204505DA00E45AA7 /* MimicMe */;
 			targetProxy = A55F2179204505DA00E45AA7 /* PBXContainerItemProxy */;
-		};
-		A5AAB13A2056E2CF0059D9BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Starscream;
-			targetProxy = A5AAB1392056E2CF0059D9BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -558,6 +586,7 @@
 		};
 		A55F2182204505DA00E45AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B2EE4E3F44094B3323935F /* Pods-MimicMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92NZHY756F;
@@ -572,6 +601,7 @@
 		};
 		A55F2183204505DA00E45AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA30D2C22DBEB7884BF5AC6 /* Pods-MimicMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 92NZHY756F;
@@ -585,6 +615,7 @@
 		};
 		A55F2185204505DA00E45AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7D1D2143D8242D85ED35AF8 /* Pods-MimicMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -600,6 +631,7 @@
 		};
 		A55F2186204505DA00E45AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 555702DD50413186F83771AE /* Pods-MimicMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -615,6 +647,7 @@
 		};
 		A55F2188204505DA00E45AA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFB3BFA8E8FBC890C20842D8 /* Pods-MimicMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 92NZHY756F;
@@ -629,6 +662,7 @@
 		};
 		A55F2189204505DA00E45AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74BB2C0A7AAEE58E591C5BC2 /* Pods-MimicMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 92NZHY756F;

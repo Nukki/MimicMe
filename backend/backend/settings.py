@@ -25,7 +25,7 @@ SECRET_KEY = '#*94hx*jr^wnjizo6(&^fc1%!z-3ih8ojs8&!dq@vz%-9crbmv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.7', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.0.2', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
-    'user.apps.UserConfig',
     'chat.apps.ChatConfig',
 ]
 
@@ -88,28 +87,12 @@ ASGI_APPLICATION = 'backend.routing.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-import mongoengine
-
 DATABASES = {
     'default': {
-        'ENGINE': '',
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-
-# SESSION_ENGINE = 'mongoengine.django.sessions' # optional
-
-_MONGODB_USER = 'localhost'
-_MONGODB_PASSWD = '27017'
-_MONGODB_NAME = 'mimicme'
-_MONGODB_DATABASE_HOST = \
-    'mongodb://%s:%s/%s' \
-    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_NAME)
-
-mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
-
-AUTHENTICATION_BACKENDS = (
-    'mongoengine.django.auth.MongoEngineBackend',
-)
 
 
 # Password validation
@@ -145,7 +128,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]

@@ -1,118 +1,165 @@
 from django.conf import settings
+from django.contrib.auth.models import User
+from .models import Room
 import numpy as np
 import pickle
 import tensorflow as tf
-import chat.model as cm
+# issue with peramertizing Model file will port as two seperate files
+# we can get around the inconveneince of this by having a dict of which module
+# to select
+import chat.model_0 as mod_0
+# import chat.model_1 as mod_1
 
+import asyncio
+import os
+
+from asgiref.sync import async_to_sync # to keep sync functions sync
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+
+model = {
+        "0": mod_0.pred,
+        # "1": mod_1.pred,
+    }
 
 from channels.generic.websocket import JsonWebsocketConsumer
 
+#TODO Look into options
 
+# Consumer class is instantiated for every websocket connection
+# 3 main functions (connect, receive_json, disconnect)
 class MyConsumer(JsonWebsocketConsumer):
-    groups = ["broadcast"]
 
+
+    # Called upon ws://chat/stream connection
     def connect(self):
-        # with open("chat/data/wordList.txt", "rb") as fp:
-        #     wordList = pickle.load(fp)
-        # wordList.append('<pad>')
-        # wordList.append('<EOS>')
-        #
-        # # Load in hyperparamters
-        # vocabSize = len(wordList)
-        # batchSize = 24
-        # maxEncoderLength = 15
-        #
-        # maxDecoderLength = 15
-        # lstmUnits = 112 #48
-        # numLayersLSTM = 3
-        #
-        # # Create placeholders
-        # encoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxEncoderLength)]
-        # decoderLabels = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
-        # decoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
-        # feedPrevious = tf.placeholder(tf.bool)
-        #
-        # encoderLSTM = tf.nn.rnn_cell.BasicLSTMCell(lstmUnits, state_is_tuple=True)
-        # #encoderLSTM = tf.nn.rnn_cell.MultiRNNCell([singleCell]*numLayersLSTM, state_is_tuple=True)
-        # decoderOutputs, decoderFinalState = tf.contrib.legacy_seq2seq.embedding_rnn_seq2seq(encoderInputs, decoderInputs, encoderLSTM,
-        #                                                             vocabSize, vocabSize, lstmUnits, feed_previous=feedPrevious)
-        #
-        # decoderPrediction = tf.argmax(decoderOutputs, 2)
-        #
-        # # Start session and get graph
-        # sess = tf.Session()
-        # #y, variables = model.getModel(encoderInputs, decoderLabels, decoderInputs, feedPrevious)
-        #
-        # # Load in pretrained model
-        # saver = tf.train.Saver()
-        # saver.restore(sess, tf.train.latest_checkpoint('chat/models'))
-        # zeroVector = np.zeros((1), dtype='int32')
-
-        # Called on connection. Either call
+        # print(self.scope["user"])
+        # if self.scope["user"].is_anonymous:
+        #     print("user not logged")
+        #     # reject if user isnt logged in
+        #     self.close()
+        # else:
+        #     print("user found")
+        #     # accept
+        #     self.accept()
         self.accept()
-        # Or to reject the connection, call
-        # self.close()
 
 
+    # Called when a message is sent from client to the server
     def receive_json(self, content):
-        message = content["message"]
-        response =  cm.pred(str(message))
-        self.send_json({
-            "type": "websocket.message",
-            "message" : response,
-            })
+        print(content)
+        # Get command to select routine
+        command = content.get("command", None)
+
+        if command == "join":
+            self.join_room(content["room"], content["username"], content["uid"])
+
+        elif command == "send":
+            self.send_room(content["room"], content["message"], content["username"])
 
 
-    def disconnect(self, close_code):
+
+    # called when the socket closes
+    def disconnect(self,close_code):
         print('close')
-        # Called when the socket closes
 
 
 
+    def join_room(self, roomId, uname, uid):
+
+        room = Room.objects.get(pk=roomId) # "room" is the room id
+
+        user = User.objects.get(username=uname)
+
+        if user.id is not uid:
+            print("User id not found")
+            self.send_json({
+                "status" : "Failed"
+            })
+            return
 
 
+        # Add them to the group so they get room messages
+        async_to_sync(self.channel_layer.group_add)(
+            room.group_name,
+            self.channel_name,
+        )
+        # Instruct their client to finish opening the room
+        # Note: mobile apps may need different information
+        self.send_json({
+            "join": room.id,
+            "name": room.name,
+        })
 
-# Load in data structures
+    def send_room(self, roomId, message, username):
+        room = Room.objects.get(pk=roomId)
+
+        # send message to room
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": username,
+            "message" : message,
+        });
+
+        # bot id's will be retreived from room object
+        # formulate model response
+        response =  model["0"](str(message))
+        # send that response to the room
+        async_to_sync(self.channel_layer.group_send)(room.group_name, {
+            "type": "chat.message",
+            "room_id" : roomId,
+            "username": "bot0",
+            "message" : response,
+        });
+
+        # response =  mod_1.pred(str(message))
+        #
+        # async_to_sync(self.channel_layer.group_send)(room.group_name, {
+        #     "type": "chat.message",
+        #     "room_id" : roomId,
+        #     "username": "bot1",
+        #     "message" : response,
+        # });
 
 
-#    def pred(inputString):
-#        inputVector = model.getTestInput(inputString, wordList, maxEncoderLength)
-#        feedDict = {encoderInputs[t]: inputVector[t] for t in range(maxEncoderLength)}
-#        feedDict.update({decoderLabels[t]: zeroVector for t in range(maxDecoderLength)})
-#        feedDict.update({decoderInputs[t]: zeroVector for t in range(maxDecoderLength)})
-#        feedDict.update({feedPrevious: True})
-#        ids = (sess.run(decoderPrediction, feed_dict=feedDict))
-#        return model.idsToSentence(ids, wordList)
+            ##### Handlers for messages sent over the channel layer
 
-#    def getTestInput(inputMessage, wList, maxLen):
-#        encoderMessage = np.full((maxLen), wList.index('<pad>'), dtype='int32')
-#        inputSplit = inputMessage.lower().split()
-#        for index,word in enumerate(inputSplit):
-#            try:
-#                encoderMessage[index] = wList.index(word)
-#            except ValueError:
-#                continue
-#        encoderMessage[index + 1] = wList.index('<EOS>')
-#        encoderMessage = encoderMessage[::-1]
-#        encoderMessageList=[]
-#        for num in encoderMessage:
-#            encoderMessageList.append([num])
-#        return encoderMessageList
+    # These helper methods are named by the types we send - so chat.join becomes chat_join
+    def chat_join(self, event):
 
-#    def idsToSentence(ids, wList):
-#        EOStokenIndex = wList.index('<EOS>')
-#        padTokenIndex = wList.index('<pad>')
-#        myStr = ""
-#        listOfResponses=[]
-#        for num in ids:
-#            if (num[0] == EOStokenIndex or num[0] == padTokenIndex):
-#                listOfResponses.append(myStr)
-#                myStr = ""
-#            else:
-#                myStr = myStr + wList[num[0]] + " "
-#        if myStr:
-#            listOfResponses.append(myStr)
-#        listOfResponses = [i for i in listOfResponses if i]
-#        listOfResponses = list(set(listOfResponses))
-        #chosenString = max(listOfResponses, key=len)
-#        return chosenString
+        # Called when someone has joined our chat.
+
+        # Send a message down to the client
+        self.send_json(
+            {
+                "room": event["room_id"],
+                # "username": event["username"],
+            },
+        )
+
+    def chat_leave(self, event):
+
+        # Called when someone has left our chat.
+
+        # Send a message down to the client
+        self.send_json(
+            {
+                "room": event["room_id"],
+                # "username": event["username"],
+            },
+        )
+
+    def chat_message(self, event):
+
+        # Called when someone has messaged our chat.
+
+        # Send a message down to the client
+        self.send_json(
+            {
+                # "msg_type": settings.MSG_TYPE_MESSAGE,
+                "room": event["room_id"],
+                "username": event["username"],
+                "message": event["message"],
+            },
+        )
