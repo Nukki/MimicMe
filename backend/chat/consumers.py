@@ -4,6 +4,7 @@ from .models import Room
 import numpy as np
 import pickle
 import tensorflow as tf
+from .utils import delay
 # issue with peramertizing Model file will port as two seperate files
 # we can get around the inconveneince of this by having a dict of which module
 # to select
@@ -105,6 +106,7 @@ class MyConsumer(JsonWebsocketConsumer):
         # bot id's will be retreived from room object
         # formulate model response
         response =  model["0"](str(message))
+        delay(message)
         # send that response to the room
         async_to_sync(self.channel_layer.group_send)(room.group_name, {
             "type": "chat.message",
