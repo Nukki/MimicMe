@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50CCE24209D1256008283A6 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */; };
+		A50CCE26209D4B5D008283A6 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */; };
+		A50CCE2A209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */; };
 		A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F112205A29ED00C53D76 /* TalkToBotController.swift */; };
-		A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */; };
-		A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5338E372052F3D000A71014 /* KeychainWrapper.swift */; };
 		A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349F862054197B009FB58B /* RootHighjackController.swift */; };
 		A5383993204C82C2006EA321 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5383992204C82C2006EA321 /* MessageCell.swift */; };
 		A53C7A5D2057FD8900789790 /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A5AAB1362056E29A0059D9BF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -27,9 +28,7 @@
 		A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643B205A54DB006D418E /* PersistenceService.swift */; };
 		A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643D205A76C2006D418E /* WebsocketHelper.swift */; };
 		A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */; };
-		A5E0EBBD2079B41B004E647D /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */; };
 		A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */; };
-		A5E0EBC52079D2FF004E647D /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +84,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A532F112205A29ED00C53D76 /* TalkToBotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToBotController.swift; sourceTree = "<group>"; };
-		A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
-		A5338E372052F3D000A71014 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		A5349F862054197B009FB58B /* RootHighjackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHighjackController.swift; sourceTree = "<group>"; };
 		A5383992204C82C2006EA321 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,9 +110,7 @@
 		A5CB643B205A54DB006D418E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		A5CB643D205A76C2006D418E /* WebsocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketHelper.swift; sourceTree = "<group>"; };
 		A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,18 +168,17 @@
 				A55F2159204505DA00E45AA7 /* AppDelegate.swift */,
 				A55F215D204505DA00E45AA7 /* Main.storyboard */,
 				A55F2165204505DA00E45AA7 /* LaunchScreen.storyboard */,
-				A5338E372052F3D000A71014 /* KeychainWrapper.swift */,
-				A5338E352052F3C600A71014 /* KeychainItemAccessibility.swift */,
 				A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */,
-				A5E0EBC32079D2FF004E647D /* Room+CoreDataProperties.swift */,
+				A50CCE23209D1256008283A6 /* Room+CoreDataProperties.swift */,
 				A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */,
-				A5E0EBBB2079B41B004E647D /* ChatMessage+CoreDataProperties.swift */,
+				A50CCE29209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift */,
 				A5CB643B205A54DB006D418E /* PersistenceService.swift */,
 				A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */,
 				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
 				A5349F862054197B009FB58B /* RootHighjackController.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+				A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */,
 				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
 				A5383992204C82C2006EA321 /* MessageCell.swift */,
 				A532F112205A29ED00C53D76 /* TalkToBotController.swift */,
@@ -386,22 +383,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E0EBC52079D2FF004E647D /* Room+CoreDataProperties.swift in Sources */,
+				A50CCE24209D1256008283A6 /* Room+CoreDataProperties.swift in Sources */,
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
 				A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */,
-				A5338E382052F3D000A71014 /* KeychainWrapper.swift in Sources */,
-				A5338E362052F3C600A71014 /* KeychainItemAccessibility.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
+				A50CCE26209D4B5D008283A6 /* CreateRoomViewController.swift in Sources */,
 				A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */,
 				A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */,
+				A50CCE2A209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift in Sources */,
 				A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */,
 				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
 				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
 				A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */,
-				A5E0EBBD2079B41B004E647D /* ChatMessage+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

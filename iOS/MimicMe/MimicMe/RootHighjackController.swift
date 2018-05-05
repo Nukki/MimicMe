@@ -27,7 +27,7 @@ class RootHighjackController: UINavigationController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let userLoggedIn: String? = UserDefaults.standard.string(forKey: "ayyy")
+        let userLoggedIn: String? = UserDefaults.standard.string(forKey: "secret")
         if userLoggedIn != nil {
             print("--------------------- Logged in ------------------------")
             let mainController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeScreen") as UIViewController

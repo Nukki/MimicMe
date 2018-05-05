@@ -33,3 +33,6 @@ playground.xcworkspace
 ## Python
 .DS_Store
 __pycache__/
+
+## Tensorflow 200 meg model
+pretrained_seq2seq.ckpt-400000.data-00000-of-00001
