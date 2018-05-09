@@ -30,10 +30,25 @@ def index(request):
 
 
 
-# Recive post request
+# Function to handle GET and POST request for room creation
+# GET: Send a list of bots in json format {name, id}
+#       hardcoded for not but TODO: make modular
+# POST: Recieve name of room
+#       and list of bots by id
+#       Generate new room object
 @csrf_exempt
 def create(request):
-    if request.method == "POST":
+    if request.method == "GET":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+
+        bots = [{"name": "Tensorflow-dataset2", "id": "0"},
+                {"name": "Tensorflow-dataset1", "id": "1"}]
+        data = json.dumps(bots)
+
+        return HttpResponse(data, content_type='application/json', status=200)
+
+    elif request.method == "POST":
         print("Post recieved!")
 
         # parse raw to usable format
