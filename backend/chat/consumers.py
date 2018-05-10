@@ -4,11 +4,11 @@ from .models import Room
 import numpy as np
 import pickle
 import tensorflow as tf
+from .utils import *
 # issue with peramertizing Model file will port as two seperate files
 # we can get around the inconveneince of this by having a dict of which module
 # to select
-import chat.model_0 as mod_0
-# import chat.model_1 as mod_1
+
 
 import asyncio
 import os
@@ -16,11 +16,8 @@ import os
 from asgiref.sync import async_to_sync # to keep sync functions sync
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+#TODO remove global variable for numbots and make part of room model
 
-model = {
-        "0": mod_0.pred,
-        # "1": mod_1.pred,
-    }
 
 from channels.generic.websocket import JsonWebsocketConsumer
 
@@ -76,6 +73,7 @@ class MyConsumer(JsonWebsocketConsumer):
             self.send_json({
                 "status" : "Failed"
             })
+            self.close()
             return
 
 
@@ -102,25 +100,29 @@ class MyConsumer(JsonWebsocketConsumer):
             "message" : message,
         });
 
-        # bot id's will be retreived from room object
-        # formulate model response
-        response =  model["0"](str(message))
-        # send that response to the room
-        async_to_sync(self.channel_layer.group_send)(room.group_name, {
-            "type": "chat.message",
-            "room_id" : roomId,
-            "username": "bot0",
-            "message" : response,
-        });
+        # Create list of all predicted responses
+        response = []
+        totallen = 0
+        for i in range(numbots):
+            msg = model[str(i)](str(message))
+            response.append((len(msg), msg))
+            totallen += len(msg)
 
-        # response =  mod_1.pred(str(message))
-        #
-        # async_to_sync(self.channel_layer.group_send)(room.group_name, {
-        #     "type": "chat.message",
-        #     "room_id" : roomId,
-        #     "username": "bot1",
-        #     "message" : response,
-        # });
+        #sort responses based on length
+        response.sort()
+        while totallen > 0:
+            msg = response.pop()
+            delay(msg[0])
+            async_to_sync(self.channel_layer.group_send)(room.group_name, {
+                "type": "chat.message",
+                "room_id" : roomId,
+                "username": "bot",
+                "message" : msg[1],
+            });
+            totallen -= msg[0]
+
+
+
 
 
             ##### Handlers for messages sent over the channel layer
