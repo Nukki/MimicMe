@@ -58,8 +58,8 @@ class SignupController : UIViewController, UITextFieldDelegate {
         // ****************** Make an HTTP Request **********************************
         
         // make a header for request
-        guard let url = URL(string: "http://127.0.0.1:8000/user/register") else { return }
-//        guard let url = URL(string: "http://192.168.0.7:8000/register") else { return }
+//        guard let url = URL(string: "http://127.0.0.1:8000/user/register") else { return }
+        guard let url = URL(string: "http://159.65.38.56:8000/user/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");
@@ -75,6 +75,7 @@ class SignupController : UIViewController, UITextFieldDelegate {
         // make a request
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             if error != nil {
+                print("Sign up request didn't go through")
                 print(error!.localizedDescription)
             }
             guard let data = data else {return}
@@ -82,21 +83,21 @@ class SignupController : UIViewController, UITextFieldDelegate {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 print(json)
                 
-//                if let resp = response as? HTTPURLResponse {
-//                    if resp.statusCode == 201 {
-//                        print("ACCOUNT CREATED 201")
-//                        DispatchQueue.main.async {
-//                            self.dismiss(animated: false, completion: nil)
-//                        }
-////                        self.dismiss(animated: false, completion: nil)
-//                    } else {
-//                        DispatchQueue.main.async {
-//                            self.displayAlertMessage("Something went wrong. Try again later")
-//                        }
-//                    }
-//                }
+                if let resp = response as? HTTPURLResponse {
+                    if resp.statusCode == 201 {
+                        print("ACCOUNT CREATED 201")
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: false, completion: nil)
+                        }
+//                        self.dismiss(animated: false, completion: nil)
+                    } else {
+                        DispatchQueue.main.async {
+                            self.displayAlertMessage("Something went wrong. Try again later")
+                        }
+                    }
+                }
 //
-                self.dismiss(animated: false, completion: nil)
+//                self.dismiss(animated: false, completion: nil)
                 
             } catch {}
         }.resume()

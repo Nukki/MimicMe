@@ -19,7 +19,7 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
         // ****************** Make an HTTP Request **********************************
         
         // make a header for request
-        guard let url = URL(string: "http://127.0.0.1:8000/chat/create") else { return }
+        guard let url = URL(string: "http://159.65.38.56:8000/chat/create") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");

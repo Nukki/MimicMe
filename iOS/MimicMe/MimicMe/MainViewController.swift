@@ -62,8 +62,9 @@ class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     func getRoomsFromServer() -> [Room] {
         let memoryRooms = loadRoomsFromMemory()
         
-        // make a header for request
-        guard let url = URL(string: "http://127.0.0.1:8000/chat/rooms") else { return memoryRooms}
+        // make a header for request 
+        guard let url = URL(string: "http://159.65.38.56:8000/chat/rooms") else { return memoryRooms}
+//        guard let url = URL(string: "http://127.0.0.1:8000/chat/rooms") else { return memoryRooms}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");

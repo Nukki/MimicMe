@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+// http://159.65.38.56:8000
 // This view lets the user log in. In case of correct credentials
 // it redirects to "Main" view.
 // Also can trigger "Sign up" view for new users.
@@ -82,8 +82,8 @@ class LoginController : UIViewController, UITextFieldDelegate {
     // @param username and password from user input
     func check(name : String, password: String, completion: @escaping (_ isWorking: Bool, _ id: Int)->()) {
         // make a header for HTTP request
-        guard let url = URL(string: "http://127.0.0.1:8000/user/login") else { return }
-//        guard let url = URL(string: "http://192.168.0.2:8000/login") else { return }
+//        guard let url = URL(string: "http://127.0.0.1:8000/user/login") else { return }
+        guard let url = URL(string: "http://159.65.38.56:8000/user/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type");
@@ -113,6 +113,7 @@ class LoginController : UIViewController, UITextFieldDelegate {
                 
                 // if status code is 200 save the auth id and go to main screen , else display error
                 if let resp = response as? HTTPURLResponse {
+                    print("STATUS NOW: ", resp.statusCode)
                     if resp.statusCode == 200 {
                         print("LOGIN STATUS 200")
                         completion(true, responseJson.uid)
