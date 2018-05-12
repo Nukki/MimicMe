@@ -24,7 +24,6 @@ import android.support.design.widget.Snackbar;
 public class LoginActivity extends AppCompatActivity {
 
     // UI references.
-    private AutoCompleteTextView mEmailView;
     private AutoCompleteTextView mNameView;
     private EditText mPasswordView;
 
@@ -34,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login); // Connect to activity_login.xml
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -62,12 +60,10 @@ public class LoginActivity extends AppCompatActivity {
     private void attemptLogin() {
 
         // Reset errors.
-        mEmailView.setError(null);
         mPasswordView.setError(null);
         mNameView.setError(null);
 
         // Store values at the time of the login attempt.
-        final String email = mEmailView.getText().toString();
         final String password = mPasswordView.getText().toString();
         final String name = mNameView.getText().toString();
 
@@ -82,15 +78,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
@@ -107,7 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                     try {
 
                         // port to connect to Django server
-                        URL url = new URL("http://10.0.2.2:8000/login");
+
+                        String urlString = "http://159.65.38.56:8000/user/login";
+
+                        URL url = new URL(urlString);
 
                         conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
@@ -115,7 +105,6 @@ public class LoginActivity extends AppCompatActivity {
                         // Send information user entered as a JSON object to the backend
                         JSONObject jsonObject = new JSONObject();
                         try {
-                            jsonObject.put("email", email);
                             jsonObject.put("password", password);
                             jsonObject.put("name", name);
                         } catch (JSONException e) {
@@ -141,27 +130,13 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         br.close();
 
-                        // If the server returns a login-success response, launch the RecyclerActivity which contains the list of chatrooms
-                        if (sb.toString().contains("Login success!")) {
+                        if (conn.getResponseCode() == 500) {
+                            Snackbar mySnackbar;
+                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"Error. Incorrect user/password",3000);
+                            mySnackbar.show();
 
+                        } else if (conn.getResponseCode() == 200) {
                             Intent myIntent = new Intent(LoginActivity.this, RecyclerActivity.class);
-                            startActivity(myIntent);
-
-                        // If the server returns that the password is wrong, show a Snackbar message to alert the user
-                        }  else if (sb.toString().contains("Wrong password")) {
-
-                            Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"Incorrect Password",3000);
-                            mySnackbar.show();
-
-                         // If the server returns that the account is not registered, alert user and send them SignUpActivity
-                        } else if (sb.toString().contains("Account not found. User does not exist")) {
-
-                            Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.login_view),"This email is not registered",3000);
-                            mySnackbar.show();
-                            // see if I can put a delay here.
-                            Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
                             startActivity(myIntent);
                         }
 

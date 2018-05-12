@@ -33,7 +33,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
@@ -41,11 +41,15 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.i("You clicked on ",  mValues.get(position).toString());
+                Log.i("which is ID number ",mValues.get(position).id.toString());
+                Log.i("IDK?? ",mValues.get(position).content.toString());
+
+
+                
+
                 if (null != mListener) {
-                    Log.d("test","testing 123");
-                    // naveed
-//                    Intent myIntent = new Intent(RecyclerActivity.class, ChatRoomActivity.class);
-//                    startActivity(myIntent);
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
                     mListener.onListFragmentInteraction(holder.mItem);

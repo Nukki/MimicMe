@@ -31,7 +31,7 @@ public class ChatRoomContent {
                 HttpURLConnection conn = null;
                 try {
 
-                    URL url = new URL("http://10.0.2.2:8000/chatrooms");
+                    URL url = new URL("http://159.65.38.56:8000/chat/rooms");
 
                     conn = (HttpURLConnection) url.openConnection();
 
@@ -50,18 +50,11 @@ public class ChatRoomContent {
 
                     try {
 
-                        JSONObject json = new JSONObject(sb.toString());
+                        JSONArray json = new JSONArray(sb.toString());
 
-                        Iterator<String> iter = json.keys();
-
-                        while (iter.hasNext()) {
-
-                            String key = iter.next();
-
-                            addItem(createChatRoom(counter, json.getString(key)));
-
-                            counter++;
-
+                        for (int i = 0; i < json.length(); i++) {
+                            JSONObject row = json.getJSONObject(i);
+                            addItem(createChatRoom(row.getInt("id"), row.getString("name")));
                         }
 
                     } catch (JSONException e) {
