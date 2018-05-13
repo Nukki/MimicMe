@@ -14,6 +14,7 @@
 		A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A532F112205A29ED00C53D76 /* TalkToBotController.swift */; };
 		A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349F862054197B009FB58B /* RootHighjackController.swift */; };
 		A5383993204C82C2006EA321 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5383992204C82C2006EA321 /* MessageCell.swift */; };
+		A54C87F820A7C91200201F9F /* MainViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C87F720A7C91200201F9F /* MainViewHelper.swift */; };
 		A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F2159204505DA00E45AA7 /* AppDelegate.swift */; };
 		A55F215F204505DA00E45AA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55F215D204505DA00E45AA7 /* Main.storyboard */; };
 		A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A55F2160204505DA00E45AA7 /* MimicMe.xcdatamodeld */; };
@@ -28,6 +29,9 @@
 		A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB643D205A76C2006D418E /* WebsocketHelper.swift */; };
 		A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */; };
 		A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */; };
+		A5E3023E20A70FFD006211D4 /* SignupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3023D20A70FFD006211D4 /* SignupHelper.swift */; };
+		A5E3024020A71517006211D4 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3023F20A71517006211D4 /* LoginHelper.swift */; };
+		A5E3024220A717F5006211D4 /* CreateRoomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3024120A717F5006211D4 /* CreateRoomHelper.swift */; };
 		AF4AF0EB672E8937322FC5F5 /* Pods_MimicMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E417C9649DFF051051E5FD3 /* Pods_MimicMe.framework */; };
 		F9D56B15601378C237F500CB /* Pods_MimicMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C602497E22008E80D70CA7 /* Pods_MimicMeTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,7 @@
 		A532F112205A29ED00C53D76 /* TalkToBotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToBotController.swift; sourceTree = "<group>"; };
 		A5349F862054197B009FB58B /* RootHighjackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHighjackController.swift; sourceTree = "<group>"; };
 		A5383992204C82C2006EA321 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		A54C87F720A7C91200201F9F /* MainViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewHelper.swift; sourceTree = "<group>"; };
 		A55F2156204505DA00E45AA7 /* MimicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55F2159204505DA00E45AA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55F215E204505DA00E45AA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +86,9 @@
 		A5CB643D205A76C2006D418E /* WebsocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketHelper.swift; sourceTree = "<group>"; };
 		A5E0EBBA2079B41B004E647D /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A5E0EBC22079D2FF004E647D /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5E3023D20A70FFD006211D4 /* SignupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupHelper.swift; sourceTree = "<group>"; };
+		A5E3023F20A71517006211D4 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
+		A5E3024120A717F5006211D4 /* CreateRoomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomHelper.swift; sourceTree = "<group>"; };
 		BFB3BFA8E8FBC890C20842D8 /* Pods-MimicMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeUITests/Pods-MimicMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2C602497E22008E80D70CA7 /* Pods_MimicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MimicMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D1D2143D8242D85ED35AF8 /* Pods-MimicMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MimicMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MimicMeTests/Pods-MimicMeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,11 +161,15 @@
 				A55F2163204505DA00E45AA7 /* Assets.xcassets */,
 				A5349F862054197B009FB58B /* RootHighjackController.swift */,
 				A5AC8C2D2049478600F1D95D /* LoginController.swift */,
+				A5E3023F20A71517006211D4 /* LoginHelper.swift */,
 				A5AC8C2F2049479700F1D95D /* SignupController.swift */,
+				A5E3023D20A70FFD006211D4 /* SignupHelper.swift */,
 				A50CCE25209D4B5D008283A6 /* CreateRoomViewController.swift */,
+				A5E3024120A717F5006211D4 /* CreateRoomHelper.swift */,
 				A5C1F0362047E3AC00503DD5 /* MainViewController.swift */,
-				A5383992204C82C2006EA321 /* MessageCell.swift */,
+				A54C87F720A7C91200201F9F /* MainViewHelper.swift */,
 				A532F112205A29ED00C53D76 /* TalkToBotController.swift */,
+				A5383992204C82C2006EA321 /* MessageCell.swift */,
 				A5CB643D205A76C2006D418E /* WebsocketHelper.swift */,
 			);
 			path = MimicMe;
@@ -384,10 +396,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MimicMe/Pods-MimicMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,18 +435,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50CCE24209D1256008283A6 /* Room+CoreDataProperties.swift in Sources */,
+				A54C87F820A7C91200201F9F /* MainViewHelper.swift in Sources */,
 				A55F215A204505DA00E45AA7 /* AppDelegate.swift in Sources */,
 				A5E0EBC42079D2FF004E647D /* Room+CoreDataClass.swift in Sources */,
+				A5E3023E20A70FFD006211D4 /* SignupHelper.swift in Sources */,
 				A5AC8C302049479700F1D95D /* SignupController.swift in Sources */,
 				A50CCE26209D4B5D008283A6 /* CreateRoomViewController.swift in Sources */,
 				A5E0EBBC2079B41B004E647D /* ChatMessage+CoreDataClass.swift in Sources */,
 				A5CB643E205A76C2006D418E /* WebsocketHelper.swift in Sources */,
+				A5E3024220A717F5006211D4 /* CreateRoomHelper.swift in Sources */,
 				A55F2162204505DA00E45AA7 /* MimicMe.xcdatamodeld in Sources */,
 				A5349F872054197B009FB58B /* RootHighjackController.swift in Sources */,
 				A50CCE2A209E2D9F008283A6 /* ChatMessage+CoreDataProperties.swift in Sources */,
 				A5CB643C205A54DB006D418E /* PersistenceService.swift in Sources */,
 				A5C1F0372047E3AC00503DD5 /* MainViewController.swift in Sources */,
 				A5AC8C2E2049478600F1D95D /* LoginController.swift in Sources */,
+				A5E3024020A71517006211D4 /* LoginHelper.swift in Sources */,
 				A5383993204C82C2006EA321 /* MessageCell.swift in Sources */,
 				A532F113205A29ED00C53D76 /* TalkToBotController.swift in Sources */,
 			);

@@ -15,6 +15,7 @@ import UIKit
 extension TalkToBotController: WebSocketDelegate {
     
     func websocketDidConnect(socket: WebSocketClient) {
+        // joing the room as soon as socket connected
         let myID = Int32(UserDefaults.standard.integer(forKey: "secret"))
         let myUsername = UserDefaults.standard.string(forKey: "uname")
         let joinMsg = JoinMsg(command: "join", room: (room?.id)!, username: myUsername!, uid: myID)
@@ -28,11 +29,14 @@ extension TalkToBotController: WebSocketDelegate {
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("----------------------- disconnected ------------------")
-        let er: Starscream.WSError = error as! WSError
-        print("Socket disconnected with: ", er.code)
-        if (er.code == 1011) {
-            print(er)
-            displayAlertMessage("Disconnected from chat", actionName: "Reconnect")
+        if let er: Starscream.WSError = error as? WSError {
+            print("Socket disconnected with: ", er.code)
+            if (er.code == 1011) {
+                print(er)
+                displayAlertMessage("Disconnected from chat", actionName: "Reconnect")
+            }
+        } else {
+            print("Error: ", error as Any);
         }
     }
     
@@ -50,8 +54,7 @@ extension TalkToBotController: WebSocketDelegate {
             }
         }
         else {
-            print("looks like it joined the rooom")
-            return
+            print("Joined the rooom")
         }
     }
     
@@ -74,6 +77,7 @@ extension TalkToBotController: WebSocketDelegate {
         self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: false)
     }
     
+    // convert JSON to Swift dictionary
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {

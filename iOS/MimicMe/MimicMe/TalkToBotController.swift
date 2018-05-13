@@ -21,8 +21,6 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     var messages = [ChatMessage]() // messages from core data
-    
-//    var socket = WebSocket(url: URL(string: "ws://127.0.0.1:8000/chat/stream/")!)
     var socket = WebSocket(url: URL(string: "ws://159.65.38.56:8000/socket")!)
     
     // positioning input window at the bottom
@@ -98,7 +96,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         self.collectionView!.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         
-        // LAYOUT -------------------------------------------------------------------------------------
+        // LAYOUT SETUP ---------------------------------------------------------------------------
         collectionView?.contentInset = UIEdgeInsetsMake(8.0,0.0,58.0,0.0) // make some space on top and show last message above the "send" box
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -108,7 +106,6 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         collectionView?.alwaysBounceVertical = true
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
         navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
-        
         
         typingContainerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(typingContainerView)
@@ -123,10 +120,11 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         view.addConstraint(bottomConstraint!)
         configureTypingView()
         
+        // sign up for notifications when keyboard appears and disappears
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
+    } // end viewDidLoad
     
     // animates input field up when keyboard appears
     func handleKeyboardNotification(_ notification: Notification) {
@@ -146,6 +144,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         }
     }
     
+    // sets layout contraints for input field and send button
     private func configureTypingView() {
         let topBorderView = UIView()
         topBorderView.backgroundColor = UIColor.black
@@ -183,7 +182,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         typingContainerView.addConstraint(snapButtonRight)
         typingContainerView.addConstraint(buttonWidth)
         typingContainerView.addConstraint(spaceBtwInputAndButton)
-    }
+    } // end configureTypingView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -218,8 +217,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     
 
 
-
-    // MARK: UICollectionViewDataSource -------------------------------------------------------------------------------------------
+    //  ****************  CollectionView Setup (text bubbles) **************************
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -237,15 +235,10 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
         cell.messageTextLabel.text = chatMessage.text
         cell.nameLabel.text = chatMessage.uName
         
-        print("User in this message", chatMessage.uName!)
-        
         if let messageText =  chatMessage.text {
-//            let stringLarge: String = messageText + "This is a line of text is a line of text"
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)], context: nil)
-           
-            
             
             // adjust color and position of message bubble
             // depending if it's a sender message or a message from other users
@@ -264,13 +257,6 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
                 cell.bubble.frame = CGRect(x: 3, y: 16, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
                 cell.bubble.backgroundColor =  UIColor(white: 0.95, alpha: 1)
                 cell.messageTextLabel.textColor = UIColor.black
-                //end new
-                
-                //old
-//                cell.messageTextLabel.frame = CGRect(x: 8, y: 0, width: estimatedFrame.width + 16 , height: estimatedFrame.height + 18)
-//                cell.bubble.frame = CGRect(x: 3, y: 0, width: estimatedFrame.width + 16 + 8  , height: estimatedFrame.height + 18)
-//                cell.bubble.backgroundColor =  UIColor(white: 0.95, alpha: 1)
-//                cell.messageTextLabel.textColor = UIColor.black
             }
         }
         return cell
@@ -282,8 +268,7 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)], context: nil)
-            
-            //new
+
             if (messages[indexPath.item].isSender) {
                  return CGSize(width: view.frame.width, height: estimatedFrame.height + 18 )
             }
@@ -291,10 +276,6 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
                  // make 16 pixels of space for username above the bubble
                  return CGSize(width: view.frame.width, height: estimatedFrame.height + 18 + 16)
             }
-            // end new
-            
-            //old
-//            return CGSize(width: view.frame.width, height: estimatedFrame.height + 18)
         }
         return CGSize(width: view.frame.width,height: 100)
     }
