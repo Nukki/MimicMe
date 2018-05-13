@@ -6,40 +6,41 @@ import pickle
 
 with open("chat/data/wordList_1.txt", "rb") as fp:
     wordList = pickle.load(fp)
-wordList.append('<pad>')
-wordList.append('<EOS>')
+with tf.Graph().as_default() as net1_graph:
+    wordList.append('<pad>')
+    wordList.append('<EOS>')
 
-# Load in hyperparamters
-vocabSize = len(wordList)
-batchSize = 24
-maxEncoderLength = 15
-maxDecoderLength = 15
+    # Load in hyperparamters
+    vocabSize = len(wordList)
+    batchSize = 24
+    maxEncoderLength = 15
+    maxDecoderLength = 15
 
-lstmUnits = 112
+    lstmUnits = 112
 
-numLayersLSTM = 3
+    numLayersLSTM = 3
 
-# Create placeholders
-encoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxEncoderLength)]
-decoderLabels = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
-decoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
-feedPrevious = tf.placeholder(tf.bool)
+    # Create placeholders
+    encoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxEncoderLength)]
+    decoderLabels = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
+    decoderInputs = [tf.placeholder(tf.int32, shape=(None,)) for i in range(maxDecoderLength)]
+    feedPrevious = tf.placeholder(tf.bool)
 
-encoderLSTM = tf.nn.rnn_cell.BasicLSTMCell(lstmUnits, state_is_tuple=True)
-#encoderLSTM = tf.nn.rnn_cell.MultiRNNCell([singleCell]*numLayersLSTM, state_is_tuple=True)
-with variable_scope("model_1"):
-    decoderOutputs, decoderFinalState = tf.contrib.legacy_seq2seq.embedding_rnn_seq2seq(encoderInputs, decoderInputs, encoderLSTM, vocabSize, vocabSize, lstmUnits, feed_previous=feedPrevious)
+    encoderLSTM = tf.nn.rnn_cell.BasicLSTMCell(lstmUnits, state_is_tuple=True)
+    #encoderLSTM = tf.nn.rnn_cell.MultiRNNCell([singleCell]*numLayersLSTM, state_is_tuple=True)
+    decoderOutputs1, decoderFinalState1 = tf.contrib.legacy_seq2seq.embedding_rnn_seq2seq(encoderInputs, decoderInputs, encoderLSTM, vocabSize, vocabSize, lstmUnits, feed_previous=feedPrevious)
+    saver1 = tf.train.Saver()
 
-decoderPrediction = tf.argmax(decoderOutputs, 2)
+    decoderPrediction = tf.argmax(decoderOutputs1, 2)
+
+sess1 = tf.Session(graph=net1_graph)
+
 
 # Start session and get graph
-sess = tf.Session()
 #y, variables = model.getModel(encoderInputs, decoderLabels, decoderInputs, feedPrevious)
 
 # Load in pretrained model
-saver = tf.train.Saver()
-saver.restore(sess, tf.train.latest_checkpoint('chat/models/1'))
-saver.config.init_training_mode()
+saver1.restore(sess1, tf.train.latest_checkpoint('chat/models/1'))
 
 zeroVector = np.zeros((1), dtype='int32')
 
@@ -84,7 +85,7 @@ def pred(inputString):
     feedDict.update({decoderLabels[t]: zeroVector for t in range(maxDecoderLength)})
     feedDict.update({decoderInputs[t]: zeroVector for t in range(maxDecoderLength)})
     feedDict.update({feedPrevious: True})
-    ids = (sess.run(decoderPrediction, feed_dict=feedDict))
+    ids = (sess1.run(decoderPrediction, feed_dict=feedDict))
     return idsToSentence(ids, wordList)
 
 # def prediction(msg):

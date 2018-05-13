@@ -16,7 +16,7 @@ import UIKit
 class RootHighjackController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .purple
     }
     
     func showLoginController() {
@@ -37,9 +37,4 @@ class RootHighjackController: UINavigationController {
             perform(#selector(showLoginController), with: nil, afterDelay: 0.01)
         }
     }
-    
-    
 }
-
-// -------->           perform(#selector(showMainController), with: nil, afterDelay: 0.01)
-

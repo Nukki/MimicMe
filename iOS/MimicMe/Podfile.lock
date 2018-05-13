@@ -1,16 +1,20 @@
 PODS:
+  - PKHUD (5.0.0)
   - Starscream (3.0.5)
 
 DEPENDENCIES:
+  - PKHUD (~> 5.0)
   - Starscream (~> 3.0.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - PKHUD
     - Starscream
 
 SPEC CHECKSUMS:
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: b20fe06d5bbdb1caf8e82c2143531b760a5b82ce
+PODFILE CHECKSUM: 90005d15e1e6800977a925200d1f45a705b55894
 
 COCOAPODS: 1.5.0

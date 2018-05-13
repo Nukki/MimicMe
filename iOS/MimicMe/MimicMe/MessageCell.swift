@@ -37,27 +37,18 @@ class MessageCell: UICollectionViewCell {
         return view
     }()
     
-//    let metaView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = UIColor.green
-//        return view
-//    }()
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = UIColor.cyan
         configureViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func configureViews() {
-//        addSubview(metaView)
         addSubview(nameLabel)
         addSubview(bubble)
         addSubview(messageTextLabel)
     }
-    
 }

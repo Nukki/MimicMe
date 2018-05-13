@@ -8,20 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		0B903D1BE31FDE52375910A6599FADDD /* Pods-MimicMeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C41FC1D5168F36C46868879CE5E09B2 /* Pods-MimicMeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E74D505D53534F25016F2BC02D6084C /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */; };
+		17E7E62102D200AFE11B049F570C9397 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2E757AF76AB8128BAE2182D479262 /* PKHUDErrorView.swift */; };
+		1929F91EB38B923FBFA0B2F53C0C4877 /* PKHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7DB287959D71B879BF04B56E520877 /* PKHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A78AB283D9D26D0C50EA46ECFCB87F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		1D074B9127FA5FC2639ADEABB5B3D2A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		1F34910B27A3B86966E07898A2B70AE6 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2EEF3E41ECF78D3900F26CA1FDFD8 /* FrameView.swift */; };
+		2DCA4225866D2445C444325589BD9744 /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 17549C2AFC7B1DE12F1BB6DBEE4DE347 /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3470186F176465D3CA04711D0D82DF38 /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941D9AD947C8EE75E149A7B1B4C377D1 /* PKHUDAnimation.swift */; };
+		34D8AB5C8FA400C58D7CA084633DF744 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F5F85ADB4231216C702AA09AC2868A /* Images.xcassets */; };
+		4A36CED4DBE86F882BBED34930999DEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		578DB068008A1502542C957AF43E22A9 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546B1E1065C547E4D3FD9262F0C3525A /* SSLSecurity.swift */; };
+		5BF57CF13BBE283BFACD532AABC65F4E /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED6FAF1E1EE6BA0CE65C36AAB7D6057 /* WebSocket.swift */; };
 		5E24991981A5A0417893B3491150A536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		68B5FEFC3182ED9114EAA41D63600BD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		6941AD9920F383590616886A7F4F2F2E /* Pods-MimicMeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8309BC82DD741E168366B5FB5E6FFD /* Pods-MimicMeUITests-dummy.m */; };
 		74D39D9B9EC92CFFDEFE38A00CC1F226 /* Pods-MimicMeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AABA8212C42E1661C4CEBDF48442711E /* Pods-MimicMeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9168B887E8B205533D8CF5D9AD601AFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		981AE8645E54ACC64DF6172C1AB50F50 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1661B72F0A274473D9147AAE8A3E06F1 /* Starscream-dummy.m */; };
-		B4AA360A8830F57695E217BB38A0B958 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */; };
-		C2708BB6A16A16FA5E74E6F5FBC4020F /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D996E17FD79A681D5829532F50CF07C /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		766750E7B98FF8495403D0C7B5064D6C /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729C8C38C9B59495914ED9D76A7D36A /* PKHUDProgressView.swift */; };
+		7F09171ED8899C35E45511452323B3DF /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED0680EA2AD687F943F580BF252103 /* PKHUDSquareBaseView.swift */; };
+		869B25CDDA4D1BDA81A495A23D43E108 /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373549DA8BA8B2F7E20D43CF17295034 /* PKHUDAssets.swift */; };
+		89C4ADD534D41DF5442F67D799B8E12B /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB6FE6F559BBAA0CCBC07681BFE2E /* PKHUDSystemActivityIndicatorView.swift */; };
+		A5A9F17A94A6CC0F7D4E9DE0FCAFE5AB /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57401E6A05E86516973B3138A2E817 /* PKHUDSuccessView.swift */; };
+		A7BA7C4E4C047A5698A68CA76A453605 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566FC7A6BFB1E2F098231562FED941A1 /* PKHUDTextView.swift */; };
+		AEA27A6C1523E5B1A1B3B74CA02FB67D /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57464344C8E6AD170F16CEFAC2F1A330 /* PKHUDRotatingImageView.swift */; };
+		B1DC643D39F725A5C89C8195B5C10A09 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA5C38300D5E92D9D8BCBD9974A6FA /* PKHUDAnimating.swift */; };
+		BA1B53BE85DE9BD789FE1C32FBA8C752 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DAA47BF78C744558A4AE50EA2185D3 /* HUD.swift */; };
+		BF541FB658B81D55E6A960701BF0619E /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56E63B06B4925334556FBC495BD9A0F /* PKHUD.swift */; };
+		C131CDCE54A59BF8CF59A9BF2DA3FEC6 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2874B13FD2E7E2D165D999E861A7519 /* Compression.swift */; };
 		CAE272970E5C8BCDE491BCDE3E174730 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CCA0CE4E0B4636246EFC342DDFE46F2D /* Pods-MimicMe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD85B645BCDDD2D49757BC977F99010 /* Pods-MimicMe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCBE0F20C646FFAD9B6BD06E9FE5D166 /* Pods-MimicMe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 490B7E7B5A80862E43A0DBB01AF4B440 /* Pods-MimicMe-dummy.m */; };
-		E94A1D5FBCD84A9270FE9C1E1F948B18 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */; };
+		D0013C2FA44653288638A1DCF5C862AC /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAA4057EA5E7E1E80EBAF18FAA39B46 /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F542D62E2AA523E0A3D28DC85D2012 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082B1BFBBDB5214F1CFC5FD7F3BADFE /* PKHUDWideBaseView.swift */; };
+		DCF29808A708F2F60B78E663C64EC007 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B29E66B833DA6B8C54D4E157FA932D /* Starscream-dummy.m */; };
+		E0D7734A1CEB0C3EF2B9606318720704 /* Pods-MimicMe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD85B645BCDDD2D49757BC977F99010 /* Pods-MimicMe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E43D2B5F39EBCC2DE6D16862F6A5AA64 /* Pods-MimicMe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 490B7E7B5A80862E43A0DBB01AF4B440 /* Pods-MimicMe-dummy.m */; };
+		E57944FDD00D7F5F2674D4D52E0F52BA /* PKHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B58BFABF8ECBA3B52B8FDD6A33DEFAC7 /* PKHUD-dummy.m */; };
 		F2CDFC05B443BB76A4A6D33BF93A22A1 /* Pods-MimicMeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA0DD4185F4AB58DCDF8D9B82E8276A /* Pods-MimicMeTests-dummy.m */; };
+		F4C22A07683E879CB3ECF7D6A73F667E /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8999E6D3602F937F0A148F52D3571 /* WindowRootViewController.swift */; };
+		F61C2235825FE532417891978344385E /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AC20747EF60648C2E6B1C8180E6AA /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,74 +50,122 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6E29A49F68143039080284A631D85221;
+			remoteGlobalIDString = D2F8E6AD10AB05CF90D13FCA1F779DFD;
 			remoteInfo = "Pods-MimicMe";
 		};
-		72F35A9C34051EF4246C0D83DB05808B /* PBXContainerItemProxy */ = {
+		88FD535F9F205B8B44CC91D7572EA7C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 108ACB5E069CF1660401ED5D7682186B;
+			remoteGlobalIDString = 2F7E1133F270B33E44AE398CE7F9A241;
 			remoteInfo = Starscream;
+		};
+		A4549B062D68F16F6D426F3202B7465A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7A75F149082140741FC1E0B5B2863C8;
+			remoteInfo = PKHUD;
 		};
 		FDBBB56E06AC917CAA5DCEDAA958F569 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6E29A49F68143039080284A631D85221;
+			remoteGlobalIDString = D2F8E6AD10AB05CF90D13FCA1F779DFD;
 			remoteInfo = "Pods-MimicMe";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00FE110793B9B28D333112AAC93166D9 /* Pods-MimicMe-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMe-frameworks.sh"; sourceTree = "<group>"; };
-		0EFE84D0B4E66B269BFAF38E0DFB3E86 /* Pods_MimicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMeTests.framework; path = "Pods-MimicMeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1661B72F0A274473D9147AAE8A3E06F1 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		06DAA47BF78C744558A4AE50EA2185D3 /* HUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HUD.swift; path = PKHUD/HUD.swift; sourceTree = "<group>"; };
+		0729C8C38C9B59495914ED9D76A7D36A /* PKHUDProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDProgressView.swift; path = PKHUD/PKHUDProgressView.swift; sourceTree = "<group>"; };
+		0CF27280F80B0A55F99FC330E4FD4FD3 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		16B6FBB123EC9905A58D0BB78B96CF5A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17549C2AFC7B1DE12F1BB6DBEE4DE347 /* PKHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PKHUD.h; path = PKHUD/PKHUD.h; sourceTree = "<group>"; };
 		1AD85B645BCDDD2D49757BC977F99010 /* Pods-MimicMe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MimicMe-umbrella.h"; sourceTree = "<group>"; };
+		1D7DB287959D71B879BF04B56E520877 /* PKHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PKHUD-umbrella.h"; sourceTree = "<group>"; };
 		2231C32D610760A8FEFEA97334E47F5D /* Pods-MimicMeUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMeUITests-resources.sh"; sourceTree = "<group>"; };
-		24CD1CF8C67430D7697078621E8DFD65 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
+		263A0AA4DDDFF3B780AB763B13F6ACF0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2929573B5D9452FDA4D7F49FC6364965 /* Pods_MimicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMeUITests.framework; path = "Pods-MimicMeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F57401E6A05E86516973B3138A2E817 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSuccessView.swift; path = PKHUD/PKHUDSuccessView.swift; sourceTree = "<group>"; };
+		3082B1BFBBDB5214F1CFC5FD7F3BADFE /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDWideBaseView.swift; path = PKHUD/PKHUDWideBaseView.swift; sourceTree = "<group>"; };
+		362EB6FE6F559BBAA0CCBC07681BFE2E /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSystemActivityIndicatorView.swift; path = PKHUD/PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
+		373549DA8BA8B2F7E20D43CF17295034 /* PKHUDAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAssets.swift; path = PKHUD/PKHUDAssets.swift; sourceTree = "<group>"; };
+		38A78AFD09B3C8B0AD993CF6AC8953A0 /* PKHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PKHUD.framework; path = PKHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3054407EEDB885EBFBE541FEAB50E4 /* Pods-MimicMe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MimicMe-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3A89F29E62024F23802960B4656EAB90 /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
-		3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/WebSocket.swift; sourceTree = "<group>"; };
 		3C41FC1D5168F36C46868879CE5E09B2 /* Pods-MimicMeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MimicMeTests-umbrella.h"; sourceTree = "<group>"; };
 		41F41CDD204E94974BCF771A0B3E127F /* Pods-MimicMeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MimicMeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		42F5F85ADB4231216C702AA09AC2868A /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PKHUD/Images.xcassets; sourceTree = "<group>"; };
+		43A62DE8CB95762E5DD3757D19B0A18B /* PKHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PKHUD.modulemap; sourceTree = "<group>"; };
+		44B29E66B833DA6B8C54D4E157FA932D /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		456BEF84B40AC002B35060FE9DE674F5 /* PKHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PKHUD-prefix.pch"; sourceTree = "<group>"; };
 		477C318012025058106FE4B2770491C8 /* Pods-MimicMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMe.debug.xcconfig"; sourceTree = "<group>"; };
 		490B7E7B5A80862E43A0DBB01AF4B440 /* Pods-MimicMe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MimicMe-dummy.m"; sourceTree = "<group>"; };
 		52F9FC461FCA6DE4D8FA69814BFA10FF /* Pods-MimicMeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MimicMeUITests.modulemap"; sourceTree = "<group>"; };
+		546B1E1065C547E4D3FD9262F0C3525A /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/SSLSecurity.swift; sourceTree = "<group>"; };
+		566FC7A6BFB1E2F098231562FED941A1 /* PKHUDTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDTextView.swift; path = PKHUD/PKHUDTextView.swift; sourceTree = "<group>"; };
+		57464344C8E6AD170F16CEFAC2F1A330 /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDRotatingImageView.swift; path = PKHUD/PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		5E8557096B940CC8A7352494A71E8E9C /* Pods-MimicMeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MimicMeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5FF27B8866198935CA5CA4E696D876B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		621F8304F1A122126FA1C580E74B6F37 /* Pods_MimicMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMe.framework; path = "Pods-MimicMe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		69E83DA6344BE94E0BEDC3F477CCCE94 /* Pods-MimicMeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMeUITests-frameworks.sh"; sourceTree = "<group>"; };
 		6D34F433CBA7295B307476F8077188B3 /* Pods-MimicMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6ED6FAF1E1EE6BA0CE65C36AAB7D6057 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Sources/WebSocket.swift; sourceTree = "<group>"; };
+		71D2E757AF76AB8128BAE2182D479262 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDErrorView.swift; path = PKHUD/PKHUDErrorView.swift; sourceTree = "<group>"; };
+		78726342A8A35973EF0C02307E3A967D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B67ABBDC830862DF48C7BC911EB09D7 /* Pods-MimicMe-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMe-resources.sh"; sourceTree = "<group>"; };
-		8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression.swift; sourceTree = "<group>"; };
+		8180D5845D89250F2FC0ECA657CB784A /* Starscream.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
+		873C9364A415788C48BB352A8D8D824F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		879AC20747EF60648C2E6B1C8180E6AA /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = PKHUD/Window.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D996E17FD79A681D5829532F50CF07C /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
+		941D9AD947C8EE75E149A7B1B4C377D1 /* PKHUDAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAnimation.swift; path = PKHUD/PKHUDAnimation.swift; sourceTree = "<group>"; };
+		98DA9595643B1B389A59D0EDA578905D /* Pods_MimicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMeTests.framework; path = "Pods-MimicMeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993DF20586CEA70D9B097DAF5764ACC5 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
 		9E8F9CDCF5DA4E235164DA3DCE9B489A /* Pods-MimicMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A49472BDFE09AA768AB10445014D8F9A /* Pods-MimicMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMe.release.xcconfig"; sourceTree = "<group>"; };
-		A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/SSLSecurity.swift; sourceTree = "<group>"; };
 		A894C44780420084873F1F285711DCA6 /* Pods-MimicMeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MimicMeTests.modulemap"; sourceTree = "<group>"; };
 		AABA8212C42E1661C4CEBDF48442711E /* Pods-MimicMeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MimicMeUITests-umbrella.h"; sourceTree = "<group>"; };
-		AFADCAE9AA39EF39D510C9C98FF3991C /* Pods_MimicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMeUITests.framework; path = "Pods-MimicMeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1371CE8FABFE615BEE95274BFF894B8 /* Pods-MimicMeTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMeTests-resources.sh"; sourceTree = "<group>"; };
 		B28D24DAA86C1FA1623E909C1DDC85E9 /* Pods-MimicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B41184EB70E3E8FFC15DE8B23A8A68E9 /* Pods-MimicMeTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MimicMeTests-frameworks.sh"; sourceTree = "<group>"; };
+		B58BFABF8ECBA3B52B8FDD6A33DEFAC7 /* PKHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PKHUD-dummy.m"; sourceTree = "<group>"; };
 		BA38A3A4905463D49C1395555A8009A3 /* Pods-MimicMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MimicMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAAA4057EA5E7E1E80EBAF18FAA39B46 /* Starscream-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-umbrella.h"; sourceTree = "<group>"; };
 		C24C08C64DDF5A394266319C51C517FA /* Pods-MimicMeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MimicMeTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C2874B13FD2E7E2D165D999E861A7519 /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression.swift; sourceTree = "<group>"; };
+		C47934FCA9514C7295B80C9043BDC752 /* PKHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PKHUD.xcconfig; sourceTree = "<group>"; };
 		C4E8266205A1EF97AE9B8EC9483CE6B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC8309BC82DD741E168366B5FB5E6FFD /* Pods-MimicMeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MimicMeUITests-dummy.m"; sourceTree = "<group>"; };
-		D81F63893E234525A4008CE1A18359F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D460E752E661C77A9F8A92444E79C9E7 /* Pods_MimicMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MimicMe.framework; path = "Pods-MimicMe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56E63B06B4925334556FBC495BD9A0F /* PKHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUD.swift; path = PKHUD/PKHUD.swift; sourceTree = "<group>"; };
+		DCB2EEF3E41ECF78D3900F26CA1FDFD8 /* FrameView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameView.swift; path = PKHUD/FrameView.swift; sourceTree = "<group>"; };
 		DF12BA0061F1118D48A33A979C8FA3BE /* Pods-MimicMe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MimicMe-acknowledgements.plist"; sourceTree = "<group>"; };
-		E30CD6AEB67F8F272DEAB957F7021909 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		E88609C8DDE55EDE76E019A4CBF5C5BB /* Pods-MimicMe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MimicMe.modulemap"; sourceTree = "<group>"; };
+		EBF8999E6D3602F937F0A148F52D3571 /* WindowRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowRootViewController.swift; path = PKHUD/WindowRootViewController.swift; sourceTree = "<group>"; };
+		F0FA5C38300D5E92D9D8BCBD9974A6FA /* PKHUDAnimating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDAnimating.swift; path = PKHUD/PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F3106EC4C9F7A2EE5A4A764F7F44A024 /* Pods-MimicMeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MimicMeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FDBE11C12C9FAC08B7E50D60103C3C6E /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCED0680EA2AD687F943F580BF252103 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKHUDSquareBaseView.swift; path = PKHUD/PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		FFA0DD4185F4AB58DCDF8D9B82E8276A /* Pods-MimicMeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MimicMeTests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		09097AE0247A71FADE9AE4A13E3E0C55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D074B9127FA5FC2639ADEABB5B3D2A2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21AE786E35A302BC5DEA4E491D178A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A36CED4DBE86F882BBED34930999DEA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		26C0A6F9BD2D454F01DF3B6398D37855 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,11 +174,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7643E8980B1EEEB200C3A688FC0E7E3 /* Frameworks */ = {
+		52D5A70738DCFC4DA3BD45EB5F3235F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9168B887E8B205533D8CF5D9AD601AFB /* Foundation.framework in Frameworks */,
+				1A78AB283D9D26D0C50EA46ECFCB87F6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,14 +187,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE272970E5C8BCDE491BCDE3E174730 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F04194ADA5362404EBFB9A8865F50AF3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68B5FEFC3182ED9114EAA41D63600BD8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,23 +211,67 @@
 			path = "Target Support Files/Pods-MimicMeUITests";
 			sourceTree = "<group>";
 		};
-		3008E48E2340DC1AAE79A0014FCE15B9 /* Products */ = {
+		3CE4A111DBE09399A3489A6243965468 /* PKHUD */ = {
 			isa = PBXGroup;
 			children = (
-				621F8304F1A122126FA1C580E74B6F37 /* Pods_MimicMe.framework */,
-				0EFE84D0B4E66B269BFAF38E0DFB3E86 /* Pods_MimicMeTests.framework */,
-				AFADCAE9AA39EF39D510C9C98FF3991C /* Pods_MimicMeUITests.framework */,
-				FDBE11C12C9FAC08B7E50D60103C3C6E /* Starscream.framework */,
+				DCB2EEF3E41ECF78D3900F26CA1FDFD8 /* FrameView.swift */,
+				06DAA47BF78C744558A4AE50EA2185D3 /* HUD.swift */,
+				17549C2AFC7B1DE12F1BB6DBEE4DE347 /* PKHUD.h */,
+				D56E63B06B4925334556FBC495BD9A0F /* PKHUD.swift */,
+				F0FA5C38300D5E92D9D8BCBD9974A6FA /* PKHUDAnimating.swift */,
+				941D9AD947C8EE75E149A7B1B4C377D1 /* PKHUDAnimation.swift */,
+				373549DA8BA8B2F7E20D43CF17295034 /* PKHUDAssets.swift */,
+				71D2E757AF76AB8128BAE2182D479262 /* PKHUDErrorView.swift */,
+				0729C8C38C9B59495914ED9D76A7D36A /* PKHUDProgressView.swift */,
+				57464344C8E6AD170F16CEFAC2F1A330 /* PKHUDRotatingImageView.swift */,
+				FCED0680EA2AD687F943F580BF252103 /* PKHUDSquareBaseView.swift */,
+				2F57401E6A05E86516973B3138A2E817 /* PKHUDSuccessView.swift */,
+				362EB6FE6F559BBAA0CCBC07681BFE2E /* PKHUDSystemActivityIndicatorView.swift */,
+				566FC7A6BFB1E2F098231562FED941A1 /* PKHUDTextView.swift */,
+				3082B1BFBBDB5214F1CFC5FD7F3BADFE /* PKHUDWideBaseView.swift */,
+				879AC20747EF60648C2E6B1C8180E6AA /* Window.swift */,
+				EBF8999E6D3602F937F0A148F52D3571 /* WindowRootViewController.swift */,
+				55A02E851BF024FBF3AE435D2457F913 /* Resources */,
+				5A9E7EA02B87EDAD57E33F36582A8601 /* Support Files */,
 			);
-			name = Products;
+			name = PKHUD;
+			path = PKHUD;
 			sourceTree = "<group>";
 		};
-		3472A81D0DB31608B2D83C2463248903 /* Pods */ = {
+		45FD5206AA488FC90EC1E34E76A0CCBC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB62A5E4B3983660FF962BD54E1FC6E7 /* Starscream */,
+				78726342A8A35973EF0C02307E3A967D /* Info.plist */,
+				993DF20586CEA70D9B097DAF5764ACC5 /* Starscream.modulemap */,
+				8180D5845D89250F2FC0ECA657CB784A /* Starscream.xcconfig */,
+				44B29E66B833DA6B8C54D4E157FA932D /* Starscream-dummy.m */,
+				0CF27280F80B0A55F99FC330E4FD4FD3 /* Starscream-prefix.pch */,
+				BAAA4057EA5E7E1E80EBAF18FAA39B46 /* Starscream-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Starscream";
+			sourceTree = "<group>";
+		};
+		55A02E851BF024FBF3AE435D2457F913 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42F5F85ADB4231216C702AA09AC2868A /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5A9E7EA02B87EDAD57E33F36582A8601 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				873C9364A415788C48BB352A8D8D824F /* Info.plist */,
+				43A62DE8CB95762E5DD3757D19B0A18B /* PKHUD.modulemap */,
+				C47934FCA9514C7295B80C9043BDC752 /* PKHUD.xcconfig */,
+				B58BFABF8ECBA3B52B8FDD6A33DEFAC7 /* PKHUD-dummy.m */,
+				456BEF84B40AC002B35060FE9DE674F5 /* PKHUD-prefix.pch */,
+				1D7DB287959D71B879BF04B56E520877 /* PKHUD-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PKHUD";
 			sourceTree = "<group>";
 		};
 		5ABE1D3F2FA99DB23CC94B998FA6D99B /* Pods-MimicMeTests */ = {
@@ -187,13 +292,46 @@
 			path = "Target Support Files/Pods-MimicMeTests";
 			sourceTree = "<group>";
 		};
+		7028F1AFBD6F3F86082536FDCBF5EAB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38A78AFD09B3C8B0AD993CF6AC8953A0 /* PKHUD.framework */,
+				D460E752E661C77A9F8A92444E79C9E7 /* Pods_MimicMe.framework */,
+				98DA9595643B1B389A59D0EDA578905D /* Pods_MimicMeTests.framework */,
+				2929573B5D9452FDA4D7F49FC6364965 /* Pods_MimicMeUITests.framework */,
+				263A0AA4DDDFF3B780AB763B13F6ACF0 /* Starscream.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74125DC3536895866F2D22D80C732A01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CE4A111DBE09399A3489A6243965468 /* PKHUD */,
+				78572BE72D868B7505DD72B30A9FC45B /* Starscream */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78572BE72D868B7505DD72B30A9FC45B /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				C2874B13FD2E7E2D165D999E861A7519 /* Compression.swift */,
+				546B1E1065C547E4D3FD9262F0C3525A /* SSLSecurity.swift */,
+				6ED6FAF1E1EE6BA0CE65C36AAB7D6057 /* WebSocket.swift */,
+				45FD5206AA488FC90EC1E34E76A0CCBC /* Support Files */,
+			);
+			name = Starscream;
+			path = Starscream;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				3472A81D0DB31608B2D83C2463248903 /* Pods */,
-				3008E48E2340DC1AAE79A0014FCE15B9 /* Products */,
+				74125DC3536895866F2D22D80C732A01 /* Pods */,
+				7028F1AFBD6F3F86082536FDCBF5EAB7 /* Products */,
 				840D5BCB17DA12A53155F0D093D67522 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -234,18 +372,6 @@
 			path = "Target Support Files/Pods-MimicMe";
 			sourceTree = "<group>";
 		};
-		CB62A5E4B3983660FF962BD54E1FC6E7 /* Starscream */ = {
-			isa = PBXGroup;
-			children = (
-				8A04D8C3C1516E1A02A46FCEB72236FA /* Compression.swift */,
-				A55365038245EB43AE2A59C80C01FD23 /* SSLSecurity.swift */,
-				3BF79A3A1C6FEF108CF16DE0537B0431 /* WebSocket.swift */,
-				E54986408F60ECB036498154E2A5488B /* Support Files */,
-			);
-			name = Starscream;
-			path = Starscream;
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,36 +380,31 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E54986408F60ECB036498154E2A5488B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D81F63893E234525A4008CE1A18359F7 /* Info.plist */,
-				24CD1CF8C67430D7697078621E8DFD65 /* Starscream.modulemap */,
-				3A89F29E62024F23802960B4656EAB90 /* Starscream.xcconfig */,
-				1661B72F0A274473D9147AAE8A3E06F1 /* Starscream-dummy.m */,
-				E30CD6AEB67F8F272DEAB957F7021909 /* Starscream-prefix.pch */,
-				9D996E17FD79A681D5829532F50CF07C /* Starscream-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Starscream";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		73D6678CD024E4B5058ECC9A2A78AC1D /* Headers */ = {
+		CEEFB59308D9874EDAA446AD0659FA29 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2708BB6A16A16FA5E74E6F5FBC4020F /* Starscream-umbrella.h in Headers */,
+				1929F91EB38B923FBFA0B2F53C0C4877 /* PKHUD-umbrella.h in Headers */,
+				2DCA4225866D2445C444325589BD9744 /* PKHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E62684A757D916E171173CF660A1CB14 /* Headers */ = {
+		EC47EA2332E252A42A429ACBC668C161 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCA0CE4E0B4636246EFC342DDFE46F2D /* Pods-MimicMe-umbrella.h in Headers */,
+				D0013C2FA44653288638A1DCF5C862AC /* Starscream-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFB634CDDF2F27AFFCFFF256686FA8A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D7734A1CEB0C3EF2B9606318720704 /* Pods-MimicMe-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,24 +442,7 @@
 			);
 			name = "Pods-MimicMeTests";
 			productName = "Pods-MimicMeTests";
-			productReference = 0EFE84D0B4E66B269BFAF38E0DFB3E86 /* Pods_MimicMeTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		108ACB5E069CF1660401ED5D7682186B /* Starscream */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99E20CE85076FEC6E365C7FBF12E8035 /* Build configuration list for PBXNativeTarget "Starscream" */;
-			buildPhases = (
-				24D66995734BCE8AF3B3540AED34522F /* Sources */,
-				B7643E8980B1EEEB200C3A688FC0E7E3 /* Frameworks */,
-				73D6678CD024E4B5058ECC9A2A78AC1D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Starscream;
-			productName = Starscream;
-			productReference = FDBE11C12C9FAC08B7E50D60103C3C6E /* Starscream.framework */;
+			productReference = 98DA9595643B1B389A59D0EDA578905D /* Pods_MimicMeTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		274F0495E1590A626C817AC027B978A8 /* Pods-MimicMeUITests */ = {
@@ -356,25 +460,61 @@
 			);
 			name = "Pods-MimicMeUITests";
 			productName = "Pods-MimicMeUITests";
-			productReference = AFADCAE9AA39EF39D510C9C98FF3991C /* Pods_MimicMeUITests.framework */;
+			productReference = 2929573B5D9452FDA4D7F49FC6364965 /* Pods_MimicMeUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6E29A49F68143039080284A631D85221 /* Pods-MimicMe */ = {
+		2F7E1133F270B33E44AE398CE7F9A241 /* Starscream */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AA5E9D890D2DE49D105A3A04E3D0DEA /* Build configuration list for PBXNativeTarget "Pods-MimicMe" */;
+			buildConfigurationList = 1EC0E267EA4AE8BDFEFB7FCAC80A4ADD /* Build configuration list for PBXNativeTarget "Starscream" */;
 			buildPhases = (
-				C37E125ADFF556EC88F279D5D3FDFB0E /* Sources */,
-				F04194ADA5362404EBFB9A8865F50AF3 /* Frameworks */,
-				E62684A757D916E171173CF660A1CB14 /* Headers */,
+				9328C290BA4BC2589825E7CACA60A38F /* Sources */,
+				21AE786E35A302BC5DEA4E491D178A3E /* Frameworks */,
+				EC47EA2332E252A42A429ACBC668C161 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DD4264B1CDF83472AF8D0EDBE58741B4 /* PBXTargetDependency */,
+			);
+			name = Starscream;
+			productName = Starscream;
+			productReference = 263A0AA4DDDFF3B780AB763B13F6ACF0 /* Starscream.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D2F8E6AD10AB05CF90D13FCA1F779DFD /* Pods-MimicMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C5A8792278A5DA88D086027DC6CD066 /* Build configuration list for PBXNativeTarget "Pods-MimicMe" */;
+			buildPhases = (
+				FE043FD77CCA18E56262077AACCE193F /* Sources */,
+				52D5A70738DCFC4DA3BD45EB5F3235F3 /* Frameworks */,
+				EFB634CDDF2F27AFFCFFF256686FA8A6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81258465CFCF628444E3C056E40CDDD2 /* PBXTargetDependency */,
+				EB68D90263154182C5A843B1E41D1C99 /* PBXTargetDependency */,
 			);
 			name = "Pods-MimicMe";
 			productName = "Pods-MimicMe";
-			productReference = 621F8304F1A122126FA1C580E74B6F37 /* Pods_MimicMe.framework */;
+			productReference = D460E752E661C77A9F8A92444E79C9E7 /* Pods_MimicMe.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D7A75F149082140741FC1E0B5B2863C8 /* PKHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9306D49004A2A30AC52787A7B1C9C87A /* Build configuration list for PBXNativeTarget "PKHUD" */;
+			buildPhases = (
+				64C2A244B5B13B1D5FBAAA42BFE1724F /* Sources */,
+				09097AE0247A71FADE9AE4A13E3E0C55 /* Frameworks */,
+				CEEFB59308D9874EDAA446AD0659FA29 /* Headers */,
+				A6E5CC81DF41A96AA2FC861070D8146A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKHUD;
+			productName = PKHUD;
+			productReference = 38A78AFD09B3C8B0AD993CF6AC8953A0 /* PKHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -394,30 +534,31 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 3008E48E2340DC1AAE79A0014FCE15B9 /* Products */;
+			productRefGroup = 7028F1AFBD6F3F86082536FDCBF5EAB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E29A49F68143039080284A631D85221 /* Pods-MimicMe */,
+				D7A75F149082140741FC1E0B5B2863C8 /* PKHUD */,
+				D2F8E6AD10AB05CF90D13FCA1F779DFD /* Pods-MimicMe */,
 				01ED9F35C8B1A3E97FBCA4AE3E6C1E52 /* Pods-MimicMeTests */,
 				274F0495E1590A626C817AC027B978A8 /* Pods-MimicMeUITests */,
-				108ACB5E069CF1660401ED5D7682186B /* Starscream */,
+				2F7E1133F270B33E44AE398CE7F9A241 /* Starscream */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		24D66995734BCE8AF3B3540AED34522F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		A6E5CC81DF41A96AA2FC861070D8146A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94A1D5FBCD84A9270FE9C1E1F948B18 /* Compression.swift in Sources */,
-				B4AA360A8830F57695E217BB38A0B958 /* SSLSecurity.swift in Sources */,
-				981AE8645E54ACC64DF6172C1AB50F50 /* Starscream-dummy.m in Sources */,
-				2E74D505D53534F25016F2BC02D6084C /* WebSocket.swift in Sources */,
+				34D8AB5C8FA400C58D7CA084633DF744 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		3FC1A6E7D6E3306A9440F7C7E555ABE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,11 +567,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C37E125ADFF556EC88F279D5D3FDFB0E /* Sources */ = {
+		64C2A244B5B13B1D5FBAAA42BFE1724F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCBE0F20C646FFAD9B6BD06E9FE5D166 /* Pods-MimicMe-dummy.m in Sources */,
+				1F34910B27A3B86966E07898A2B70AE6 /* FrameView.swift in Sources */,
+				BA1B53BE85DE9BD789FE1C32FBA8C752 /* HUD.swift in Sources */,
+				E57944FDD00D7F5F2674D4D52E0F52BA /* PKHUD-dummy.m in Sources */,
+				BF541FB658B81D55E6A960701BF0619E /* PKHUD.swift in Sources */,
+				B1DC643D39F725A5C89C8195B5C10A09 /* PKHUDAnimating.swift in Sources */,
+				3470186F176465D3CA04711D0D82DF38 /* PKHUDAnimation.swift in Sources */,
+				869B25CDDA4D1BDA81A495A23D43E108 /* PKHUDAssets.swift in Sources */,
+				17E7E62102D200AFE11B049F570C9397 /* PKHUDErrorView.swift in Sources */,
+				766750E7B98FF8495403D0C7B5064D6C /* PKHUDProgressView.swift in Sources */,
+				AEA27A6C1523E5B1A1B3B74CA02FB67D /* PKHUDRotatingImageView.swift in Sources */,
+				7F09171ED8899C35E45511452323B3DF /* PKHUDSquareBaseView.swift in Sources */,
+				A5A9F17A94A6CC0F7D4E9DE0FCAFE5AB /* PKHUDSuccessView.swift in Sources */,
+				89C4ADD534D41DF5442F67D799B8E12B /* PKHUDSystemActivityIndicatorView.swift in Sources */,
+				A7BA7C4E4C047A5698A68CA76A453605 /* PKHUDTextView.swift in Sources */,
+				D0F542D62E2AA523E0A3D28DC85D2012 /* PKHUDWideBaseView.swift in Sources */,
+				F61C2235825FE532417891978344385E /* Window.swift in Sources */,
+				F4C22A07683E879CB3ECF7D6A73F667E /* WindowRootViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9328C290BA4BC2589825E7CACA60A38F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C131CDCE54A59BF8CF59A9BF2DA3FEC6 /* Compression.swift in Sources */,
+				578DB068008A1502542C957AF43E22A9 /* SSLSecurity.swift in Sources */,
+				DCF29808A708F2F60B78E663C64EC007 /* Starscream-dummy.m in Sources */,
+				5BF57CF13BBE283BFACD532AABC65F4E /* WebSocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,63 +610,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE043FD77CCA18E56262077AACCE193F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E43D2B5F39EBCC2DE6D16862F6A5AA64 /* Pods-MimicMe-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		2F1F699513B2C4719B4C9912D741F6DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MimicMe";
-			target = 6E29A49F68143039080284A631D85221 /* Pods-MimicMe */;
+			target = D2F8E6AD10AB05CF90D13FCA1F779DFD /* Pods-MimicMe */;
 			targetProxy = 1859ACE864900696A8160548173FB17D /* PBXContainerItemProxy */;
 		};
 		354A17B9E8C587AEA2A40F92D3840600 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MimicMe";
-			target = 6E29A49F68143039080284A631D85221 /* Pods-MimicMe */;
+			target = D2F8E6AD10AB05CF90D13FCA1F779DFD /* Pods-MimicMe */;
 			targetProxy = FDBBB56E06AC917CAA5DCEDAA958F569 /* PBXContainerItemProxy */;
 		};
-		DD4264B1CDF83472AF8D0EDBE58741B4 /* PBXTargetDependency */ = {
+		81258465CFCF628444E3C056E40CDDD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PKHUD;
+			target = D7A75F149082140741FC1E0B5B2863C8 /* PKHUD */;
+			targetProxy = A4549B062D68F16F6D426F3202B7465A /* PBXContainerItemProxy */;
+		};
+		EB68D90263154182C5A843B1E41D1C99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Starscream;
-			target = 108ACB5E069CF1660401ED5D7682186B /* Starscream */;
-			targetProxy = 72F35A9C34051EF4246C0D83DB05808B /* PBXContainerItemProxy */;
+			target = 2F7E1133F270B33E44AE398CE7F9A241 /* Starscream */;
+			targetProxy = 88FD535F9F205B8B44CC91D7572EA7C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		02BA83266269E8AB0470470D18CAD8F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A89F29E62024F23802960B4656EAB90 /* Starscream.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
-				PRODUCT_MODULE_NAME = Starscream;
-				PRODUCT_NAME = Starscream;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		03FD26BE06A3A1E6138D63772CDF7BC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B28D24DAA86C1FA1623E909C1DDC85E9 /* Pods-MimicMeTests.release.xcconfig */;
@@ -534,9 +683,9 @@
 			};
 			name = Release;
 		};
-		0E4B72050A4815262F96E2BD7DC9024F /* Release */ = {
+		42E2109CE38D70CB33EFB4D063C8A258 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A49472BDFE09AA768AB10445014D8F9A /* Pods-MimicMe.release.xcconfig */;
+			baseConfigurationReference = 477C318012025058106FE4B2770491C8 /* Pods-MimicMe.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -562,13 +711,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		721C57B8AF7CF3244A5A6470584020C4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -605,9 +754,9 @@
 			};
 			name = Release;
 		};
-		93F0225027FA948580F953FB119077E3 /* Debug */ = {
+		76238DB242C6BAD7F2888D9EAA7AB5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A89F29E62024F23802960B4656EAB90 /* Starscream.xcconfig */;
+			baseConfigurationReference = 8180D5845D89250F2FC0ECA657CB784A /* Starscream.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -637,6 +786,75 @@
 			};
 			name = Debug;
 		};
+		7A0418D048AE2D13C8C6F2FF99453A33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47934FCA9514C7295B80C9043BDC752 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PKHUD/PKHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PKHUD/PKHUD.modulemap";
+				PRODUCT_MODULE_NAME = PKHUD;
+				PRODUCT_NAME = PKHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		805532D04C6078896C7D0931F027F905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49472BDFE09AA768AB10445014D8F9A /* Pods-MimicMe.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MimicMe/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MimicMe/Pods-MimicMe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9A57648B96555E508EF26E7025E8AF02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA38A3A4905463D49C1395555A8009A3 /* Pods-MimicMeTests.debug.xcconfig */;
@@ -665,6 +883,38 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0D2777ECCE2880AA14D5D07302BBD5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47934FCA9514C7295B80C9043BDC752 /* PKHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PKHUD/PKHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PKHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PKHUD/PKHUD.modulemap";
+				PRODUCT_MODULE_NAME = PKHUD;
+				PRODUCT_NAME = PKHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -792,42 +1042,6 @@
 			};
 			name = Debug;
 		};
-		E43C999EFE74AB5C3A6EE3C7B162C568 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 477C318012025058106FE4B2770491C8 /* Pods-MimicMe.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MimicMe/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MimicMe/Pods-MimicMe.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		EB8FE557DB11C308A51AD300719DF648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D34F433CBA7295B307476F8077188B3 /* Pods-MimicMeUITests.debug.xcconfig */;
@@ -862,9 +1076,51 @@
 			};
 			name = Debug;
 		};
+		FADC05D1E8108CBDF428D8A40F43076A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8180D5845D89250F2FC0ECA657CB784A /* Starscream.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Starscream/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Starscream/Starscream.modulemap";
+				PRODUCT_MODULE_NAME = Starscream;
+				PRODUCT_NAME = Starscream;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1EC0E267EA4AE8BDFEFB7FCAC80A4ADD /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76238DB242C6BAD7F2888D9EAA7AB5F6 /* Debug */,
+				FADC05D1E8108CBDF428D8A40F43076A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -883,20 +1139,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AA5E9D890D2DE49D105A3A04E3D0DEA /* Build configuration list for PBXNativeTarget "Pods-MimicMe" */ = {
+		6C5A8792278A5DA88D086027DC6CD066 /* Build configuration list for PBXNativeTarget "Pods-MimicMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E43C999EFE74AB5C3A6EE3C7B162C568 /* Debug */,
-				0E4B72050A4815262F96E2BD7DC9024F /* Release */,
+				42E2109CE38D70CB33EFB4D063C8A258 /* Debug */,
+				805532D04C6078896C7D0931F027F905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99E20CE85076FEC6E365C7FBF12E8035 /* Build configuration list for PBXNativeTarget "Starscream" */ = {
+		9306D49004A2A30AC52787A7B1C9C87A /* Build configuration list for PBXNativeTarget "PKHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				93F0225027FA948580F953FB119077E3 /* Debug */,
-				02BA83266269E8AB0470470D18CAD8F7 /* Release */,
+				C0D2777ECCE2880AA14D5D07302BBD5F /* Debug */,
+				7A0418D048AE2D13C8C6F2FF99453A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
