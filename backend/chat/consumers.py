@@ -44,6 +44,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     # Called when a message is sent from client to the server
     async def receive_json(self, content):
         # Get command to select routine
+        print(content)
         command = content.get("command", None)
 
         if command == "join":
@@ -117,8 +118,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             response.append((len(msg), msg))
             totallen += len(msg)
 
+
+
         #sort responses based on length
-        response.sort()
+        response.sort(reverse=True)
         i = 1
         while totallen > 0:
             msg = response.pop()
