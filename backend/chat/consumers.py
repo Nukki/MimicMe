@@ -74,7 +74,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             return
 
         user = User.objects.get(username=uname)
-
+        self.user = user
         if user.id is not uid:
             print("User id not found")
             await self.send_json({
@@ -99,6 +99,15 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
     async def send_room(self, roomId, message, username):
         room = Room.objects.get(pk=roomId)
 
+
+        await self.send_json(
+            {
+                # "msg_type": settings.MSG_TYPE_MESSAGE,
+                "room": roomId,
+                "username": username,
+                "message": message,
+            },
+        )
         # send message to room
         await self.channel_layer.group_send(
             room.group_name,
@@ -125,9 +134,16 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         i = 1
         while totallen > 0:
             msg = response.pop()
-            #delay(msg[0])
-            #await asyncio.sleep(msg[0]*.05)
+            await asyncio.sleep(msg[0]*.05)
             print(msg)
+            await self.send_json(
+                {
+                    # "msg_type": settings.MSG_TYPE_MESSAGE,
+                    "room": roomId,
+                    "username": "bot" + str(i),
+                    "message": msg[1],
+                },
+            )
             await self.channel_layer.group_send(
                 room.group_name,
                 {
@@ -176,6 +192,9 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # Called when someone has messaged our chat.
 
         # Send a message down to the client
+        if event["username"] == self.user.username:
+            return
+
         await self.send_json(
             {
                 # "msg_type": settings.MSG_TYPE_MESSAGE,
