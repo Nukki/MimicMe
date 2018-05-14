@@ -126,7 +126,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         while totallen > 0:
             msg = response.pop()
             #delay(msg[0])
-            await asyncio.sleep(msg[0]*.2)
+            #await asyncio.sleep(msg[0]*.05)
             print(msg)
             await self.channel_layer.group_send(
                 room.group_name,
