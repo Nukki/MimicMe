@@ -29,15 +29,6 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
     # Called upon ws://chat/stream connection
     async def connect(self):
-        # print(self.scope["user"])
-        # if self.scope["user"].is_anonymous:
-        #     print("user not logged")
-        #     # reject if user isnt logged in
-        #     self.close()
-        # else:
-        #     print("user found")
-        #     # accept
-        #     self.accept()
         await self.accept()
 
 
@@ -100,14 +91,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         room = Room.objects.get(pk=roomId)
 
 
-        await self.send_json(
-            {
-                # "msg_type": settings.MSG_TYPE_MESSAGE,
-                "room": roomId,
-                "username": username,
-                "message": message,
-            },
-        )
+        await self.self_send(roomId, message, username)
         # send message to room
         await self.channel_layer.group_send(
             room.group_name,
@@ -116,6 +100,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             "room_id" : roomId,
             "username": username,
             "message" : message,
+            "origin"  : username,
             }
         );
 
@@ -136,14 +121,8 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             msg = response.pop()
             await asyncio.sleep(msg[0]*.05)
             print(msg)
-            await self.send_json(
-                {
-                    # "msg_type": settings.MSG_TYPE_MESSAGE,
-                    "room": roomId,
-                    "username": "bot" + str(i),
-                    "message": msg[1],
-                },
-            )
+
+            await self.self_send(roomId, msg[1], "bot"+str(i))
             await self.channel_layer.group_send(
                 room.group_name,
                 {
@@ -151,14 +130,22 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 "room_id" : roomId,
                 "username": "bot" + str(i),
                 "message" : msg[1],
+                "origin"  : username,
                 }
             );
             i +=1
             totallen -= msg[0]
 
 
-
-
+    async def self_send(self, roomId, username, message):
+        await self.send_json(
+            {
+                # "msg_type": settings.MSG_TYPE_MESSAGE,
+                "room": roomId,
+                "username": username,
+                "message": message,
+            },
+        )
 
             ##### Handlers for messages sent over the channel layer
 
@@ -192,14 +179,15 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         # Called when someone has messaged our chat.
 
         # Send a message down to the client
-        if event["username"] == self.user.username:
+        if event["origin"] == self.user.username:
             return
-
-        await self.send_json(
-            {
-                # "msg_type": settings.MSG_TYPE_MESSAGE,
-                "room": event["room_id"],
-                "username": event["username"],
-                "message": event["message"],
-            },
-        )
+        else:
+            print(event["message"])
+            await self.send_json(
+                {
+                    # "msg_type": settings.MSG_TYPE_MESSAGE,
+                    "room": event["room_id"],
+                    "username": event["username"],
+                    "message": event["message"],
+                },
+            )

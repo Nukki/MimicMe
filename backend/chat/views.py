@@ -39,9 +39,7 @@ def index(request):
 @csrf_exempt
 def create(request):
     if request.method == "GET":
-        body_unicode = request.body.decode('utf-8')
-        body = json.loads(body_unicode)
-
+    
         bots = [{"name": "Tensorflow-dataset2", "id": "0"},
                 {"name": "Tensorflow-dataset1", "id": "1"}]
         data = json.dumps(bots)
