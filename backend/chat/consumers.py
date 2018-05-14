@@ -5,10 +5,6 @@ import numpy as np
 import pickle
 import tensorflow as tf
 from .utils import *
-# issue with peramertizing Model file will port as two seperate files
-# we can get around the inconveneince of this by having a dict of which module
-# to select
-
 
 import asyncio
 import os
@@ -23,7 +19,8 @@ from channels.generic.websocket import AsyncJsonWebsocketConsumer
 #TODO Look into options
 
 # Consumer class is instantiated for every websocket connection
-# 3 main functions (connect, receive_json, disconnect)
+# Consumers connect to other consumers through the group_add over the
+# Channel layer
 class ChatConsumer(AsyncJsonWebsocketConsumer):
 
 
@@ -33,6 +30,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
 
     # Called when a message is sent from client to the server
+    #
     async def receive_json(self, content):
         # Get command to select routine
         print(content)
@@ -59,7 +57,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         if not room:
             print("Room not found")
             await self.send_json({
-                "status" : "Failed"
+                "status": "Failed"
             })
             await self.close()
             return
@@ -69,7 +67,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         if user.id is not uid:
             print("User id not found")
             await self.send_json({
-                "status" : "Failed"
+                "status": "Failed"
             })
             await self.close()
             return
@@ -97,10 +95,10 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             room.group_name,
             {
             "type": "chat.message",
-            "room_id" : roomId,
+            "room_id": roomId,
             "username": username,
-            "message" : message,
-            "origin"  : username,
+            "message": message,
+            "origin" : username,
             }
         );
 
@@ -122,15 +120,15 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
             await asyncio.sleep(msg[0]*.05)
             print(msg)
 
-            await self.self_send(roomId, msg[1], "bot"+str(i))
+            await self.self_send(roomId, "bot"+str(i), msg[1])
             await self.channel_layer.group_send(
                 room.group_name,
                 {
                 "type": "chat.message",
-                "room_id" : roomId,
+                "room_id": roomId,
                 "username": "bot" + str(i),
-                "message" : msg[1],
-                "origin"  : username,
+                "message": msg[1],
+                "origin": username,
                 }
             );
             i +=1
