@@ -48,6 +48,12 @@ def register(request):
 			data = json.dumps(res)
 			return HttpResponseBadRequest(data, content_type='application/json') # error, send 400 status
 
+		elif User.objects.filter(email=body['name']).exists():
+			res = {	'response' : 'Username is already in use' }
+			data = json.dumps(res)
+			return HttpResponseBadRequest(data, content_type='application/json') # error, send 400 status
+
+
 		user = User.objects.create_user(
 			body['name'],
 			body['email'],
