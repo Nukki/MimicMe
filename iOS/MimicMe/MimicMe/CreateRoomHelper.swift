@@ -67,8 +67,8 @@ extension CreateRoomViewController {
     
     
     func getBotListFromServer() -> [Bot] {
+        let bots = [Bot]()
         
-        var bots = [Bot]()
         // make a header for request
         guard let url = URL(string: "http://159.65.38.56:8000/chat/create") else { return []}
         var request = URLRequest(url: url)
@@ -92,9 +92,10 @@ extension CreateRoomViewController {
                 if resp.statusCode == 200 {
                     guard let data = data else {return}
                     do {
-                        let responseBots = try JSONDecoder().decode([Bot].self, from: data) // decode as array of bots
-                        print(responseBots)
-                        bots = responseBots
+                        self.bots = try JSONDecoder().decode([Bot].self, from: data) // decode as array of bots
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData() // for bots to be displayed in the table
+                        }
                     } catch { print("Could not parse bot JSON")}
                 }
             } // end outer if

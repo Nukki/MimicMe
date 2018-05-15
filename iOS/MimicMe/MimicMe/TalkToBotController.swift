@@ -61,6 +61,10 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
     func sendTapped() {
         let messageContent = typingField.text
         
+        if !socket.isConnected {
+            displayAlertMessage("Disconnected from chat", actionName: "Reconnect")
+            return
+        }
         // write to socket
         let myUsername: String = UserDefaults.standard.string(forKey: "uname")!
         let messageDictionary : [String: String] = ["command": "send", "message": messageContent!, "username" : myUsername, "room": String(room!.id) ]
@@ -69,9 +73,11 @@ class TalkToBotController: UICollectionViewController, UICollectionViewDelegateF
             let jsonData =  try JSONEncoder().encode(messageDictionary)
             let jsonString = String(data: jsonData, encoding: .utf8)!
             socket.write(string: jsonString )
+//            saveMessage(text: messageContent!, isSender: true, room: room!, user: myUsername)
         } catch let err {
             print(err)
         }
+        collectionView?.reloadData()
         typingField.resignFirstResponder()
         typingField.text = nil           // clear text field
     }

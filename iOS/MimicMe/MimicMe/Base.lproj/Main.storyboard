@@ -45,7 +45,7 @@
                                     <action selector="logoutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0we-f3-OyB"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-w4-XHl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fdp-w4-XHl">
                                 <rect key="frame" x="41" y="180" width="293" height="449"/>
                                 <color key="backgroundColor" red="0.46274509800000002" green="0.28627450980000002" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,7 +57,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="55" id="JFK-6I-cDw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="tableCell" rowHeight="55" id="JFK-6I-cDw">
                                         <rect key="frame" x="0.0" y="28" width="293" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JFK-6I-cDw" id="RIM-Te-kHg">
@@ -76,7 +76,7 @@
                                                 <constraint firstItem="lnI-ez-67b" firstAttribute="centerY" secondItem="RIM-Te-kHg" secondAttribute="centerY" id="Ub5-o9-pVH"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -383,7 +383,7 @@
                                     <segue destination="39y-jc-apV" kind="show" identifier="noAccount" id="sul-h4-MaW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-eS-N1g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-eS-N1g">
                                 <rect key="frame" x="37.5" y="50" width="300" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="qdg-Yv-45N"/>
@@ -614,9 +614,9 @@
     </scenes>
     <resources>
         <image name="email2" width="32" height="32"/>
+        <image name="l" width="600" height="242"/>
         <image name="name" width="32" height="32"/>
         <image name="pass2" width="32" height="32"/>
-        <image name="testerLogo" width="600" height="226"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -19,9 +19,6 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        HUD.show(.progress)
-        bots = getBotListFromServer()
-        bots = [Bot(name: "Tensorflow-dataset2", id: "0"), Bot(name: "Tensorflow-dataset1", id: "1")]
         roomNameTextField.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "tableCell")
         tableView.delegate = self
@@ -31,6 +28,12 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate, UITableVi
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
         navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        HUD.show(.progress)
+        bots = getBotListFromServer()
+//        tableView.reloadData()
     }
     
     // Called when 'Done' key pressed (keyboard disappears)
@@ -62,21 +65,18 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate, UITableVi
         return cell
     }
     
+    // on table cell click selects ans unselects bots to be added to the room
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("-------------------------------------------")
         let bot = bots[indexPath.item] as Bot
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
             // row unselected
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
-            chosenBots.remove(at: chosenBots.index(of: bot.id)!)
-            print("unselected bot id ", bot.id)
+            chosenBots.remove(at: chosenBots.index(of: bot.id)!) // remove bot from list
         } else {
             // row selected
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
             chosenBots.append(bot.id) // add the id to chosen bot list
-            print("selected bot id ", bot.id)
         }
-        print("Current chosen bot list: ", chosenBots)
     }
     
     // ********** Button Actions ***********************

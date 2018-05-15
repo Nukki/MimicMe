@@ -16,7 +16,8 @@ import UIKit
 class RootHighjackController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
+        view.backgroundColor = UIColor.init(red: 97.0/255, green: 50.0/255, blue: 153.0/255, alpha: 1.0)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func showLoginController() {

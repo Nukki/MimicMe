@@ -31,11 +31,12 @@ extension TalkToBotController: WebSocketDelegate {
         print("----------------------- disconnected ------------------")
         if let er: Starscream.WSError = error as? WSError {
             print("Socket disconnected with: ", er.code)
-            if (er.code == 1011) {
+            if (er.code != 1000) {
                 print(er)
                 displayAlertMessage("Disconnected from chat", actionName: "Reconnect")
             }
         } else {
+            displayAlertMessage("Disconnected from chat", actionName: "Reconnect")
             print("Error: ", error as Any);
         }
     }
@@ -43,14 +44,14 @@ extension TalkToBotController: WebSocketDelegate {
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         let myUsername: String = UserDefaults.standard.string(forKey: "uname")!
         let incomingMsg = convertToDictionary(text: text)
-        print("incoming json: ", incomingMsg ?? "no json")
+//        print("incoming json: ", incomingMsg ?? "no json")
         if (incomingMsg != nil && incomingMsg!["message"] != nil) {
             let u: String = incomingMsg!["username"] as! String
-            if (u == myUsername) {
-                saveMessage(text: incomingMsg!["message"] as! String, isSender: true, room: room!, user: u)
+            if (u != myUsername) {
+                saveMessage(text: incomingMsg!["message"] as! String, isSender: false, room: room!, user: u)
             }
             else {
-                saveMessage(text: incomingMsg!["message"] as! String, isSender: false, room: room!, user: u)
+                saveMessage(text: incomingMsg!["message"] as! String, isSender: true, room: room!, user: u)
             }
         }
         else {
@@ -60,6 +61,7 @@ extension TalkToBotController: WebSocketDelegate {
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         // not using for now
+        print("RECEIVED DATA")
     }
     
     // Saves message to phone memory
