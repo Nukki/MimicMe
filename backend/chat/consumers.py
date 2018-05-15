@@ -89,7 +89,7 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         room = Room.objects.get(pk=roomId)
 
 
-        await self.self_send(roomId, message, username)
+        await self.self_send(roomId, username, message)
         # send message to room
         await self.channel_layer.group_send(
             room.group_name,
