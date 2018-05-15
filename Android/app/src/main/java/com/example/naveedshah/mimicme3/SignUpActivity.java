@@ -109,9 +109,9 @@ public class SignUpActivity extends AppCompatActivity {
                     HttpURLConnection conn = null;
                     try {
 
-                        // connect to backend server to register user
-                        URL url = new URL("http://10.0.2.2:8000/register");
+                        String urlString = "http://159.65.38.56:8000/user/register";
 
+                        URL url = new URL(urlString);
 
                         conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
@@ -143,22 +143,19 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                         br.close();
 
-                        if (sb.toString().contains("Email already in use")) {
 
+                        if (conn.getResponseCode() == 400) {
+                            Log.d("from server:","400");
                             Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.sign_up_view),"Email already registered. Please Login",1000);
+                            mySnackbar = Snackbar.make(findViewById(R.id.sign_up_view),"Error. Please try again. Email may already in use.",3000);
+                            mySnackbar.show();
+                        } else if (conn.getResponseCode() == 201) {
+                            Log.d("from server:","201");
+                            Snackbar mySnackbar;
+                            mySnackbar = Snackbar.make(findViewById(R.id.sign_up_view),"Success! Please Log in.",3000);
                             mySnackbar.show();
 
                             Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
-                            startActivity(myIntent);
-                        }
-                            else if (sb.toString().contains("New user created")) {
-
-                            Snackbar mySnackbar;
-                            mySnackbar = Snackbar.make(findViewById(R.id.sign_up_view),"Success!",1000);
-                            mySnackbar.show();
-
-                            Intent myIntent = new Intent(SignUpActivity.this, RecyclerActivity.class);
                             startActivity(myIntent);
                         }
 

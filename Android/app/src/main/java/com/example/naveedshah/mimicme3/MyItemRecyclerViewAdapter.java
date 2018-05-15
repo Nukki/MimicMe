@@ -1,6 +1,8 @@
 package com.example.naveedshah.mimicme3;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 import com.example.naveedshah.mimicme3.ItemFragment.OnListFragmentInteractionListener;
 
 import com.example.naveedshah.mimicme3.ChatRoomContent.ChatRoom;
 
+import java.net.SocketAddress;
 import java.util.List;
 
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
@@ -31,7 +35,6 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         return new ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
@@ -44,10 +47,19 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
                 Log.i("You clicked on ",  mValues.get(position).toString());
                 Log.i("which is ID number ",mValues.get(position).id.toString());
+
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("room",mValues.get(position).id.toString());
+
+                editor.apply();
+
                 Log.i("IDK?? ",mValues.get(position).content.toString());
 
+//                Intent myIntent = new Intent(v.getContext(), ChatRoomActivity.class);
+//                startActivity(myIntent);
 
-                
+                v.getContext().startActivity(new Intent(v.getContext(),ChatRoomActivity.class));
 
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the

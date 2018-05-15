@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 import java.util.ArrayList;
 import android.view.ViewGroup;
-import com.example.naveedshah.mimicme3.ChatMessage;
 
 
 public class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {

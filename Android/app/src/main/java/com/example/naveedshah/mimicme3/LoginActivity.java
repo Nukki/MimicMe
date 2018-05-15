@@ -1,6 +1,7 @@
 package com.example.naveedshah.mimicme3;
 
 // Libraries and files to import
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,9 +17,14 @@ import java.net.HttpURLConnection;
 import java.io.*;
 import android.util.*;
 import java.net.*;
+import android.preference.*;
+import java.util.Set;
+import android.content.Context;
+
 import android.content.Intent;
 import org.json.*;
 import android.support.design.widget.Snackbar;
+import android.content.SharedPreferences;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -29,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login); // Connect to activity_login.xml
 
@@ -54,8 +61,17 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-    }
 
+        Button buttonOne = (Button) findViewById(R.id.goToSignUp);
+        buttonOne.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+
+    }
 
     private void attemptLogin() {
 
@@ -111,24 +127,10 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        // http://10.0.2.2:8000/user/login
-                        // http://10.0.2.2:8000/user/register
-
                         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
                         wr.writeBytes(jsonObject.toString());
                         wr.flush();
                         wr.close();
-
-                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-
-                        StringBuilder sb = new StringBuilder();
-                        String line;
-
-                        // Obtain and record response from back-end server
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line + "\n");
-                        }
-                        br.close();
 
                         if (conn.getResponseCode() == 500) {
                             Snackbar mySnackbar;
@@ -136,6 +138,33 @@ public class LoginActivity extends AppCompatActivity {
                             mySnackbar.show();
 
                         } else if (conn.getResponseCode() == 200) {
+
+                            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+                            StringBuilder sb = new StringBuilder();
+                            String line;
+
+                            while ((line = br.readLine()) != null) {
+                                sb.append(line + "\n");
+                            }
+                            br.close();
+
+                            try {
+
+                                JSONObject json_obj=new JSONObject(sb.toString());
+                                Integer value1=json_obj.getInt("uid");
+
+                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putInt("uid",value1);
+                                editor.putString("username",name);
+
+                                editor.apply();
+
+                            } catch (JSONException e) {
+                                Log.d("JSON Exception: ", e.toString());
+                            }
+
                             Intent myIntent = new Intent(LoginActivity.this, RecyclerActivity.class);
                             startActivity(myIntent);
                         }

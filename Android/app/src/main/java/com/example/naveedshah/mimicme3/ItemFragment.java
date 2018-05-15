@@ -63,6 +63,7 @@ public class ItemFragment extends ListFragment {
             }
             ChatRoomContent myChatRoomContent = new ChatRoomContent();
 
+            // The Recycler view will contain the list of chat rooms contained in ITEMS.
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(myChatRoomContent.ITEMS, mListener));
         }
         return view;
