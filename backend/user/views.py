@@ -9,12 +9,9 @@ import json                           # Converts to json
 from django.views.decorators.csrf import csrf_exempt
 
 
-
-
-# A simple test function to check GET and POST functionality
 @csrf_exempt
 def index(request):
-
+	"""Ping funciton for server."""
 	if request.method == "POST":
 		res = { 'response': 'POST recieved!' }
 	elif request.method == "GET":
@@ -25,15 +22,15 @@ def index(request):
 	return HttpResponse(data, content_type='application/json')
 
 
-
-
-
-
-
 # Input : name, email, password
 # user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
 @csrf_exempt
 def register(request):
+	"""Handles post for user registration
+
+	POST: Saves a new user with name email and password
+		returns badrequest if email or username is in use
+	"""
 	if request.method == "POST":
 
 		# parse the raw request body from bytes to unicode string
@@ -48,6 +45,11 @@ def register(request):
 			data = json.dumps(res)
 			return HttpResponseBadRequest(data, content_type='application/json') # error, send 400 status
 
+		elif User.objects.filter(email=body['name']).exists():
+			res = {	'response' : 'Username is already in use' }
+			data = json.dumps(res)
+			return HttpResponseBadRequest(data, content_type='application/json') # error, send 400 status
+
 		user = User.objects.create_user(
 			body['name'],
 			body['email'],
@@ -56,7 +58,6 @@ def register(request):
 		res = {	'response' : 'New user created' } #success, send 201 status
 		data = json.dumps(res)
 		return HttpResponse(data, content_type='application/json',status=201, reason='created' )
-
 
 	else :
 		res = { 'response' : 'GET recived when POST was expected' } #error
@@ -68,6 +69,11 @@ def register(request):
 
 @csrf_exempt
 def login(request):
+	"""Handles post for user login
+
+	POST: authenticates request with username and password
+		returns servererror if issue with authentication
+	"""
 	if request.method == "POST":
 
 		# parse the raw request body from bytes to unicode string
