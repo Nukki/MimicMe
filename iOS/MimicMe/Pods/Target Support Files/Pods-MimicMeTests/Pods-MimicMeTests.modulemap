@@ -1,0 +1,6 @@
+framework module Pods_MimicMeTests {
+  umbrella header "Pods-MimicMeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -2,72 +2,74 @@
 //  MainViewController.swift
 //  MimicMe
 //
-//  Created by Full Name on 3/1/18.
+//  Created by Nikki Jack on 3/1/18.
 //  Copyright © 2018 N. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import Starscream
+import CoreData
+import PKHUD
 
-class MainViewController: UIViewController {
+class MainViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var socket = WebSocket(url: URL(string: "http://192.168.0.7:3000/")!)
-//    var socket = WebSocket(url: URL(string: "ws://echo.websocket.org")!)
-//    var socket:WebSocket?
-    
+    @IBOutlet weak var tableView: UITableView!
+    var rooms = [Room]() // data for rooms table
+    var jsonArr: String?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        socket.disableSSLCertValidation = true
-        socket.delegate = self
-        socket.connect()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 55;
         self.navigationController?.isNavigationBarHidden = true
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
-  
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        HUD.show(.progress)
+        rooms = getRoomsFromServer() // get data to fill the table every time the view appears
+        tableView.reloadData()
+    }
     
-//    override func viewDidAppear(_ animated: Bool) {
+    // ******************* TableView setup ******************************
     
-        // if not logged in, go to login/signup (UnknownUser View)
-//        let retrievedUser: String? = KeychainWrapper.standard.string(forKey: "userId")
-//        let retrievedUser = UserDefaults.standard.string(forKey: "ayyy")
-//        if retrievedUser != nil {
-//             print("LOGGED IN")
-//             print("retrieved in main ", retrievedUser!)
-//        }
-//        else {
-//            self.performSegue(withIdentifier: "letmein", sender: self)
-//        }
-//    }
-//
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rooms.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let room = rooms[indexPath.item] as Room
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        cell.backgroundColor = UIColor.init(red: 96.0/255, green: 49.0/255, blue: 152.0/255, alpha: 1.0)
+        cell.textLabel?.text = room.name
+        cell.textLabel?.textColor = UIColor.white
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let layout = UICollectionViewFlowLayout()
+        let controller = TalkToBotController(collectionViewLayout: layout)
+        let room = rooms[indexPath.item] as Room
+        controller.room = room
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // *********************** Buttons Actions ******************************
     
     @IBAction func logoutTapped(_ sender: UIButton) {
-        UserDefaults.standard.removeObject(forKey: "ayyy")
-        print("tapped logout button")
+        UserDefaults.standard.removeObject(forKey: "secret")
         self.dismiss(animated: false, completion: nil)
         self.performSegue(withIdentifier: "letmein", sender: self)
     }
-    
-    
+} // end MainViewController
+
+// struct for parsing JSON to Room
+struct RoomFromJson: Decodable {
+    let id: Int32
+    let name: String
 }
 
-extension MainViewController : WebSocketDelegate {
-    func websocketDidConnect(socket: WebSocketClient) {
-        print("------------------------------------- socket connect")
-    }
-    
-    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        print("websocket is disconnected: \(String(describing: error?.localizedDescription))")
-    }
-    
-    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        print("did rec msg")
-    }
-    
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print("did stuff")
-    }
-    
-}
+
+
